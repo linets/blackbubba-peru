@@ -9,6 +9,14 @@
   %}
 {% endcomment %}
 
+<style>
+  .social-container-div{ display: flex; gap: 80px; }
+  @media screen and (max-width: 749px){
+    .social-container-div{ flex-direction: column; gap: 0; }
+  }
+</style>
+<div class="social-container-div" >
+<h1 style="font: normal normal bold 22px/27px Montserrat;letter-spacing: 0px;">EXPLROE MORE!</h1>
 <ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
   {%- if settings.social_facebook_link != blank -%}
     <li class="list-social__item">
@@ -83,3 +91,4 @@
     </li>
   {%- endif -%}
 </ul>
+</div>
