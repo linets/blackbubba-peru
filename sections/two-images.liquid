@@ -1,0 +1,246 @@
+{% style %}
+  .section-two-images h1{
+    font: normal normal bold 28px/34px Montserrat;
+    letter-spacing: 0px;
+    width: 100%;
+    text-align: {{ section.settings.heading_position }};
+  }
+  .section-two-images .image_wrapper{ 
+    display: flex; 
+    padding-bottom: 131px;
+    gap: 47px;
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .section-two-images .image_wrapper .image_container{
+    max-width: 664px;
+    max-height: 670px;
+    position: relative;
+    width: 50%;
+  }
+  .section-two-images .image_wrapper .image_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .section-two-images .image_wrapper .image_container a.all_link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 99;
+  }
+  .section-two-images .image_wrapper .image_container a.main_link{
+    font: normal normal normal 18px/22px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    position: absolute;
+    display: block;
+    background: #000000 0% 0% no-repeat padding-box;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    width: 313px;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+  .section-two-images .image_wrapper .image_container a.main_link.left{
+    left: 2rem;
+  }
+  .section-two-images .image_wrapper .image_container a.main_link.right{
+    right: 2rem;
+  }
+  .section-two-images .image_wrapper .image_container a.main_link.top{
+    top: 2rem;
+  }
+  .section-two-images .image_wrapper .image_container a.main_link.bottom{
+    bottom: 2rem;
+  }
+  
+  .section-two-images .image_wrapper .image_container a.main_link.center_v{
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .section-two-images .image_wrapper .image_container a.main_link.center_h{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 750px){
+    .section-two-images .image_wrapper{
+      flex-direction: column;
+      margin-top: 20px;
+      gap: 23px;
+      padding-bottom: 100px;
+    }
+    .section-two-images .image_wrapper .image_container{
+      width: 100%;
+      max-width: 389px;
+      max-height: 392px;
+      overflow: hidden;
+    }
+  }
+{% endstyle %}
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <h1>{{ section.settings.title }}</h1>
+  {% endif %}
+  
+   {% if section.blocks.size > 0 %}
+     <div class="image_wrapper">
+       {%- for block in section.blocks -%}
+         {% if block.settings.image %}
+           <div class="image_container">
+             {% if block.settings.btn_label != blank %}<a class="all_link" href="{{ block.settings.btn_link }}"></a>{% endif %}
+           
+             <img src="{{ block.settings.image | img_url: 'master'}}">
+             {% if block.settings.btn_label != blank %}<a class="main_link {{ block.settings.v_position }} {{ block.settings.h_position }}" href="{{ block.settings.btn_link }}">{{ block.settings.btn_label }}</a>{% endif %}
+           </div>
+         {% endif %}
+       {%- endfor -%}
+     </div>
+   {% endif %}
+     
+</div>
+
+{% schema %}
+{
+  "name": "Two Images",
+  "tag": "section",
+  "class": "section section-two-images",
+  "max_blocks": 2,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Collections",
+      "label": "t:sections.collection-list.settings.title.label"
+    }, 
+    {
+      "type": "select",
+      "id": "heading_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Poisición del título"
+    }, 
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [ 
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recomendación de imagen (664x670)px"
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Boton Label"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Boton Link"
+        }, 
+        {
+          "type": "select",
+          "id": "v_position",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "center_v",
+              "label": "Center"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "center_v",
+          "label": "Poisición Vertical"
+        }, 
+        {
+          "type": "select",
+          "id": "h_position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center_h",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center_h",
+          "label": "Poisición Horizontal"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Images",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

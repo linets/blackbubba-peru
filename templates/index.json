@@ -211,6 +211,41 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
+      "type": "two-images",
+      "blocks": {
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/man-in-suit-on-stairs.jpg",
+            "btn_label": "FOR HIM",
+            "btn_link": "shopify:\/\/collections\/vestuario-hombre",
+            "v_position": "center_v",
+            "h_position": "center_h"
+          }
+        },
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
+            "btn_label": "FOR HER",
+            "btn_link": "shopify:\/\/collections\/vestuario-mujer",
+            "v_position": "center_v",
+            "h_position": "center_h"
+          }
+        }
+      },
+      "block_order": [
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1",
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
+      ],
+      "settings": {
+        "title": "CLOTHING",
+        "heading_position": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "bda69723-dbfb-4e98-a695-134c8c8f9141": {
       "type": "slideshow",
       "blocks": {
@@ -285,6 +320,7 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c",
     "f2ffa51e-a382-4bed-b53f-b538884ea068",
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
+    "8b8fdd54-6390-49d5-9974-bef4b0b24c26",
     "bda69723-dbfb-4e98-a695-134c8c8f9141"
   ]
 }
