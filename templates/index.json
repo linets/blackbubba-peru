@@ -69,6 +69,79 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "f2ffa51e-a382-4bed-b53f-b538884ea068": {
+      "type": "slide-collection-list",
+      "blocks": {
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        },
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        },
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        },
+        "b7b71698-f983-48c0-9e2e-27ca98bfbd9e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        },
+        "03b0d026-2469-4c3f-9b70-35caaec084fb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        },
+        "32431df5-baea-43d1-8419-772f3d02172a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        },
+        "c2263196-b278-46ae-8511-559ade5f8c9d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesorios",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3",
+        "b7b71698-f983-48c0-9e2e-27ca98bfbd9e",
+        "03b0d026-2469-4c3f-9b70-35caaec084fb",
+        "32431df5-baea-43d1-8419-772f3d02172a",
+        "c2263196-b278-46ae-8511-559ade5f8c9d"
+      ],
+      "settings": {
+        "title": "BAGS FOR ALL YOUR NEEDS",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "show_view_all": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82": {
       "type": "slideshow",
       "blocks": {
@@ -114,7 +187,7 @@
             "btn_color_border": "#ffffff",
             "button_style_secondary": false,
             "box_align": "middle-center",
-            "show_text_box": true,
+            "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
@@ -179,11 +252,11 @@
             "button_label": "Button label",
             "link": "",
             "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
+            "btn_color_bg": "#8b8b8b",
             "btn_color_border": "#ffffff",
             "button_style_secondary": false,
             "box_align": "middle-center",
-            "show_text_box": true,
+            "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
@@ -210,6 +283,7 @@
   },
   "order": [
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c",
+    "f2ffa51e-a382-4bed-b53f-b538884ea068",
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
     "bda69723-dbfb-4e98-a695-134c8c8f9141"
   ]
