@@ -277,6 +277,37 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "a911322a-46f4-4c00-bf5a-64ae36a8dc7d": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "content_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "chaquetas-1",
+        "products_to_show": 25,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "enable_desktop_slider_layout_2": true,
+        "enable_scroll": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "bda69723-dbfb-4e98-a695-134c8c8f9141": {
       "type": "slideshow",
       "blocks": {
@@ -345,37 +376,6 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
-    },
-    "a911322a-46f4-4c00-bf5a-64ae36a8dc7d": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "content_alignment": "center",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "chaquetas-1",
-        "products_to_show": 25,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "enable_desktop_slider_layout_2": true,
-        "enable_scroll": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -384,7 +384,7 @@
     "5d3cc397-b89e-467f-9396-2036ad216ca4",
     "f2ffa51e-a382-4bed-b53f-b538884ea068",
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
-    "bda69723-dbfb-4e98-a695-134c8c8f9141",
-    "a911322a-46f4-4c00-bf5a-64ae36a8dc7d"
+    "a911322a-46f4-4c00-bf5a-64ae36a8dc7d",
+    "bda69723-dbfb-4e98-a695-134c8c8f9141"
   ]
 }
