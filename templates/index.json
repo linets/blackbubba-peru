@@ -6,8 +6,8 @@
         "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rooftopper-looking-down.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mens-fashion-watch.jpg",
+            "image": "shopify:\/\/shop_images\/slider_new_editado_2x_2b482ecf-e889-4b17-8c64-a74341d8d739.png",
+            "image_mobile": "shopify:\/\/shop_images\/slider_new_editado_2x_42a58909-31f7-4b2f-9964-5e623bcaea94.png",
             "desktop_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c0fdd965f40f4826bce28b8aa0465292.mp4",
             "mobile_video": "",
             "tag": "Nueva Colleción",
@@ -142,14 +142,80 @@
         "padding_bottom": 24
       }
     },
+    "b9fd4ddc-5235-440d-a455-5507df7e3b06": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "BAGS FOR EVERYWHERE",
+        "heading_size": "h2",
+        "content_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bolsos-y-maletas",
+        "products_to_show": 24,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "enable_desktop_slider_layout_2": true,
+        "enable_scroll": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
+      "type": "two-images",
+      "blocks": {
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/man-in-suit-on-stairs.jpg",
+            "btn_label": "FOR HIM",
+            "btn_link": "shopify:\/\/collections\/vestuario-hombre",
+            "v_position": "center_v",
+            "h_position": "center_h"
+          }
+        },
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/female_image_item_2x_926eb01b-759f-46dd-9160-1ce3ff76dd4e.png",
+            "btn_label": "FOR HER",
+            "btn_link": "shopify:\/\/collections\/vestuario-mujer",
+            "v_position": "center_v",
+            "h_position": "center_h"
+          }
+        }
+      },
+      "block_order": [
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1",
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
+      ],
+      "settings": {
+        "title": "CLOTHING",
+        "heading_position": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82": {
       "type": "slideshow",
       "blocks": {
         "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/man-sitting-in-city.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/casual-urban-menswear.jpg",
+            "image": "shopify:\/\/shop_images\/imagen_publi_1_2x_baaa07f7-c2c5-4372-87b3-eb7c9c09981c.png",
+            "image_mobile": "shopify:\/\/shop_images\/imagen_publi_1_2x_db69c112-b649-454e-b1f6-d1a92b93a02f.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "New Collection",
@@ -194,11 +260,36 @@
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
+        },
+        "bbfdae70-af69-4211-b61b-021f034ce250": {
+          "type": "slide",
+          "settings": {
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
         }
       },
       "block_order": [
         "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1",
-        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-2"
+        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-2",
+        "bbfdae70-af69-4211-b61b-021f034ce250"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -211,37 +302,33 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
-      "type": "two-images",
-      "blocks": {
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/man-in-suit-on-stairs.jpg",
-            "btn_label": "FOR HIM",
-            "btn_link": "shopify:\/\/collections\/vestuario-hombre",
-            "v_position": "center_v",
-            "h_position": "center_h"
-          }
-        },
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
-            "btn_label": "FOR HER",
-            "btn_link": "shopify:\/\/collections\/vestuario-mujer",
-            "v_position": "center_v",
-            "h_position": "center_h"
-          }
-        }
-      },
-      "block_order": [
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1",
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
-      ],
+    "95f75e9f-ed94-4f21-9228-4f27ccc33e97": {
+      "type": "featured-collection",
       "settings": {
-        "title": "CLOTHING",
-        "heading_position": "center",
+        "title": "BAGS FOR EVERYWHERE",
+        "heading_size": "h2",
+        "content_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vestuario-hombre",
+        "products_to_show": 16,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "enable_desktop_slider_layout_2": true,
+        "enable_scroll": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -252,8 +339,8 @@
         "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/london-uk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/chicago-city-lights-at-night.jpg",
+            "image": "shopify:\/\/shop_images\/imagen_publi_pre-footer_2x_776f4cf9-0f37-4e99-b4d2-36c7a36e619d.png",
+            "image_mobile": "shopify:\/\/shop_images\/imagen_publi_pre-footer_2x_a54b9f7c-b209-4722-907e-3e941588bf90.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "New Collection",
@@ -306,7 +393,7 @@
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "large",
+        "slide_height": "adapt_image",
         "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -319,8 +406,10 @@
   "order": [
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c",
     "f2ffa51e-a382-4bed-b53f-b538884ea068",
-    "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
+    "b9fd4ddc-5235-440d-a455-5507df7e3b06",
     "8b8fdd54-6390-49d5-9974-bef4b0b24c26",
+    "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
+    "95f75e9f-ed94-4f21-9228-4f27ccc33e97",
     "bda69723-dbfb-4e98-a695-134c8c8f9141"
   ]
 }
