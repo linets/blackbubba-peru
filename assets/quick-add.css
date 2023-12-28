@@ -1,9 +1,42 @@
 .quick-add {
-  position: relative;
+  /* position: relative; */
   grid-row-start: 4;
   margin: 0 0 1rem;
-  z-index: 1;
+  z-index: 999;
+  /* CE746-9 */
+  position: absolute;
+  width: 100%;
+  opacity: 0; 
+  pointer-events: auto; 
+  /*bottom: 21%;*/
+  bottom: -3px;
+  padding: 0 8px;
 }
+
+.quick-add.mobile{ display: none; }
+
+.product-card-wrapper .card:hover .quick-add{
+  opacity: 1; 
+}
+
+@media screen and (max-width: 749px){
+  .quick-add {  
+    position: relative;
+    opacity: 1; 
+    pointer-events: initial;
+  }
+  
+  .quick-add.desktop{ display: none; }
+  
+  .quick-add.mobile{ 
+    display: block; 
+    margin: 10px 0 10px 0;
+    padding: 0;
+  }
+  .quick-add__submit{
+    opacity: 1;
+  }
+} 
 
 .card--card .quick-add {
   margin: 0 1.3rem 1rem;
@@ -209,14 +242,33 @@ quick-add-modal .product-form__buttons {
   max-width: initial;
 }
 
+.quick-add__submit:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
 .quick-add__submit {
   padding: 0.8rem;
   min-width: 100%;
   box-sizing: border-box;
+  min-height: initial;
+  text-transform: uppercase;
+  opacity: 0.8;
+  border: 1px solid #000000;
+  background: #FFF;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
 }
+ 
+.quick-add__submit::before,
+.quick-add__submit::after{ display: none; }
 
 quick-add-modal .product-media-container.constrain-height {
   --viewport-offset: calc((var(--modal-height-offset) + var(--modal-padding) + var(--popup-border-width)) * 2);
+}
+
+@media screen and (max-width: 750px) {
+  .quick-add__submit { font-size: 1rem; }  
 }
 
 @media screen and (min-width: 750px) {
