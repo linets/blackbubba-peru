@@ -268,7 +268,15 @@
             </h3>
             
             <div class="variant-option-container">
-              {{ card_product.title }} --- xxxx
+              {% if card_product.variants.size > 1 %} 
+                <ul>
+                {% assign countVariantAvailable = 0 %}
+                {% for variant in card_product.variants %}
+                  <li onClick="validateVariantSelected(this, {{ variant.id }})" class="available-{{ variant.available }}
+                  {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}">{{ variant.title | slice: 0, 2 }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
             </div>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
@@ -486,9 +494,17 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {% render 'price', show_compare_at_price: true %}
-          </div>
+          </div> 
           <div class="variant-option-container">
-            {{ card_product.title }} --- yyyy
+            {% if card_product.variants.size > 1 %} 
+              <ul>
+              {% assign countVariantAvailable = 0 %}
+              {% for variant in card_product.variants %}
+                <li onClick="validateVariantSelected(this, {{ variant.id }})" class="available-{{ variant.available }}
+                {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}">{{ variant.title | slice: 0, 2 }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
           </div>
         </div>
       </div>
