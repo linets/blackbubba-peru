@@ -603,23 +603,38 @@
 }
 .variant-option-container ul li{ 
   display: inline-block;
-  background: #EAEAEA;
-  border-radius: 10px;
+  border-radius: 50%;
   padding: 0px 7px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   transition: all .3s ease-in-out;
+  border: 3px solid transparent;
+  height: 15px;
 }
 .variant-option-container ul li.active,
 .variant-option-container ul li:hover{ 
-  color: #EAEAEA;
-  background: #000;
+  opacity: 0.7;
+  border: 3px solid #000;
+  border-style: outset;
 }
 .variant-option-container ul li.available-false{
   opacity: 0.7;
-  pointer-events: none;
-  text-decoration: line-through;
+  pointer-events: none; 
+  position: relative;
+  overflow: hidden;
+}
+.variant-option-container ul li.available-false:before{
+  content: 'X';
+  position: absolute;
+  margin: auto auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  top: -13px;
+  font-size: 23px;
 }
 @media screen and (max-width: 750px) { 
   .slider-mobile-gutter .slider-counter{ display: none; } 
