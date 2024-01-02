@@ -2847,9 +2847,19 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
+  color: rgb(var(--color-foreground)); 
   text-underline-offset: 0.3rem;
+  position: relative;
+}
+
+.header__menu-item span.header__active-menu-item:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  display: block;
+  bottom: -10px;
 }
 
 .header__menu-item:hover .header__active-menu-item {

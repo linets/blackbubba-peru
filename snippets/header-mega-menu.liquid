@@ -30,43 +30,68 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
-                <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
-                  role="list"
-                >
-                  {%- for childlink in link.links -%}
-                    <li>
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
+                <div class="header_container">
+                  <ul
+                    class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                    role="list"
+                  >
+                    {%- for childlink in link.links -%}
+                      <li>
+                        <a
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          href="{{ childlink.url }}"
+                          class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                        {%- if childlink.links != blank -%}
+                          <ul class="list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  {% for menu_content in shop.metaobjects.menu_content.values %}
+                    {% assign menuContentID = menu_content.id_header_asociado | downcase | replace: " ", "" %}
+                    {% assign linkText = link.title | downcase | replace: " ", "" %}
+                    {% if menuContentID == linkText %} 
+                      {% if menu_content.texto_para_boton != blank %}
+                        <a class="promo_button" style="background: {{ menu_content.color_de_fondo_de_boton }}; color: {{ menu_content.color_de_texto_de_boton }}; border: 1px solid {{ menu_content.color_de_borde_de_boton }};" 
+                        href="{{ menu_content.url_para_boton }}">{{ menu_content.texto_para_boton }}</a>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                {% for menu_content in shop.metaobjects.menu_content.values %}
+                  {% assign menuContentID = menu_content.id_header_asociado | downcase | replace: " ", "" %}
+                  {% assign linkText = link.title | downcase | replace: " ", "" %}
+                  {% if menuContentID == linkText %} 
+                    <div class="header_container promo_content">
+                      <a href="{{ menu_content.url_de_imagen }}">
+                        {% if menu_content.imagen %}<img loading="lazy" src="{{ menu_content.imagen | img_url: 'master' }}">{% endif %}
+                        {% if menu_content.texto_de_imagen %}<p>{{ menu_content.texto_de_imagen }}</p>{% endif %}
+                        {% if menu_content.texto_para_enlace_de_imagen %}<p class="linkC">{{ menu_content.texto_para_enlace_de_imagen }}</p>{% endif %}
                       </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
+                    </div>
+                  {% endif %}
+                {% endfor %}
               </div>
             </details>
           </header-menu>
@@ -93,6 +118,11 @@
   </ul>
 </nav>
 <script>
+  document.addEventListener("click", function(){
+    document.querySelectorAll(".mega-menu").forEach((x) => {
+      x.removeAttribute("open");
+    });
+  });
   function addOpen(e){
     document.querySelectorAll(".mega-menu").forEach((x) => {
       x.removeAttribute("open");
