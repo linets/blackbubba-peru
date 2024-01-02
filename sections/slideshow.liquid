@@ -2,6 +2,12 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+    @media screen and (max-width: 749px) {
+      .custom-slideshow .slider-counter{ display: block !important; }
+    }
+  {%- endstyle -%}
+  
 {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
@@ -12,7 +18,6 @@
         content: '';
         display: block;
       }
-      .custom-slideshow .slider-mobile-gutter .slider-counter{ display: block; }
     }
 
     @media screen and (min-width: 750px) {
