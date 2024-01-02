@@ -83,7 +83,7 @@ volume-pricing show-more-button {
   width: 67px;
   text-align: center;
   height: 27px;
-  line-height: 1;
+  padding: 0;
 }
 @media screen and (max-width: 750px){
   .badge-discount{

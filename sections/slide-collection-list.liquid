@@ -18,8 +18,9 @@
   }
   .swiper-collection-list.swiper {
     width: 100%;
-    height: 100%;
+    height: 100%; 
   }
+  
   .swiper-collection-list .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -31,6 +32,7 @@
     height: 595px;
     overflow: hidden;
     cursor: pointer;
+    max-height: 475px;
   }
   .swiper-collection-list .swiper-slide:hover img{
     scale: 1.05;
@@ -40,6 +42,7 @@
     height: 100%;
     object-fit: cover;
     transition: all .4s;
+    max-height: 475px;
   }
   .swiper-collection-list .swiper-slide:hover h3{
     letter-spacing: 0.33em;
@@ -64,30 +67,36 @@
   .swiper-collection-list .swiper-pagination-bullet{
     background: #CECECE;
     opacity: 1;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
   }
   .swiper-collection-list .swiper-pagination-bullet-active{
     background: #000000;
     opacity: 1;
   }
+  .swiper-collection-list .swiper-pagination{ display: initial; }
   .section-slide-collection-list .title-wrapper-with-link { margin: 20px auto; }
-  .swiper-collection-list .swiper-pagination{ display: none; }
   @media screen and (max-width: 750px) {
     .section-slide-collection-list .title-wrapper-with-link,
     .section-slide-collection-list h2{ display: none; }
-    .swiper-collection-list .swiper-pagination{ display: initial; }
     .swiper-collection-list{ padding-bottom: 50px; }
     .swiper-collection-list .swiper-slide h3{
       font-size: 1rem;
       left: 1.5rem;
     }
     .swiper-collection-list .swiper-slide{
-      height: 337px;
+      height: 260px%;
+      max-height: 260px;
     }
   }
   
   @media screen and (min-width: 750px) {
+    .swiper-collection-list.swiper {
+      padding-bottom: 100px;
+    }
+    .swiper-collection-list .swiper-pagination-bullet{
+      margin: 0 20px !important;
+    }
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
