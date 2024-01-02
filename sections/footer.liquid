@@ -371,7 +371,8 @@
           </ul>
         {%- endif -%}
       </div>
-      <img width="103px" height="145px" src="https://static.vecteezy.com/system/resources/previews/007/089/006/non_2x/ccs-letter-logo-design-on-black-background-ccs-creative-initials-letter-logo-concept-ccs-letter-design-vector.jpg">
+      
+      <img width="103px" height="145px" src="{{ 'footer_logo.png' | asset_url }}">
       {%- if section.settings.show_social and has_social_icons -%}
         {%- render 'social-icons', class: 'footer__list-social' -%}
       {%- endif -%}
