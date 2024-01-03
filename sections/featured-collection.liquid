@@ -45,11 +45,31 @@
     background: #000000;
     opacity: 1;
   }
+  .swiper-button-next,
+  .swiper-button-prev{
+    opacity: 1;
+    pointer-event: initial;
+    display: block !important;
+    margin: -2% 2%;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after{
+    color: #000000;
+    font-weight: bold;
+    font-size: 29px;
+  }
   .featured-collection-slider .swiper-slide .card-wrapper{ width: 100%; }
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   } 
+  @media screen and (max-width: 900px) {
+    .swiper-button-next,
+    .swiper-button-prev{
+      opacity: 0 !important;
+      pointer-event: none;
+    }
+  }
   @media screen and (max-width: 750px) {
     .featured-collection-slider.swiper {
       max-width: 100%;
@@ -211,6 +231,8 @@
       </ul>
       <div class="swiper-pagination swiper-pagination-{{ section.id }}"></div>
     </div>
+    <div class="swiper-button-next swiper-button-next-{{ section.id }}"></div>
+    <div class="swiper-button-prev swiper-button-prev-{{ section.id }}"></div>
     
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -241,6 +263,10 @@
       slidesPerView: 'auto',
       spaceBetween: 16,
       centeredSlides: true,
+      navigation: {
+        nextEl: ".swiper-button-next-{{ section.id }}",
+        prevEl: ".swiper-button-prev-{{ section.id }}",
+      },
       pagination: {
         el: ".swiper-pagination-{{ section.id }}",
         clickable: true,
