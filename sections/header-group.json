@@ -5,16 +5,20 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
+        "e4bafdab-8ff7-4e04-a956-75f8950d49fc": {
+          "type": "info",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "ubicacion": "Encuentra tu Tienda",
+            "ubicacion_url": "shopify:\/\/collections\/all",
+            "contacto": "contacto@bubba-bags.com",
+            "contacto_url": "",
+            "envio": "Free Shipping",
+            "envio_url": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "e4bafdab-8ff7-4e04-a956-75f8950d49fc"
       ],
       "settings": {
         "color_scheme": "",

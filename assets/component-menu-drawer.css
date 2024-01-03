@@ -113,12 +113,60 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .js .menu-drawer__menu li {
   margin-bottom: 0.2rem;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.js .menu-drawer__menu li.metaobject-container{
+  padding: 0 30px;
+  margin-top: 50px;
+}
+
+.js .menu-drawer__menu li.metaobject-container .promo_button{
+  display: block;
+  text-align: center;
+  font: normal normal bold 16px/19px Montserrat;
+  letter-spacing: 0px;
+  text-decoration: none;
+  padding: 15px 0;
+  width: 100%;
+  margin-bottom: 47px;
+}
+
+.js .menu-drawer__menu li.metaobject-container .promo_content{
+    padding-bottom: 50px;
+}
+
+.js .menu-drawer__menu li.metaobject-container .promo_content a img{
+  width: 100%;
+  max-height: 418px;
+  object-fit: cover;
+}
+
+.js .menu-drawer__menu li.metaobject-container .promo_content a{
+  font: normal normal medium 15px/26px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.js .menu-drawer__menu li.metaobject-container .promo_content a p{
+  margin: 0;
+}
+
+.js .menu-drawer__menu li.metaobject-container .promo_content a p.linkC{
+  background: url('data:image/svg+xml,<%3Fxml version="1.0" %3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 10%;
+  display: block;
 }
 
 .menu-drawer__menu-item {
   padding: 1.1rem 3rem;
   text-decoration: none;
   font-size: 1.8rem;
+  font: normal normal 600 16px/19px Montserrat;
+  letter-spacing: 0px;
 }
 
 .no-js .menu-drawer__menu-item {
@@ -135,7 +183,16 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer summary.menu-drawer__menu-item {
   padding-right: 5.2rem;
+  background: url('data:image/svg+xml,<%3Fxml version="1.0" %3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 94%;
+  display: block;
+  font: normal normal 600 16px/19px Montserrat;
+  letter-spacing: 0px;
 }
+
+.menu-drawer summary.menu-drawer__menu-item svg{ display: none; }
 
 .no-js .menu-drawer__menu-item .icon-caret {
   right: 3rem;
@@ -194,6 +251,15 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   text-align: left;
+  font: normal normal bold 22px/27px Montserrat;
+  letter-spacing: 0px;
+  gap: 80px;
+  background: #E3E3E3;
+}
+
+.menu-drawer__close-button svg{
+  width: 28px;
+  height: 28px;
 }
 
 .no-js .menu-drawer__close-button {

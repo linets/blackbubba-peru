@@ -408,7 +408,7 @@
     width: 100%;
     background: transparent;
     bottom: 10px;
-    z-index: 99;
+    z-index: 1;
     border: none;
   }
   .slider-counter__link--dots .dot{ 

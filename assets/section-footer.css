@@ -136,7 +136,7 @@
   .footer-block.footer-block--menu:only-child {
     text-align: left;
   }
-  .list-menu__item{
+  .footer-block .list-menu__item{
     justify-content: center;
   }
 }
