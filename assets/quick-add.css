@@ -277,3 +277,7 @@ quick-add-modal .product-media-container.constrain-height {
     --constrained-min-height: 400px;
   }
 }
+.quick-add-modal .product__column-sticky .product__title h1,
+.quick-add-modal .product__column-sticky .product__title h2{
+  font-size: 2rem;
+}

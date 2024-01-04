@@ -9,6 +9,17 @@
   .list-social {
     justify-content: center;
   }
+  .list-social__item svg.icon{
+    height: 5.2rem;
+    width: 5.2rem;
+  }
+  .social-container-div h1{
+    width: 100%;
+    text-align: center;
+  }
+  .social-container-div{
+    margin-bottom: 70px;
+  }
 }
 
 .list-social__item .icon {

@@ -152,6 +152,9 @@
   margin-bottom: 2rem;
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font: 700 18px/22px Montserrat;
+  letter-spacing: 0px;
+  color: #FFFFFF;
 }
 
 @media screen and (min-width: 990px) {
@@ -187,7 +190,7 @@
 .footer-block__newsletter .footer-block__subheading{
   font: normal normal normal 12px/14px Montserrat;
   letter-spacing: 0px;
-  margin-bottom: 68px;
+  margin-bottom: 40px;
 }
 
 .footer-block__newsletter .newsletter-form__button_new{

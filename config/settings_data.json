@@ -78,6 +78,7 @@
     "media_shadow_horizontal_offset": 0,
     "media_shadow_vertical_offset": 4,
     "media_shadow_blur": 5,
+    "mobile_hit_menu": "main-menu",
     "mobile_menu_utility_links": "f-necesitas-ayuda",
     "popup_border_thickness": 1,
     "popup_border_opacity": 10,

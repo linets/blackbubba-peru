@@ -1,5 +1,5 @@
 <!-- Link Swiper's CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
@@ -12,15 +12,15 @@
   }
   .section-slide-collection-list h2{
     width: 100%;
-    font-weight: bold;    
+    font-weight: bold;
     letter-spacing: 0px;
     text-align: {{ section.settings.heading_position }};
   }
   .swiper-collection-list.swiper {
     width: 100%;
-    height: 100%; 
+    height: 100%;
   }
-  
+
   .swiper-collection-list .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -37,7 +37,7 @@
   .swiper-collection-list .swiper-slide:hover img{
     scale: 1.05;
   }
-  .swiper-collection-list .swiper-slide img{ 
+  .swiper-collection-list .swiper-slide img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,7 +90,7 @@
       min-width: 220px;
     }
   }
-  
+
   @media screen and (min-width: 750px) {
     .swiper-collection-list.swiper {
       padding-bottom: 100px;
@@ -137,29 +137,28 @@
       </div>
     {%- endunless -%}
 
-    
     <!-- Swiper -->
-   {% if section.blocks.size > 0 %}
+    {% if section.blocks.size > 0 %}
       <div class="swiper swiper-collection-list">
         <div class="swiper-wrapper">
           {%- for block in section.blocks -%}
-           {% if block.settings.image %}
-            <div class="swiper-slide">
-              <a href="{{ block.settings.url }}"></a>
-              {% if block.settings.image %}
-                <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}"> 
-              {% endif %}
-             
-              {% if block.settings.title != blank %}
-                <h3>{{ block.settings.title }}</h3> 
-              {% endif %}
-            </div>
-           {% endif %}
+            {% if block.settings.image %}
+              <div class="swiper-slide">
+                <a href="{{ block.settings.url }}"></a>
+                {% if block.settings.image %}
+                  <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
+                {% endif %}
+
+                {% if block.settings.title != blank %}
+                  <h3>{{ block.settings.title }}</h3>
+                {% endif %}
+              </div>
+            {% endif %}
           {%- endfor -%}
         </div>
         <div class="swiper-pagination"></div>
       </div>
-   {% endif %} 
+    {% endif %}
 
     {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
       <div
@@ -186,25 +185,26 @@
 
 <!-- Initialize Swiper -->
 <script>
-  var swiper = new Swiper(".swiper-collection-list", {
+  var swiper = new Swiper('.swiper-collection-list', {
     slidesPerView: 2,
     spaceBetween: 18,
     centeredSlides: true,
-    initialSlide: 2,
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     breakpoints: {
       750: {
+        centeredSlides: true,
+        loop: true,
         slidesPerView: 4,
         spaceBetween: 32,
-      }
-    }
+      },
+    },
   });
 </script>
-      
+
 {% schema %}
 {
   "name": "Slide Collection List",
@@ -281,7 +281,7 @@
       "default": "square",
       "label": "t:sections.collection-list.settings.image_ratio.label",
       "info": "t:sections.collection-list.settings.image_ratio.info"
-    }, 
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -298,7 +298,7 @@
     {
       "type": "header",
       "content": "t:sections.collection-list.settings.header_mobile.content"
-    },  
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
@@ -328,7 +328,7 @@
     {
       "type": "featured_collection",
       "name": "t:sections.collection-list.blocks.featured_collection.name",
-      "settings": [ 
+      "settings": [
         {
           "type": "image_picker",
           "id": "image",

@@ -106,18 +106,32 @@
                             {%- endfor -%}
                             <li class="metaobject-container">
                               {% for menu_content in shop.metaobjects.menu_content.values %}
-                                {% assign menuContentID = menu_content.id_header_asociado | downcase | replace: " ", "" %}
-                                {% assign linkText = link.title | downcase | replace: " ", "" %}
-                                {% if menuContentID == linkText %} 
+                                {% assign menuContentID = menu_content.id_header_asociado
+                                  | downcase
+                                  | replace: ' ', ''
+                                %}
+                                {% assign linkText = link.title | downcase | replace: ' ', '' %}
+                                {% if menuContentID == linkText %}
                                   {% if menu_content.texto_para_boton != blank %}
-                                    <a class="promo_button" style="background: {{ menu_content.color_de_fondo_de_boton }}; color: {{ menu_content.color_de_texto_de_boton }}; border: 1px solid {{ menu_content.color_de_borde_de_boton }};" 
-                                    href="{{ menu_content.url_para_boton }}">{{ menu_content.texto_para_boton }}</a>
+                                    <a
+                                      class="promo_button"
+                                      style="background: {{ menu_content.color_de_fondo_de_boton }}; color: {{ menu_content.color_de_texto_de_boton }}; border: 1px solid {{ menu_content.color_de_borde_de_boton }};"
+                                      href="{{ menu_content.url_para_boton }}"
+                                    >
+                                      {{- menu_content.texto_para_boton -}}
+                                    </a>
                                   {% endif %}
                                   <div class="promo_content">
                                     <a href="{{ menu_content.url_de_imagen }}">
-                                      {% if menu_content.imagen %}<img loading="lazy" src="{{ menu_content.imagen | img_url: 'master' }}">{% endif %}
-                                      {% if menu_content.texto_de_imagen %}<p>{{ menu_content.texto_de_imagen }}</p>{% endif %}
-                                      {% if menu_content.texto_para_enlace_de_imagen %}<p class="linkC">{{ menu_content.texto_para_enlace_de_imagen }}</p>{% endif %}
+                                      {% if menu_content.imagen -%}
+                                        <img loading="lazy" src="{{ menu_content.imagen | img_url: 'master' }}">
+                                      {%- endif %}
+                                      {% if menu_content.texto_de_imagen %}
+                                        <p>{{ menu_content.texto_de_imagen }}</p>
+                                      {% endif %}
+                                      {% if menu_content.texto_para_enlace_de_imagen %}
+                                        <p class="linkC">{{ menu_content.texto_para_enlace_de_imagen }}</p>
+                                      {% endif %}
                                     </a>
                                   </div>
                                 {% endif %}
@@ -142,27 +156,29 @@
                 </li>
               {%- endfor -%}
             </ul>
-            
+
             {% comment %}{%- if shop.customer_accounts_enabled -%}{%- endif -%}{% endcomment %}
             <a
               href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
               class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
             >
               {% render 'icon-account' %}
-              {% comment %}{%- liquid
-                if customer
-                  echo 'customer.account_fallback' | t
-                else
-                  echo 'customer.log_in' | t
-                endif
-              -%}{% endcomment %}
+              {% comment %}
+                {%- liquid
+                  if customer
+                    echo 'customer.account_fallback' | t
+                  else
+                    echo 'customer.log_in' | t
+                  endif
+                -%}
+              {% endcomment %}
               Login / Registro
             </a>
             <ul class="utility-links-container" role="list">
               {%- for link in settings.mobile_menu_utility_links.links -%}
                 {%- if link -%}
                   <li>
-                    <a href="{{ link.handle }}">{{ link.title }}</a>
+                    <a href="{{ link.url }}">{{ link.title }}</a>
                   </li>
                 {%- endif -%}
               {%- endfor -%}
