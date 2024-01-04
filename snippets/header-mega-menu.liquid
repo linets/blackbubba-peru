@@ -123,11 +123,15 @@
       x.removeAttribute("open");
     });
   });
+
   function addOpen(e){
     document.querySelectorAll(".mega-menu").forEach((x) => {
       x.removeAttribute("open");
+      x.addEventListener("mouseout", (event) => {
+        console.log('x');
+      });
     });
-    e.setAttribute("open", "");
+    e.setAttribute("open", ""); 
   }
   
 </script>

@@ -210,7 +210,7 @@
     </slider-component>
     {% endcomment %}
     <!-- Swiper -->
-    <div class="swiper featured-collection-slider page-width featured-slide-container-{{ section.id }}">
+    <div style="display: none;" class="swiper featured-collection-slider page-width featured-slide-container-{{ section.id }}">
       <ul
         id="Slider-{{ section.id }}"
         class="swiper-wrapper">
@@ -257,8 +257,11 @@
 <!-- Initialize Swiper -->
 <script>
   window.addEventListener('load', function() {
+    document.querySelectorAll('.featured-collection-slider').forEach((e) => {
+      e.style.display = "block"
+    });
     let columnQtyDesktop = {{ section.settings.columns_desktop }};
-    let columnQtyMobile = {{ section.settings.columns_mobile }};
+    //let columnQtyMobile = {{ section.settings.columns_mobile }};
     var swiper = new Swiper(".featured-slide-container-{{ section.id }}", {
       slidesPerView: 'auto',
       spaceBetween: 16,
@@ -543,23 +546,7 @@
     {
       "type": "header",
       "content": "t:sections.featured-collection.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "default": "2",
-      "label": "t:sections.featured-collection.settings.columns_mobile.label",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.featured-collection.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
-        }
-      ]
-    },
+    }, 
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",

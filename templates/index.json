@@ -12,7 +12,6 @@
             "mobile_video": "",
             "tag": "Nueva Colleción",
             "heading": "BLACK XMAS",
-            "heading_size": "h1",
             "subheading": "LOREM IPSUM BLACK BUBBA",
             "button_label": "VER MAS",
             "link": "shopify:\/\/products\/active-caddie-black",
@@ -36,7 +35,6 @@
             "mobile_video": "",
             "tag": "Image Tag",
             "heading": "Image slide",
-            "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
             "link": "",
@@ -100,8 +98,11 @@
       "settings": {
         "title": "CLOTHING",
         "heading_position": "center",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "mobile_image": "shopify:\/\/shop_images\/smiling-man-in-formalwear.jpg",
+        "mobile_btn_label_1": "SHOP MEN",
+        "mobile_btn_url_1": "shopify:\/\/collections\/vestuario-hombre",
+        "mobile_btn_label_2": "SHOP WOMEN",
+        "mobile_btn_url_2": "shopify:\/\/collections\/vestuario-mujer"
       }
     },
     "5d3cc397-b89e-467f-9396-2036ad216ca4": {
@@ -129,7 +130,6 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": true,
-        "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
@@ -141,50 +141,57 @@
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/fashion-model-in-pink.jpg",
+            "title": "BACKPACKS",
+            "url": "shopify:\/\/pages\/quienes-somos"
           }
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/woman-in-park-afternoon.jpeg",
+            "title": "BACKPACKS",
+            "url": "shopify:\/\/pages\/seguimiento-de-tu-pedido"
           }
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/model-laughs-barefoot.jpg",
+            "title": "SLINGS & HIPS",
+            "url": "shopify:\/\/pages\/preguntas-frecuentes-cyber"
           }
         },
         "b7b71698-f983-48c0-9e2e-27ca98bfbd9e": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/a-model-in-summer-fashion-with-grey-backdrop.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/blogs\/noticias"
           }
         },
         "03b0d026-2469-4c3f-9b70-35caaec084fb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/blogs\/noticias"
           }
         },
         "32431df5-baea-43d1-8419-772f3d02172a": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/fashion-portrait.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/products\/active-short-black"
           }
         },
         "c2263196-b278-46ae-8511-559ade5f8c9d": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accesorios",
-            "title": ""
+            "image": "shopify:\/\/shop_images\/man-dressed-in-monochrome-by-white-wall.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/products\/2-pack-socks-crew-mix-skull"
           }
         }
       },
@@ -205,7 +212,7 @@
         "color_scheme": "",
         "show_view_all": false,
         "padding_top": 24,
-        "padding_bottom": 24
+        "padding_bottom": 100
       }
     },
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82": {
@@ -220,7 +227,6 @@
             "mobile_video": "",
             "tag": "New Collection",
             "heading": "BEAST TRAVEL",
-            "heading_size": "h1",
             "subheading": "FOR ALL YOUR TRIPS",
             "button_label": "SHOP NOW",
             "link": "shopify:\/\/products\/active-caddie-black",
@@ -232,7 +238,7 @@
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "box_max_width": 12,
+            "box_max_width": 40,
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
@@ -244,7 +250,6 @@
             "mobile_video": "",
             "tag": "Image Tag",
             "heading": "Image slide",
-            "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
             "link": "",
@@ -302,10 +307,9 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": true,
-        "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "bda69723-dbfb-4e98-a695-134c8c8f9141": {
@@ -320,7 +324,6 @@
             "mobile_video": "",
             "tag": "New Collection",
             "heading": "BEAST TRAVEL",
-            "heading_size": "h1",
             "subheading": "FOR ALL YOUR TRIPS",
             "button_label": "SHOP NOW",
             "link": "shopify:\/\/products\/black-no-show-socks-3-pack-black-bubba-1",
@@ -332,7 +335,7 @@
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "box_max_width": 10,
+            "box_max_width": 40,
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
@@ -344,7 +347,6 @@
             "mobile_video": "",
             "tag": "Image Tag",
             "heading": "Image slide",
-            "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
             "link": "",

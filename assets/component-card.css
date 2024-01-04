@@ -231,11 +231,12 @@
 }
 
 .card__heading {
-  margin-top: 0;
+  /*margin-top: 0;*/
   margin-bottom: 0;
   font: normal normal 600 14px/18px Montserrat;
   letter-spacing: 0px;
   color: #000000;
+  margin-top: 9px;
 }
 
 .card__heading:last-child {
@@ -414,6 +415,7 @@
 
 .card-information {
   width: 100%;
+  margin-top: -5px;
 }
 
 .card-information > * {
@@ -593,7 +595,7 @@
 .variant-option-container{ 
   position: absolute; 
   right: 0;
-  bottom: 13px;
+  bottom: 5px;
   z-index: 9999;
   width: fit-content;
 }
@@ -603,14 +605,14 @@
 }
 .variant-option-container ul li{ 
   display: inline-block;
-  border-radius: 50%;
+  border-radius: 100%;
   padding: 0px 7px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   transition: all .3s ease-in-out;
   border: 3px solid transparent;
-  height: 15px;
+  height: 14px;
 }
 .variant-option-container ul li.active,
 .variant-option-container ul li:hover{ 

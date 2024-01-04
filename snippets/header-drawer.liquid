@@ -20,6 +20,7 @@
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
+            <h2 class="title">Menu</h2>
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
@@ -141,22 +142,33 @@
                 </li>
               {%- endfor -%}
             </ul>
-          </nav>
-          <div class="menu-drawer__utility-links">
+            
             {% comment %}{%- if shop.customer_accounts_enabled -%}{%- endif -%}{% endcomment %}
             <a
               href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
               class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
             >
               {% render 'icon-account' %}
-              {%- liquid
+              {% comment %}{%- liquid
                 if customer
                   echo 'customer.account_fallback' | t
                 else
                   echo 'customer.log_in' | t
                 endif
-              -%}
+              -%}{% endcomment %}
+              Login / Registro
             </a>
+            <ul class="utility-links-container" role="list">
+              {%- for link in settings.mobile_menu_utility_links.links -%}
+                {%- if link -%}
+                  <li>
+                    <a href="{{ link.handle }}">{{ link.title }}</a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </nav>
+          <div class="menu-drawer__utility-links">
             {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
                 {%- if localization.available_countries and localization.available_countries.size > 1 -%}

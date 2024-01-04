@@ -29,6 +29,7 @@
     {%- if section.blocks.size == 1 -%}
       <div
         class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}{% if section.blocks.first.type == 'info' %} info-container{% endif %}"
+        style="justify-content: {{ section.blocks.first.settings.position }};"
         role="region"
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ block.shopify_attributes }}
@@ -54,9 +55,10 @@
         {%- elsif section.blocks.first.type == 'info' -%}
            <ul>
              {%- if section.blocks.first.settings.ubicacion != blank -%}
-             <li>
+             <li> 
                {%- if section.blocks.first.settings.ubicacion_url != blank -%}<a href="{{ section.blocks.first.settings.ubicacion_url }}">{%- endif -%}
-                  <img width="21" height="21" loading="lazy" src="{{ 'location.png' | asset_url }}"><span>{{ section.blocks.first.settings.ubicacion }}</span>
+                 {%- if section.blocks.first.ubicacion_img_curr -%}<img width="21" height="21" loading="lazy" src="{{ section.blocks.first.ubicacion_img_curr | image_url: 'master' }}">{%- endif -%}
+                 <span>{{ section.blocks.first.settings.ubicacion }}</span>
                {%- if section.blocks.first.settings.ubicacion_url != blank -%}</a>{%- endif -%}
              </li>
              {%- endif -%}
@@ -64,7 +66,8 @@
              {%- if section.blocks.first.settings.contacto != blank -%}
              <li>
                {%- if section.blocks.first.settings.contacto_url != blank -%}<a href="{{ section.blocks.first.settings.contacto_url }}">{%- endif -%}
-                  <img width="19" height="19" loading="lazy" src="{{ 'phone_top.png' | asset_url }}"><span>{{ section.blocks.first.settings.contacto }}</span>
+                 {%- if section.blocks.first.contacto_img -%}<img width="21" height="21" loading="lazy" src="{{ section.blocks.first.contacto_img | image_url: 'master' }}">{%- endif -%}
+                 <span>{{ section.blocks.first.settings.contacto }}</span>
                {%- if section.blocks.first.settings.contacto_url != blank -%}</a>{%- endif -%}
              </li>
              {%- endif -%}
@@ -72,7 +75,8 @@
              {%- if section.blocks.first.settings.envio != blank -%}
              <li>
                {%- if section.blocks.first.settings.envio_url != blank -%}<a href="{{ section.blocks.first.settings.envio_url }}">{%- endif -%}
-                  <img class="delivery" width="29" height="29" loading="lazy" src="{{ 'delivery.png' | asset_url }}"><span>{{ section.blocks.first.settings.envio }}</span>
+                 {%- if section.blocks.first.envio_img -%}<img width="21" height="21" loading="lazy" src="{{ section.blocks.first.envio_img | image_url: 'master' }}">{%- endif -%}
+                 <span>{{ section.blocks.first.settings.envio }}</span>
                {%- if section.blocks.first.settings.envio_url != blank -%}</a>{%- endif -%}
              </li>
              {%- endif -%}
@@ -151,7 +155,8 @@
                      {%- if block.settings.ubicacion != blank -%}
                      <li>
                        {%- if block.settings.ubicacion_url != blank -%}<a href="{{ block.settings.ubicacion_url }}">{%- endif -%}
-                          <img width="21" height="21" loading="lazy" src="{{ 'location.png' | asset_url }}"><span>{{ block.settings.ubicacion }}</span>
+                          {%- if block.settings.ubicacion_img -%}<img width="21" height="21" loading="lazy" src="{{ block.settings.ubicacion_img | img_url: 'master' }}">{%- endif -%}
+                           <span>{{ block.settings.ubicacion }}</span>
                        {%- if block.settings.ubicacion_url != blank -%}</a>{%- endif -%}
                      </li>
                      {%- endif -%}
@@ -159,7 +164,8 @@
                      {%- if block.settings.contacto != blank -%}
                      <li>
                        {%- if block.settings.contacto_url != blank -%}<a href="{{ block.settings.contacto_url }}">{%- endif -%}
-                          <img width="19" height="19" loading="lazy" src="{{ 'phone_top.png' | asset_url }}"><span>{{ block.settings.contacto }}</span>
+                        {%- if block.settings.contacto_img -%}<img width="21" height="21" loading="lazy" src="{{ block.settings.contacto_img | img_url: 'master' }}">{%- endif -%}
+                         <span>{{ block.settings.contacto }}</span>
                        {%- if block.settings.contacto_url != blank -%}</a>{%- endif -%}
                      </li>
                      {%- endif -%}
@@ -167,7 +173,8 @@
                      {%- if block.settings.envio != blank -%}
                      <li>
                        {%- if block.settings.envio_url != blank -%}<a href="{{ block.settings.envio_url }}">{%- endif -%}
-                          <img class="delivery" width="29" height="29" loading="lazy" src="{{ 'delivery.png' | asset_url }}"><span>{{ block.settings.envio }}</span>
+                         {%- if block.settings.envio_img -%}<img width="21" height="21" loading="lazy" src="{{ block.settings.envio_img | img_url: 'master' }}">{%- endif -%}
+                         <span>{{ block.settings.envio }}</span>
                        {%- if block.settings.envio_url != blank -%}</a>{%- endif -%}
                      </li>
                      {%- endif -%}
@@ -363,6 +370,26 @@
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
         {
+          "type": "select",
+          "id": "position",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "default": "end",
+          "label": "Posición de contenido"
+        }, 
+        {
           "type": "text",
           "id": "text",
           "default": "Welcome to our store",
@@ -380,6 +407,31 @@
       "name": "Info",
       "settings": [
         {
+          "type": "select",
+          "id": "position",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "default": "end",
+          "label": "Posición de contenido"
+        }, 
+        {
+          "type": "image_picker",
+          "id": "ubicacion_img_curr",
+          "label": "Ubicacion Image"
+        },
+        {
           "type": "text",
           "id": "ubicacion",
           "label": "Ubicacion"
@@ -390,6 +442,11 @@
           "label": "Ubicacion URL"
         },
         {
+          "type": "image_picker",
+          "id": "contacto_img",
+          "label": "Contacto Image"
+        },
+        {
           "type": "text",
           "id": "contacto",
           "label": "Contacto"
@@ -398,6 +455,11 @@
           "type": "url",
           "id": "contacto_url",
           "label": "Contacto URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "envio_img",
+          "label": "Envio Image"
         },
         {
           "type": "text",

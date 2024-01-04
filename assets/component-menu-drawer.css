@@ -32,7 +32,8 @@ menu-drawer > details[open] > summary::before {
   z-index: 3;
   left: 0;
   top: 100%;
-  width: 100%;
+  /*width: 100%;*/
+  width: 90%;
   padding: 0;
   background-color: rgb(var(--color-background));
   overflow-x: hidden;
@@ -91,6 +92,13 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__navigation {
   padding: 3rem 0;
+}
+
+.menu-drawer__navigation .title{
+  padding: 0 30px;
+  font: normal normal bold 22px/27px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
 }
 
 .menu-drawer__inner-submenu {
@@ -279,6 +287,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .header--has-social .menu-drawer__utility-links {
   padding: 2rem 3rem;
+  display: none;
 }
 
 @media screen and (max-width: 749px) {
@@ -290,6 +299,15 @@ details[open].menu-opening > .menu-drawer__submenu {
 @media screen and (max-width: 989px) {
   .header--has-localizations:where(:not(.header--has-social)) .menu-drawer__utility-links {
     padding: 2rem 3rem;
+  }
+  a.menu-drawer__account{
+    padding: 1.6rem 30px 1rem;
+    border-top: 1px solid #AAAAAA;
+    width: 100%;
+    margin-top: -2px;
+    font: 500 16px/19px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
   }
 }
 
@@ -328,4 +346,26 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer .list-social__link {
   padding: 1.1rem 1.1rem;
+}
+
+.utility-links-container{
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.utility-links-container li a{
+  text-decoration: none;
+  font: 500 16px/19px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  padding: 1.1rem 30px;
+  display: block;
+  width: 100%;
+  border-top: 1px solid #EDEDED;
+}
+
+.utility-links-container li a:hover{
+  color: rgb(var(--color-foreground));
+  background-color: rgba(var(--color-foreground), 0.04);
 }

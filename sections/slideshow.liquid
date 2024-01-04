@@ -125,7 +125,7 @@
         }
       </style>
       {% if block.settings.link != blank %}
-        <a style="position: absolute; width: 100%; height: 95%; z-index: 2; display: block;" href="{{ block.settings.link }}"></a>
+        <a style="position: absolute; width: 100%; height: 95%; z-index: 2; display: block; font: 700 10px/14px Montserrat;" href="{{ block.settings.link }};"></a>
       {% endif %}  
       <div
         class="slideshow__slide grid__item grid--1-col slider__slide"
@@ -469,27 +469,7 @@
           "id": "heading",
           "default": "Image slide",
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
-        },
-        {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
-            }
-          ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
-        },
+        }, 
         {
           "type": "inline_richtext",
           "id": "subheading",

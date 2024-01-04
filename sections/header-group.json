@@ -8,6 +8,8 @@
         "e4bafdab-8ff7-4e04-a956-75f8950d49fc": {
           "type": "info",
           "settings": {
+            "position": "end",
+            "ubicacion_img_curr": "shopify:\/\/shop_images\/maleta-sublime-moss-5-6cdbdf74-f056-4b46-98e1-508499b1c87b.jpg",
             "ubicacion": "Encuentra tu Tienda",
             "ubicacion_url": "shopify:\/\/collections\/all",
             "contacto": "contacto@bubba-bags.com",
@@ -44,8 +46,8 @@
         "enable_language_selector": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     }
   },
