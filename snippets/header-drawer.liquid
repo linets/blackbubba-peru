@@ -163,16 +163,13 @@
               class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
             >
               {% render 'icon-account' %}
-              {% comment %}
-                {%- liquid
-                  if customer
-                    echo 'customer.account_fallback' | t
-                  else
-                    echo 'customer.log_in' | t
-                  endif
-                -%}
-              {% endcomment %}
-              Login / Registro
+              {%- liquid
+                if customer
+                  echo 'customer.account_fallback' | t
+                else
+                  echo 'Login / Registro'
+                endif
+              -%}
             </a>
             <ul class="utility-links-container" role="list">
               {%- for link in settings.mobile_menu_utility_links.links -%}
