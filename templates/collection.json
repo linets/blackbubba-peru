@@ -2,10 +2,62 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "scheme-1"
+      }
+    },
+    "3dcb207e-a214-4b74-9e85-3cbcb2e954aa": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "BACKPACKS",
+            "heading_size": "h1"
+          }
+        },
+        "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-buttons-1": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-heading-1",
+        "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-text-1",
+        "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-buttons-1"
+      ],
+      "settings": {
+        "image": "{{ collection.metafields.custom.banner_image.value }}",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_image": "{{ collection.metafields.custom.banner_image_mobile.value }}",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
       }
     },
     "product-grid": {
@@ -13,20 +65,25 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "color_scheme": "",
         "image_ratio": "adapt",
-        "show_secondary_image": false,
+        "image_shape": "default",
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "enable_quick_add": true,
         "enable_filtering": true,
+        "filter_type": "drawer",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 44,
+        "padding_bottom": 88
       }
     }
   },
   "order": [
     "banner",
+    "3dcb207e-a214-4b74-9e85-3cbcb2e954aa",
     "product-grid"
   ]
 }
