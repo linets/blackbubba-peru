@@ -33,6 +33,10 @@
   width: 100%;
   padding: 0;
   text-decoration: none;
+  
+  font: normal normal normal 16px/19px Helvetica;
+  letter-spacing: 0px;
+  color: #000000;
 }
 
 a.pagination__item:hover::after {
@@ -47,10 +51,18 @@ a.pagination__item:hover::after {
   height: 0.1rem;
 }
 
+.pagination__item--current,
+.pagination__item:hover{
+  border: 1px solid #707070;
+  padding: 15px 20px;
+  opacity: 1;
+}
+
 .pagination__item--current::after,
 .pagination__item:hover::after {
   content: '';
-  display: block;
+  /*display: block;*/
+  display: none;
   width: 2rem;
   position: absolute;
   bottom: 8px;

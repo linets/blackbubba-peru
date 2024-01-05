@@ -85,3 +85,13 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+#ProductGridContainer .collection .variant-option-container ul li{
+  height: 20px;
+  padding: 0px 7px;
+}
+#ProductGridContainer .collection .variant-option-container ul li.active:after, 
+#ProductGridContainer .collection .variant-option-container ul li:hover:after{
+  height: 24px;
+  width: 24px;
+}
