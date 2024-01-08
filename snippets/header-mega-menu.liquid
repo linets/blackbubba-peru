@@ -142,6 +142,20 @@
   function addOpen(e) {
     document.querySelectorAll('.mega-menu').forEach((x) => {
       x.removeAttribute('open');
+      let counterHeight = 0;
+      x.addEventListener('mousemove', (a) => {
+        if (a.target.classList.contains('mega-menu__content')) {
+          let currCounter = a.target.clientHeight + 100;
+          if (counterHeight <= currCounter) {
+            console.log(a);
+            console.log(a.clientY, counterHeight, currCounter);
+            counterHeight = currCounter;
+          }
+          if (a.clientY > counterHeight) {
+            x.removeAttribute('open');
+          }
+        }
+      });
     });
     e.setAttribute('open', '');
   }
