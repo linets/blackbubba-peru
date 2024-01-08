@@ -2238,7 +2238,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   vertical-align: middle;
   margin-right: 15px;
   object-fit: cover;
-  height: fit-content;
+  height: 21px;
   max-width: 21px;
 }
  
