@@ -146,7 +146,7 @@
       x.addEventListener('mousemove', (a) => {
         if (a.target.classList.contains('mega-menu__content')) {
           let currCounter = a.target.clientHeight + 100;
-          if (counterHeight <= currCounter) {
+          if (counterHeight <= currCounter) { 
             counterHeight = currCounter;
           }
           if (a.clientY > counterHeight) {
