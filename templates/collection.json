@@ -16,7 +16,8 @@
           "type": "heading",
           "settings": {
             "heading": "BACKPACKS",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_collection": true
           }
         },
         "template--16751998664867__3dcb207e-a214-4b74-9e85-3cbcb2e954aa-text-1": {
@@ -55,7 +56,6 @@
         "color_scheme": "scheme-4",
         "image_behavior": "none",
         "mobile_image": "{{ collection.metafields.custom.banner_image_mobile.value }}",
-        "mobile_content_alignment": "left",
         "stack_images_on_mobile": true,
         "show_text_below": false
       }
