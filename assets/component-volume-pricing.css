@@ -68,3 +68,25 @@ volume-pricing show-more-button {
   font-size: 1.2rem;
   letter-spacing: 0.07rem;
 }
+
+.badge-discount {
+  background-color: #000000;
+  position: absolute;
+  z-index: 100;
+  padding: 5px;
+  color: #fff;
+  font: normal normal bold 18px/27px Poppins;
+  letter-spacing: 0px;
+  border-radius: 4px;
+  top: 12.5px;
+  left: 10px;
+  width: 67px;
+  text-align: center;
+  height: 27px;
+  padding: 0;
+}
+@media screen and (max-width: 750px){
+  .badge-discount{
+    line-height: 29px;
+  }
+}

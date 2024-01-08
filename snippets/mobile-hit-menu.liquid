@@ -1,0 +1,50 @@
+<style>
+  .mobile-hit-menu{
+    display: none;
+    background: {{ settings.mobile_hit_menu_bg_color }};
+  }
+  .mobile-hit-menu .list-container{
+    display: -webkit-box;
+    padding: 15px 19px;
+    margin: 0;
+
+    overflow: -moz-scrollbars-horizontal; /* For FF */
+    -ms-overflow-x: scroll; /* For IE */
+    overflow-x: scroll; /* For others & old IE */
+
+  }
+  .mobile-hit-menu .list-container li{
+    display: block;
+    margin-right: 32px;
+  }
+  .mobile-hit-menu .list-container li a{
+    color: {{ settings.mobile_hit_menu_text_color }};
+    font: normal normal 600 15px/19px Montserrat;
+    letter-spacing: 0px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .mobile-hit-menu .list-container::-webkit-scrollbar {
+    height: 5px;
+  }
+  /* Handle */
+  .mobile-hit-menu .list-container::-webkit-scrollbar-thumb {
+    background: #000;
+    width: 262px;
+  }
+  @media screen and (max-width: 750px){
+    .mobile-hit-menu{ display: block; }
+  }
+</style>
+<section class="mobile-hit-menu">
+  <ul class="list-container" role="list">
+    {%- for link in settings.mobile_hit_menu.links -%}
+      {%- if link -%}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</section>

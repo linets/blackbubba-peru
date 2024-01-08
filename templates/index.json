@@ -1,210 +1,392 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
+      "type": "slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
+          "type": "slide",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "image": "shopify:\/\/shop_images\/rooftopper-looking-down.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/mens-fashion-watch.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Nueva Colleción",
+            "heading": "BLACK XMAS",
+            "subheading": "LOREM IPSUM BLACK BUBBA",
+            "button_label": "VER MAS",
+            "link": "shopify:\/\/products\/active-caddie-black",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#8b8b8b",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
           }
         },
-        "text": {
-          "type": "text",
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-2": {
+          "type": "slide",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#8b8b8b",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-2"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
+      "type": "two-images",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
+          "type": "image",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "image": "shopify:\/\/shop_images\/man-in-suit-on-stairs.jpg",
+            "btn_label": "FOR HIM",
+            "btn_link": "shopify:\/\/collections\/vestuario-hombre",
+            "v_position": "center_v",
+            "h_position": "center_h"
           }
         },
-        "text": {
-          "type": "text",
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
+          "type": "image",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
+            "btn_label": "FOR HER",
+            "btn_link": "shopify:\/\/collections\/vestuario-mujer",
+            "v_position": "center_v",
+            "h_position": "center_h"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1",
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "title": "CLOTHING",
+        "heading_position": "center",
+        "mobile_image": "shopify:\/\/shop_images\/smiling-man-in-formalwear.jpg",
+        "mobile_btn_label_1": "SHOP MEN",
+        "mobile_btn_url_1": "shopify:\/\/collections\/vestuario-hombre",
+        "mobile_btn_label_2": "SHOP WOMEN",
+        "mobile_btn_url_2": "shopify:\/\/collections\/vestuario-mujer"
       }
     },
-    "featured_collection": {
+    "5d3cc397-b89e-467f-9396-2036ad216ca4": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
+        "title": "BAGS FOR EVERYWHERE",
+        "heading_size": "h1",
+        "content_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bolsos-y-maletas",
+        "products_to_show": 7,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "enable_desktop_slider_layout_2": true,
+        "enable_scroll": false,
+        "color_scheme": "",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
+        "enable_quick_add": true,
+        "swipe_on_mobile": true,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
+    "f2ffa51e-a382-4bed-b53f-b538884ea068": {
+      "type": "slide-collection-list",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1": {
+          "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "image": "shopify:\/\/shop_images\/fashion-model-in-pink.jpg",
+            "title": "BACKPACKS",
+            "url": "shopify:\/\/pages\/quienes-somos"
           }
         },
-        "product": {
-          "type": "product",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
+          "type": "featured_collection",
           "settings": {
-            "product": "",
-            "second_image": false
+            "image": "shopify:\/\/shop_images\/woman-in-park-afternoon.jpeg",
+            "title": "BACKPACKS",
+            "url": "shopify:\/\/pages\/seguimiento-de-tu-pedido"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
+          "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "image": "shopify:\/\/shop_images\/model-laughs-barefoot.jpg",
+            "title": "SLINGS & HIPS",
+            "url": "shopify:\/\/pages\/preguntas-frecuentes-cyber"
+          }
+        },
+        "b7b71698-f983-48c0-9e2e-27ca98bfbd9e": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a-model-in-summer-fashion-with-grey-backdrop.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/blogs\/noticias"
+          }
+        },
+        "03b0d026-2469-4c3f-9b70-35caaec084fb": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/blogs\/noticias"
+          }
+        },
+        "32431df5-baea-43d1-8419-772f3d02172a": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fashion-portrait.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/products\/active-short-black"
+          }
+        },
+        "c2263196-b278-46ae-8511-559ade5f8c9d": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/man-dressed-in-monochrome-by-white-wall.jpg",
+            "title": "PHOTO",
+            "url": "shopify:\/\/products\/2-pack-socks-crew-mix-skull"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3",
+        "b7b71698-f983-48c0-9e2e-27ca98bfbd9e",
+        "03b0d026-2469-4c3f-9b70-35caaec084fb",
+        "32431df5-baea-43d1-8419-772f3d02172a",
+        "c2263196-b278-46ae-8511-559ade5f8c9d"
       ],
       "settings": {
-        "heading": "Multimedia collage",
+        "title": "BAGS FOR ALL YOUR NEEDS",
         "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading_position": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "show_view_all": false,
+        "padding_top": 24,
+        "padding_bottom": 100
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "84dc5cd3-0bc3-4041-8235-1b55e2811c82": {
+      "type": "slideshow",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1": {
+          "type": "slide",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/man-sitting-in-city.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/casual-urban-menswear.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "New Collection",
+            "heading": "BEAST TRAVEL",
+            "subheading": "FOR ALL YOUR TRIPS",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/active-caddie-black",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#000000",
+            "btn_color_border": "#000000",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 40,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         },
-        "column2": {
-          "type": "column",
+        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-2": {
+          "type": "slide",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#8b8b8b",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1",
+        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-2"
       ],
       "settings": {
-        "title": "",
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "BAGS FOR EVERYWHERE",
         "heading_size": "h1",
-        "image_width": "third",
+        "content_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "test-products",
+        "products_to_show": 7,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "enable_desktop_slider_layout_2": true,
+        "enable_scroll": false,
+        "color_scheme": "",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "bda69723-dbfb-4e98-a695-134c8c8f9141": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/london-uk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/chicago-city-lights-at-night.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "New Collection",
+            "heading": "BEAST TRAVEL",
+            "subheading": "FOR ALL YOUR TRIPS",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/black-no-show-socks-3-pack-black-bubba-1",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#000000",
+            "btn_color_border": "#000000",
+            "button_style_secondary": false,
+            "box_align": "middle-right",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 40,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-2": {
+          "type": "slide",
+          "settings": {
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#8b8b8b",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1",
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-2"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c",
+    "8b8fdd54-6390-49d5-9974-bef4b0b24c26",
+    "5d3cc397-b89e-467f-9396-2036ad216ca4",
+    "f2ffa51e-a382-4bed-b53f-b538884ea068",
+    "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
+    "8dddbaca-717e-445f-a54d-320cc7aff9cc",
+    "bda69723-dbfb-4e98-a695-134c8c8f9141"
   ]
 }

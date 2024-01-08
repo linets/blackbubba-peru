@@ -22,33 +22,77 @@
   class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
   {{ block.shopify_attributes }}
 >
-  <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
+  <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}{% if section.blocks.first.type == 'info' %} info-container-head{% endif %}">
     {%- if section.settings.show_social and social_icons -%}
       {%- render 'social-icons' -%}
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
       <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}{% if section.blocks.first.type == 'info' %} info-container{% endif %}"
+        style="justify-content: {{ section.blocks.first.settings.position }};"
         role="region"
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ block.shopify_attributes }}
       >
-        {%- if section.blocks.first.settings.text != blank -%}
-          {%- if section.blocks.first.settings.link != blank -%}
-            <a
-              href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+        {%- if section.blocks.first.type == 'announcement' -%}
+          {%- if section.blocks.first.settings.text != blank -%}
             {%- if section.blocks.first.settings.link != blank -%}
-              {% render 'icon-arrow' %}
+              <a
+                href="{{ section.blocks.first.settings.link }}"
+                class="announcement-bar__link link link--text focus-inset animate-arrow"
+              >
             {%- endif -%}
-          </p>
-          {%- if section.blocks.first.settings.link != blank -%}
-            </a>
+            <p class="announcement-bar__message h5">
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
+              {%- if section.blocks.first.settings.link != blank -%}
+                {% render 'icon-arrow' %}
+              {%- endif -%}
+            </p>
+            {%- if section.blocks.first.settings.link != blank -%}
+              </a>
+            {%- endif -%}
           {%- endif -%}
+        {%- elsif section.blocks.first.type == 'info' -%}
+          <ul>
+            {%- if section.blocks.first.settings.ubicacion != blank -%}
+              <li>
+                {%- if section.blocks.first.settings.ubicacion_url != blank -%}
+                  <a href="{{ section.blocks.first.settings.ubicacion_url }}">
+                {%- endif -%}
+                {% if section.blocks.first.settings.ubicacion_img != blank -%}
+                  <img loading="lazy" src="{{ section.blocks.first.settings.ubicacion_img | img_url: 'master' }}">
+                {%- endif %}
+                <span>{{ section.blocks.first.settings.ubicacion }}</span>
+                {%- if section.blocks.first.settings.ubicacion_url != blank -%}</a>{%- endif -%}
+              </li>
+            {%- endif -%}
+
+            {%- if section.blocks.first.settings.contacto != blank -%}
+              <li>
+                {%- if section.blocks.first.settings.contacto_url != blank -%}
+                  <a href="{{ section.blocks.first.settings.contacto_url }}">
+                {%- endif -%}
+                {%- if section.blocks.first.settings.contacto_img -%}
+                  <img loading="lazy" src="{{ section.blocks.first.settings.contacto_img | img_url: 'master' }}">
+                {%- endif -%}
+                <span>{{ section.blocks.first.settings.contacto }}</span>
+                {%- if section.blocks.first.settings.contacto_url != blank -%}</a>{%- endif -%}
+              </li>
+            {%- endif -%}
+
+            {%- if section.blocks.first.settings.envio != blank -%}
+              <li>
+                {%- if section.blocks.first.settings.envio_url != blank -%}
+                  <a href="{{ section.blocks.first.settings.envio_url }}">
+                {%- endif -%}
+                {%- if section.blocks.first.settings.envio_img -%}
+                  <img loading="lazy" src="{{ section.blocks.first.settings.envio_img | img_url: 'master' }}">
+                {%- endif -%}
+                <span>{{ section.blocks.first.settings.envio }}</span>
+                {%- if section.blocks.first.settings.envio_url != blank -%}</a>{%- endif -%}
+              </li>
+            {%- endif -%}
+          </ul>
         {%- endif -%}
       </div>
     {%- elsif section.blocks.size > 1 -%}
@@ -86,30 +130,95 @@
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                 tabindex="-1"
               >
-                <div
-                  class="announcement-bar__announcement"
-                  role="region"
-                  aria-label="{{ 'sections.header.announcement' | t }}"
-                  {{ block.shopify_attributes }}
-                >
-                  {%- if block.settings.text != blank -%}
-                    {%- if block.settings.link != blank -%}
-                      <a
-                        href="{{ block.settings.link }}"
-                        class="announcement-bar__link link link--text focus-inset animate-arrow"
-                      >
-                    {%- endif -%}
-                    <p class="announcement-bar__message h5">
-                      <span>{{ block.settings.text | escape }}</span>
+                {%- if block.type == 'announcement' -%}
+                  <div
+                    class="announcement-bar__announcement"
+                    role="region"
+                    aria-label="{{ 'sections.header.announcement' | t }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- if block.settings.text != blank -%}
                       {%- if block.settings.link != blank -%}
-                        {% render 'icon-arrow' %}
+                        <a
+                          href="{{ block.settings.link }}"
+                          class="announcement-bar__link link link--text focus-inset animate-arrow"
+                        >
                       {%- endif -%}
-                    </p>
-                    {%- if block.settings.link != blank -%}
-                      </a>
+                      <p class="announcement-bar__message h5">
+                        <span>{{ block.settings.text | escape }}</span>
+                        {%- if block.settings.link != blank -%}
+                          {% render 'icon-arrow' %}
+                        {%- endif -%}
+                      </p>
+                      {%- if block.settings.link != blank -%}
+                        </a>
+                      {%- endif -%}
                     {%- endif -%}
-                  {%- endif -%}
-                </div>
+                  </div>
+                {%- elsif block.type == 'info' -%}
+                  <div
+                    class="announcement-bar{% if block.type == 'info' %} info-container{% endif %}"
+                    role="region"
+                    aria-label="{{ 'sections.header.announcement' | t }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <ul>
+                      {%- if block.settings.ubicacion != blank -%}
+                        <li>
+                          {%- if block.settings.ubicacion_url != blank -%}
+                            <a href="{{ block.settings.ubicacion_url }}">
+                          {%- endif -%}
+                          {%- if block.settings.ubicacion_img -%}
+                            <img
+                              width="21"
+                              height="21"
+                              loading="lazy"
+                              src="{{ block.settings.ubicacion_img | img_url: 'master' }}"
+                            >
+                          {%- endif -%}
+                          <span>{{ block.settings.ubicacion }}</span>
+                          {%- if block.settings.ubicacion_url != blank -%}</a>{%- endif -%}
+                        </li>
+                      {%- endif -%}
+
+                      {%- if block.settings.contacto != blank -%}
+                        <li>
+                          {%- if block.settings.contacto_url != blank -%}
+                            <a href="{{ block.settings.contacto_url }}">
+                          {%- endif -%}
+                          {%- if block.settings.contacto_img -%}
+                            <img
+                              width="21"
+                              height="21"
+                              loading="lazy"
+                              src="{{ block.settings.contacto_img | img_url: 'master' }}"
+                            >
+                          {%- endif -%}
+                          <span>{{ block.settings.contacto }}</span>
+                          {%- if block.settings.contacto_url != blank -%}</a>{%- endif -%}
+                        </li>
+                      {%- endif -%}
+
+                      {%- if block.settings.envio != blank -%}
+                        <li>
+                          {%- if block.settings.envio_url != blank -%}
+                            <a href="{{ block.settings.envio_url }}">
+                          {%- endif -%}
+                          {%- if block.settings.envio_img -%}
+                            <img
+                              width="21"
+                              height="21"
+                              loading="lazy"
+                              src="{{ block.settings.envio_img | img_url: 'master' }}"
+                            >
+                          {%- endif -%}
+                          <span>{{ block.settings.envio }}</span>
+                          {%- if block.settings.envio_url != blank -%}</a>{%- endif -%}
+                        </li>
+                      {%- endif -%}
+                    </ul>
+                  </div>
+                {%- endif -%}
               </div>
             {%- endfor -%}
           </div>
@@ -299,6 +408,26 @@
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
         {
+          "type": "select",
+          "id": "position",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "default": "end",
+          "label": "Posición de contenido"
+        },
+        {
           "type": "text",
           "id": "text",
           "default": "Welcome to our store",
@@ -308,6 +437,77 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    },
+    {
+      "type": "info",
+      "name": "Info",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "default": "end",
+          "label": "Posición de contenido"
+        },
+        {
+          "type": "image_picker",
+          "id": "ubicacion_img",
+          "label": "Ubicacion Image"
+        },
+        {
+          "type": "text",
+          "id": "ubicacion",
+          "label": "Ubicacion"
+        },
+        {
+          "type": "url",
+          "id": "ubicacion_url",
+          "label": "Ubicacion URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "contacto_img",
+          "label": "Contacto Image"
+        },
+        {
+          "type": "text",
+          "id": "contacto",
+          "label": "Contacto"
+        },
+        {
+          "type": "url",
+          "id": "contacto_url",
+          "label": "Contacto URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "envio_img",
+          "label": "Envio Image"
+        },
+        {
+          "type": "text",
+          "id": "envio",
+          "label": "Envio"
+        },
+        {
+          "type": "url",
+          "id": "envio_url",
+          "label": "Envio URL"
         }
       ]
     }

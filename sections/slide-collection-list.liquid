@@ -1,0 +1,367 @@
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .section-slide-collection-list h2{
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 0px;
+    text-align: {{ section.settings.heading_position }};
+  }
+  .swiper-collection-list.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-collection-list .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 312px;
+    height: 595px;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 475px;
+  }
+  .swiper-collection-list .swiper-slide:hover img{
+    scale: 1.05;
+  }
+  .swiper-collection-list .swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .4s;
+    max-height: 475px;
+  }
+  .swiper-collection-list .swiper-slide:hover h3{
+    letter-spacing: 0.33em;
+  }
+  .swiper-collection-list .swiper-slide h3{
+    letter-spacing: .15em;
+    font-weight: 700;
+    font-size: 2rem;
+    position: absolute;
+    color: #FFFFFF;
+    transition: letter-spacing .4s cubic-bezier(.61,1,.88,1);
+    bottom: 0.5rem;
+    left: 2.5rem;
+  }
+  .swiper-collection-list .swiper-slide a{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+  .swiper-collection-list .swiper-pagination-bullet{
+    background: #CECECE;
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+  }
+  .swiper-collection-list .swiper-pagination-bullet-active{
+    background: #000000;
+    opacity: 1;
+  }
+  .swiper-collection-list .swiper-pagination{ display: initial; }
+  .section-slide-collection-list .title-wrapper-with-link { margin: 20px auto; }
+  @media screen and (max-width: 750px) {
+    .section-slide-collection-list .title-wrapper-with-link,
+    .section-slide-collection-list h2{ display: none; }
+    .swiper-collection-list{ padding-bottom: 50px !important; }
+    .swiper-collection-list .swiper-slide h3{
+      font-size: 1rem;
+      left: 1.5rem;
+    }
+    .swiper-collection-list .swiper-slide{
+      height: 290px;
+      max-height: 290px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .swiper-collection-list.swiper {
+      padding-bottom: 70px;
+    }
+    .swiper-collection-list .swiper-pagination-bullet{
+      margin: 0 20px !important;
+    }
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-list-wrapper isolate{% if show_mobile_slider %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="collection-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        >
+          {{ section.settings.title }}
+        </h2>
+
+        {%- if section.settings.show_view_all and show_mobile_slider -%}
+          <a
+            href="{{ routes.collections_url }}"
+            id="ViewAll-{{ section.id }}"
+            class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+          >
+            {{- 'sections.collection_list.view_all' | t -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+
+    <!-- Swiper -->
+    {% if section.blocks.size > 0 %}
+      <div class="swiper swiper-collection-list">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            {% if block.settings.image %}
+              <div class="swiper-slide">
+                <a href="{{ block.settings.url }}"></a>
+                {% if block.settings.image %}
+                  <img loading="lazy" src="{{ block.settings.image | img_url: 'master' }}">
+                {% endif %}
+
+                {% if block.settings.title != blank %}
+                  <h3>{{ block.settings.title }}</h3>
+                {% endif %}
+              </div>
+            {% endif %}
+          {%- endfor -%}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    {% endif %}
+
+    {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
+      <div
+        class="center collection-list-view-all{% if show_mobile_slider %} small-hide medium-hide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        <a
+          href="{{ routes.collections_url }}"
+          class="button"
+          id="ViewAllButton-{{ section.id }}"
+          aria-labelledby="ViewAllButton-{{ section.id }} SectionHeading-{{ section.id }}"
+        >
+          {{- 'sections.collection_list.view_all' | t -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper-collection-list', {
+    slidesPerView: 2,
+    spaceBetween: 18,
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      750: {
+        centeredSlides: true,
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 32,
+      },
+    },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Slide Collection List",
+  "tag": "section",
+  "class": "section section-collection-list section-slide-collection-list",
+  "max_blocks": 15,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Collections",
+      "label": "t:sections.collection-list.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Poisición del título"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.collection-list.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.collection-list.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "square",
+      "label": "t:sections.collection-list.settings.image_ratio.label",
+      "info": "t:sections.collection-list.settings.image_ratio.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": false,
+      "label": "t:sections.collection-list.settings.show_view_all.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.collection-list.settings.header_mobile.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "t:sections.collection-list.blocks.featured_collection.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recomendación de imagen (425x595)px"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide Collection List",
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100&display=swap');
+
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -962,13 +964,19 @@ summary::-webkit-details-marker {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
   }
 
+  .footer .grid--4-col-tablet .grid__item{ width: fit-content; }
+  
   .grid--3-col-tablet .grid__item {
     width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
   }
+  
+  .footer .grid--3-col-tablet .grid__item{ width: fit-content; }
 
   .grid--2-col-tablet .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
+  
+  .footer .grid--2-col-tablet .grid__item{ width: fit-content; }
 }
 
 @media screen and (max-width: 989px) {
@@ -2190,9 +2198,78 @@ product-info .loading__spinner:not(.hidden) ~ *,
   grid-area: announcements;
 }
 
-.announcement-bar .slider--everywhere {
-  margin-bottom: 0;
-  scroll-behavior: auto;
+.announcement-bar.info-container{
+  justify-content: end;
+}
+
+.announcement-bar.info-container ul{
+  padding: 0;
+  margin: 4px 0;
+}
+
+.announcement-bar.info-container ul li{
+  display: inline-block;
+  padding: 0 20px;
+  border-left: 1px solid;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  font: normal normal medium 12px/15px Montserrat;
+  font-size: 1.2rem;
+}
+
+.announcement-bar.info-container ul li a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.announcement-bar.info-container ul li a:hover{
+  opacity: 0.7;
+}
+
+.announcement-bar.info-container ul li:first-child{
+  border: none;  
+}
+
+.announcement-bar.info-container ul li:last-child{
+  padding-right: 0;
+}
+
+.announcement-bar.info-container ul li img{
+  vertical-align: middle;
+  margin-right: 15px;
+  object-fit: cover;
+  height: 21px;
+  max-width: 21px;
+}
+ 
+@media screen and (max-width: 989px) {
+  .utility-bar__grid.page-width.info-container-head{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .announcement-bar.info-container{
+    justify-content: center !important;
+  }
+  .announcement-bar.info-container ul{
+    padding: 1px 0;
+  }
+  .announcement-bar.info-container ul li{
+    font-size: 9px;
+    padding: 0 7px;
+  }
+  .announcement-bar.info-container ul li:first-child{
+    padding-left: 0;
+  }
+  .announcement-bar.info-container ul li:last-child{
+    padding-right: 0;
+  }
+  .announcement-bar.info-container ul li img{
+    margin-right: 7px;
+  }
+  .announcement-bar.info-container ul li img.delivery{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .utility-bar__grid .announcement-bar-slider {
@@ -2368,7 +2445,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  /*border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);*/
 }
 
 .header {
@@ -2792,7 +2869,8 @@ details[open] > .header__submenu {
   }
 
   .header--middle-left .header__inline-menu {
-    margin-left: 0;
+    /*margin-left: 0;*/
+    margin-left: 5rem;
   }
 }
 
@@ -2812,15 +2890,30 @@ details[open] > .header__submenu {
 
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
+  font: normal normal 600 15px/19px Montserrat;
+  color: #000000;
+  letter-spacing: 0px;
+  position: relative;
+}
+.header__menu-item span:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  display: none;
+  bottom: -10px;
+}
+.header__menu-item:hover span:before{
+  display: block;
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
 
 details[open] > .header__menu-item {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 details[open]:hover > .header__menu-item {
@@ -2833,9 +2926,19 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
+  color: rgb(var(--color-foreground)); 
   text-underline-offset: 0.3rem;
+  position: relative;
+}
+
+.header__menu-item span.header__active-menu-item:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  display: block;
+  bottom: -10px;
 }
 
 .header__menu-item:hover .header__active-menu-item {
@@ -2882,6 +2985,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__menu-item .icon-caret {
   right: 0.8rem;
+  display: none;
 }
 
 .header__submenu .icon-caret {
