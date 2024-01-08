@@ -131,7 +131,11 @@
                 class="banner__heading inline-richtext {{ block.settings.heading_size }}"
                 {{ block.shopify_attributes }}
               >
-                {{ block.settings.heading }}
+                {% if block.settings.heading_collection %}
+                  {{ collection.title }}
+                {% else %}
+                  {{ block.settings.heading }}
+                {% endif %}
               </h2>
             {%- when 'text' -%}
               <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
@@ -385,6 +389,11 @@
           ],
           "default": "h1",
           "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_collection",
+          "label": "Use Collection Title"
         }
       ]
     },
