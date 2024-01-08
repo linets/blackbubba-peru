@@ -492,6 +492,15 @@ div.slideshow__controls{
   .banner--stacked .banner__box {
     width: 100%;
   }
+  .single-banner-contaier .banner__box{
+    height: 137px;
+  }
+  .single-banner-contaier .banner__heading { 
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -500,6 +509,8 @@ div.slideshow__controls{
     max-width: 71rem;
     min-width: 45rem;
   }
+  .single-banner-contaier .banner__heading { margin-left: 150px; }
+  .single-banner-contaier .mobile_image{ display: none; }
 }
 
 @media screen and (min-width: 1400px) {
@@ -510,6 +521,7 @@ div.slideshow__controls{
 
 .banner__heading {
   margin-bottom: 0;
+  font-weight: 700;
 }
 
 .banner__box .banner__heading + * {

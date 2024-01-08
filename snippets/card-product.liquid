@@ -22,7 +22,7 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
- 
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -36,17 +36,27 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
-  {%- if variant -%}
+    {%- if variant -%}
       {% if variant.compare_at_price != blank %}
-       {% assign discount_percent = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 %}     
+        {% assign discount_percent = variant.compare_at_price
+          | minus: variant.price
+          | times: 100.0
+          | divided_by: variant.compare_at_price
+          | round: 0
+        %}
         <span class="badge-discount">-{{ discount_percent }}%</span>
       {% endif %}
     {%- else -%}
       {%- if card_product -%}
         {%- if card_product.variants[0].compare_at_price != blank -%}
-          {% assign discount_percent = card_product.variants[0].compare_at_price | minus: card_product.variants[0].price | times: 100.0 | divided_by: card_product.variants[0].compare_at_price | round: 0 %}     
-            <span class="badge-discount">-{{ discount_percent }}%</span>
-          {%- endif -%}
+          {% assign discount_percent = card_product.variants[0].compare_at_price
+            | minus: card_product.variants[0].price
+            | times: 100.0
+            | divided_by: card_product.variants[0].compare_at_price
+            | round: 0
+          %}
+          <span class="badge-discount">-{{ discount_percent }}%</span>
+        {%- endif -%}
       {%- endif -%}
     {%- endif -%}
     <div
@@ -66,11 +76,11 @@
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         <!--
-        {% if variant.compare_at_price != blank %}
-          <div class="sale-image-container" style="position: absolute; bottom: 0; right: 0; z-index: 1; margin-bottom: 5px; margin-right: 5px;">
-            <img src="https://cdn.shopify.com/s/files/1/0399/2656/2966/files/Sello_sin_Fondo_02.png?v=1700771789" alt="Sale Badge" width="50%">
-          </div>
-        {% endif %}
+          {% if variant.compare_at_price != blank %}
+            <div class="sale-image-container" style="position: absolute; bottom: 0; right: 0; z-index: 1; margin-bottom: 5px; margin-right: 5px;">
+              <img src="https://cdn.shopify.com/s/files/1/0399/2656/2966/files/Sello_sin_Fondo_02.png?v=1700771789" alt="Sale Badge" width="50%">
+            </div>
+          {% endif %}
         -->
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden desktop">
@@ -175,7 +185,6 @@
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-          
               <a href="{% if variant.url != blank %}{{ variant.url }}{% else %}{{ card_product.url }}{% endif %}">
                 {%- if variant.featured_media -%}
                   <img
@@ -191,7 +200,7 @@
                     src="{{ variant.featured_media | image_url: width: 533 }}"
                     sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                     alt="{{ variant.featured_media.alt | escape }}"
-                    class="motion-reduce"
+                    class="motion-reduce featured_image"
                     {% unless lazy_load == false %}
                       loading="lazy"
                     {% endunless %}
@@ -212,7 +221,7 @@
                     src="{{ card_product.featured_media | image_url: width: 533 }}"
                     sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                     alt="{{ card_product.featured_media.alt | escape }}"
-                    class="motion-reduce"
+                    class="motion-reduce featured_image"
                     {% unless lazy_load == false %}
                       loading="lazy"
                     {% endunless %}
@@ -221,67 +230,65 @@
                   >
                 {%- endif -%}
                 {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
-  
+
                 {%- if card_product.media[1] != null and show_secondary_image -%}
-  
                   {% assign videos = card_product.media[1] | where: 'media_type', 'video' %}
-                  {% if videos.size > 0 %} 
-                    <div sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                  {% if videos.size > 0 %}
+                    <div
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                       alt=""
                       class="motion-reduce video"
                       loading="lazy"
                       width="{{ card_product.media[1].width }}"
-                      height="{{ card_product.media[1].height }}">
-                      {{ card_product.media[1] | video_tag: controls: true, autoplay: true, loop: true }} 
+                      height="{{ card_product.media[1].height }}"
+                    >
+                      {{ card_product.media[1] | video_tag: controls: true, autoplay: true, loop: true }}
                     </div>
                   {% else %}
                     {% if variant.metafields.custom.media != blank %}
                       {% for media in variant.metafields.custom.media.value %}
-                        {% if forloop.index == 2 %}
-                          <img
-                            srcset="
-                              {%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
-                              {%- if media.width >= 360 -%}{{ media | image_url: width: 360 }} 360w,{%- endif -%}
-                              {%- if media.width >= 533 -%}{{ media | image_url: width: 533 }} 533w,{%- endif -%}
-                              {%- if media.width >= 720 -%}{{ media | image_url: width: 720 }} 720w,{%- endif -%}
-                              {%- if media.width >= 940 -%}{{ media | image_url: width: 940 }} 940w,{%- endif -%}
-                              {%- if media.width >= 1066 -%}{{ media | image_url: width: 1066 }} 1066w,{%- endif -%}
-                              {{ media | image_url }} {{ media.width }}w
-                            "
-                            src="{{ media | image_url: width: 533 }}"
-                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                            alt=""
-                            class="motion-reduce"
-                            loading="lazy"
-                            width="{{ media.width }}"
-                            height="{{ media.height }}">
-                          {% break %}
-                        {% endif %}
+                        <img
+                          srcset="
+                            {%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if media.width >= 360 -%}{{ media | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if media.width >= 533 -%}{{ media | image_url: width: 533 }} 533w,{%- endif -%}
+                            {%- if media.width >= 720 -%}{{ media | image_url: width: 720 }} 720w,{%- endif -%}
+                            {%- if media.width >= 940 -%}{{ media | image_url: width: 940 }} 940w,{%- endif -%}
+                            {%- if media.width >= 1066 -%}{{ media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                            {{ media | image_url }} {{ media.width }}w
+                          "
+                          src="{{ media | image_url: width: 533 }}"
+                          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                          alt=""
+                          class="motion-reduce featured_image"
+                          loading="lazy"
+                          width="{{ media.width }}"
+                          height="{{ media.height }}"
+                        >
+                        {% break %}
                       {% endfor %}
-                      {% else %}
-                       {% for media in card_product.variants[0].metafields.custom.media.value %}
-                        {% if forloop.index == 2 %}
-                          <img
-                            srcset="
-                              {%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
-                              {%- if media.width >= 360 -%}{{ media | image_url: width: 360 }} 360w,{%- endif -%}
-                              {%- if media.width >= 533 -%}{{ media | image_url: width: 533 }} 533w,{%- endif -%}
-                              {%- if media.width >= 720 -%}{{ media | image_url: width: 720 }} 720w,{%- endif -%}
-                              {%- if media.width >= 940 -%}{{ media | image_url: width: 940 }} 940w,{%- endif -%}
-                              {%- if media.width >= 1066 -%}{{ media | image_url: width: 1066 }} 1066w,{%- endif -%}
-                              {{ media | image_url }} {{ media.width }}w
-                            "
-                            src="{{ media | image_url: width: 533 }}"
-                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                            alt=""
-                            class="motion-reduce"
-                            loading="lazy"
-                            width="{{ media.width }}"
-                            height="{{ media.height }}">
-                          {% break %}
-                        {% endif %}
+                    {% else %}
+                      {% for media in card_product.variants[0].metafields.custom.media.value %}
+                        <img
+                          srcset="
+                            {%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if media.width >= 360 -%}{{ media | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if media.width >= 533 -%}{{ media | image_url: width: 533 }} 533w,{%- endif -%}
+                            {%- if media.width >= 720 -%}{{ media | image_url: width: 720 }} 720w,{%- endif -%}
+                            {%- if media.width >= 940 -%}{{ media | image_url: width: 940 }} 940w,{%- endif -%}
+                            {%- if media.width >= 1066 -%}{{ media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                            {{ media | image_url }} {{ media.width }}w
+                          "
+                          src="{{ media | image_url: width: 533 }}"
+                          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                          alt=""
+                          class="motion-reduce featured_image"
+                          loading="lazy"
+                          width="{{ media.width }}"
+                          height="{{ media.height }}"
+                        >
+                        {% break %}
                       {% endfor %}
-                      
                     {% endif %}
                   {% endif %}
                 {%- endif -%}
@@ -303,20 +310,30 @@
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ variant.id }}"
               >
-                {{ card_product.title | escape }}{% if variant.title != blank %} - {{ variant.title | upcase }}{% endif %}
+                {{ card_product.title | escape -}}
+                {%- if variant.title != blank %} - {{ variant.title | upcase }}{% endif %}
               </a>
             </h3>
-              
+
             <div class="variant-option-container">
-              {% if card_product.variants.size > 1 %} 
+              {% if card_product.variants.size > 1 %}
                 <ul>
-                {% assign countVariantAvailable = 0 %}
-                {% for variant in card_product.variants %}
-                  {% if variant.metafields.custom.color %}
-                    <li style="background: {{ variant.metafields.custom.color }};" onClick="validateVariantSelected(this, {{ variant.id }})" class="available-{{ variant.available }}
-                    {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}"></li>
-                  {% endif %}
-                {% endfor %}
+                  {% assign countVariantAvailable = 0 %}
+                  {% for variant in card_product.variants %}
+                    {{ variant.metafields.custom.media }} --- bbbb
+                    {% if variant.metafields.custom.color %}
+                      <li
+                        data-featured-img="{{ variant.featured_media }}"
+                        data-second-img="{{ variant.metafields.custom.media.value[0] }}"
+                        style="background: {{ variant.metafields.custom.color }};"
+                        onClick="validateVariantSelected(this, {{ variant.id }})"
+                        class="
+                          available-{{ variant.available }}
+                          {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
+                        "
+                      ></li>
+                    {% endif %}
+                  {% endfor %}
                 </ul>
               {% endif %}
             </div>
@@ -354,7 +371,8 @@
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ variant.id }} Badge-{{ section_id }}-{{ variant.id }}"
             >
-              {{ card_product.title | escape }}{% if variant.title != blank %}  - {{ variant.title | upcase }}{% endif %}
+              {{ card_product.title | escape -}}
+              {%- if variant.title != blank %} - {{ variant.title | upcase }}{% endif %}
             </a>
           </h3>
           <div class="card-information">
@@ -401,24 +419,33 @@
               </p>
             {%- endif -%}
 
-            {% render 'price', product: card_product, variant: variant ,price_class: '', show_compare_at_price: true %}
+            {% render 'price', product: card_product, variant: variant, price_class: '', show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
             {%- endif -%}
           </div>
-  
+
           <div class="variant-option-container">
-            {% if card_product.variants.size > 1 %} 
+            {% if card_product.variants.size > 1 %}
               <ul>
-              {% assign countVariantAvailable = 0 %}
-              {% for variant in card_product.variants %}
-                {% if variant.metafields.custom.color %}
-                  <li style="background: {{ variant.metafields.custom.color }};" onClick="validateVariantSelected(this, {{ variant.id }})" class="available-{{ variant.available }}
-                  {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}"></li>
-                {% endif %}
-              {% endfor %}
+                {% assign countVariantAvailable = 0 %}
+                {% for variant in card_product.variants %}
+                  {% if variant.metafields.custom.color %}
+                    <li
+                      data-discount="{% if variant.compare_at_price %}{{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 }}{% endif %}"
+                      data-featured-img="{{ variant.featured_media }}"
+                      data-second-img="{% for media in variant.metafields.custom.media.value %}{{ media }}{% break %}{% endfor %}"
+                      style="background: {{ variant.metafields.custom.color }};"
+                      onClick="validateVariantSelected(this, {{ variant.id }})"
+                      class="
+                        available-{{ variant.available }}
+                        {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
+                      "
+                    ></li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             {% endif %}
           </div>
@@ -431,7 +458,7 @@
               if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
                 assign qty_rules = true
               endif
-            -%}          
+            -%}
             {% comment %}{%- if card_product.variants.size > 1 or qty_rules -%}{%- endif -%}{% endcomment %}
             {%- if card_product.options_with_values.size > 1 -%}
               <modal-opener data-modal="#QuickAdd-{{ card_product.id }}">
@@ -569,7 +596,8 @@
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.product_title' | t }}{% if variant.title != blank %} - {{ variant.title | upcase }}{% endif %}
+              {{ 'onboarding.product_title' | t -}}
+              {%- if variant.title != blank %} - {{ variant.title | upcase }}{% endif %}
             </a>
           </h3>
           <div class="card-information">
@@ -578,18 +606,27 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {% render 'price', show_compare_at_price: true %}
-          </div> 
-          
+          </div>
+
           <div class="variant-option-container">
-            {% if card_product.variants.size > 1 %} 
+            {% if card_product.variants.size > 1 %}
               <ul>
-              {% assign countVariantAvailable = 0 %}
-              {% for variant in card_product.variants %}
-                {% if variant.metafields.custom.color %}
-                  <li style="background: {{ variant.metafields.custom.color }};" onClick="validateVariantSelected(this, {{ variant.id }})" class="available-{{ variant.available }}
-                  {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}"></li>
-                {% endif %}
-              {% endfor %}
+                {% assign countVariantAvailable = 0 %}
+                {% for variant in card_product.variants %}
+                  {{ variant.metafields.custom.media }} --- aaaa
+                  {% if variant.metafields.custom.color %}
+                    <li
+                      data-featured-img="{{ variant.featured_media }}"
+                      data-second-img="{{ variant.metafields.custom.media.value[0] }}"
+                      style="background: {{ variant.metafields.custom.color }};"
+                      onClick="validateVariantSelected(this, {{ variant.id }})"
+                      class="
+                        available-{{ variant.available }}
+                        {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
+                      "
+                    ></li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             {% endif %}
           </div>
@@ -600,22 +637,56 @@
 {%- endif -%}
 
 <script>
-  function validateVariantSelected(e, id){
+  function updateImages(e) {
+    let quick_add_parent = e.parentElement.parentElement.parentElement.parentElement.parentElement;
+    let elements = quick_add_parent.getElementsByClassName('featured_image');
+    let featuredImgURL = '{{ shop.url }}' + '/cdn/shop/' + e.dataset.featuredImg;
+    let secondImgURL = '{{ shop.url }}' + '/cdn/shop/' + e.dataset.secondImg;
+    let numDiscount = e.dataset.discount;
+    let discountEle = quick_add_parent.parentElement.getElementsByClassName('badge-discount');
+
+    for (let x = 0; x <= elements.length; x++) {
+      if (elements[x] != undefined) {
+        if (x == 0 && e.dataset.featuredImg != '') {
+          elements[x].src = featuredImgURL;
+          elements[x].srcset = featuredImgURL;
+        }
+        if (x == 1 && e.dataset.secondImgURL != '') {
+          elements[x].src = secondImgURL;
+          elements[x].srcset = secondImgURL;
+        }
+      }
+    }
+
+    for (let x = 0; x <= discountEle.length; x++) {
+      if (discountEle[x] != undefined) {
+        if (numDiscount != '') {
+          discountEle[x].innerHTML = '-' + numDiscount + '%';
+          discountEle[x].style.display = 'block';
+        } else {
+          discountEle[x].style.display = 'none';
+        }
+      }
+    }
+  }
+
+  function validateVariantSelected(e, id) {
     let quick_add_parent = e.parentElement.parentElement.parentElement.parentElement.parentElement;
     let elements = quick_add_parent.getElementsByClassName('product-variant-id');
-    
-    for(let x = 0; x <= elements.length; x++){
-      if(elements[x] != undefined){
+
+    for (let x = 0; x <= elements.length; x++) {
+      if (elements[x] != undefined) {
         elements[x].value = id;
       }
     }
 
     let childrenList = e.parentElement.children;
-    for(let x = 0; x <= childrenList.length; x++){
-      if(childrenList[x] != undefined){
-        childrenList[x].classList.remove("active");
+    for (let x = 0; x <= childrenList.length; x++) {
+      if (childrenList[x] != undefined) {
+        childrenList[x].classList.remove('active');
       }
     }
-    e.classList.add("active")
+    e.classList.add('active');
+    updateImages(e);
   }
 </script>
