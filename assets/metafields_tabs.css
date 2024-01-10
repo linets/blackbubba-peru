@@ -1,0 +1,76 @@
+
+/* Style the tab */
+.tab {
+    overflow: hidden; 
+    border-top: 1px solid #000000;
+    text-align: center;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 0px;
+    color: #000000;
+    margin-left: 21px;
+    font: normal normal bold 14px/18px Montserrat;
+    letter-spacing: 0px;
+  }
+  .tab button:first-child{ margin-left: initial; }
+  
+  .tab button:hover,
+  .tab button.active{
+    border-bottom: 3px solid #000000;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 6px; 
+    font-size: 18px !important;
+    line-height: 20px!important;
+    font-weight: 400 !important;
+    letter-spacing: 0.8px;
+    color: #000000;
+  }
+  
+  .tabcontent h1,
+  .tabcontent h2,
+  .tabcontent h3,
+  .tabcontent h4,
+  .tabcontent h5,
+  .tabcontent h6{
+    font-size: 18px !important;
+    line-height: 29px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0px;
+    color: #000000;
+  }
+
+  .tabcontent p, .tabcontent ul{ 
+    margin: 9px 0; 
+    opacity: 0.8;
+    text-align: justify;
+    font: normal normal normal 18px/29px Montserrat;
+    letter-spacing: 0px;
+  }
+  
+  @media screen and (max-width: 750px) { 
+    .tab{
+      text-align: left;
+      border: none;
+    }
+    .tab button {
+      font-size: 11px;
+      line-height: 14px;
+      font-weight: 700;
+      padding: 10px 3px;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+    .tabcontent{
+      font-size: 15px !important;
+      line-height: 19px !important;
+    }
+  }

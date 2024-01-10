@@ -23,6 +23,7 @@
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
+{% assign counter = 0 %}
 {%- for value in option.values -%}
   {%- liquid
     assign option_disabled = true
@@ -45,8 +46,17 @@
     endfor
   -%}
 
-  {%- if block.settings.picker_type == 'button' -%}
+  {% if variant_type == 'color' %}
+    {% for variant in product.variants %}
+      {% if variant.title contains value %}
+        {% if variant.metafields.custom.color != blank %}
+          {% assign variant_color_id = variant.metafields.custom.color %}
+          {% continue %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
     <input
+      onclick="validateVariantSelection(this)"
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       name="{{ option.name }}"
@@ -59,7 +69,41 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+
+    {% comment %}
+      {% assign variant_color_id = product.variants[counter].metafields.custom.color %}
+    {% endcomment %}
+
+    <label
+      {% if variant_color_id != blank %}
+        style="background-color:{{ variant_color_id }};"
+      {% endif %}
+      class="{% if variant_color_id != blank %}color-type{% endif %}"
+      data-variantId="{{ product.variants[counter].id }}"
+      data-color="{{ value }}"
+      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    >
+      {% if variant_color_id == blank %}{{ value -}}{% endif %}
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+    </label>
+
+    {% assign counter = counter | plus: 1 %}
+  {%- elsif block.settings.picker_type == 'button' -%}
+    <input
+      onclick="validateVariantSelection(this)"
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label class="talla" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
@@ -78,3 +122,102 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
+
+<script>
+  window.addEventListener('load', (event) => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let variant_id = urlParams.get('variant');
+
+    if (variant_id) {
+      let inputs = document.querySelectorAll('.product-form__input label');
+      [].forEach.call(inputs, function (input) {
+        input.classList.remove('active');
+        if (variant_id == input.dataset.variantid) {
+          input.classList.add('active');
+        }
+      });
+    }
+    validateScrollArowDown();
+  });
+  function validateScrollArowDown() {
+    setTimeout(() => {
+      let sliderThumbanil = document.querySelectorAll('.thumbnail-list.slider li');
+      let counterThumbanil = 0;
+      sliderThumbanil.forEach((e) => {
+        if (e.style.display != 'none') {
+          counterThumbanil++;
+        }
+      });
+      if (counterThumbanil > 5) {
+        document.querySelector('.arrow-down-scroll').style.visibility = 'visible';
+        document.querySelector('.arrow-top-scroll').style.visibility = 'visible';
+        document.querySelector('.thumbnail-list.slider').classList.add('list-active');
+      } else {
+        document.querySelector('.arrow-down-scroll').style.visibility = 'hidden';
+        document.querySelector('.arrow-top-scroll').style.visibility = 'hidden';
+        document.querySelector('.thumbnail-list.slider').classList.remove('list-active');
+      }
+    }, '200');
+  }
+  function validateVariantSelection(e) {
+    setTimeout(() => {
+      //// Thumbnails Change
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      let variant_id = urlParams.get('variant');
+
+      if (variant_id) {
+        let sliderThumbanil = document.querySelectorAll('.thumbnail-list.slider li');
+        let x = 0;
+        let y = 0;
+        sliderThumbanil.forEach((e) => {
+          if (x != 0) {
+            if (e.dataset.variantid == variant_id) {
+              e.style.display = 'block';
+              y++;
+            } else {
+              e.style.display = 'none';
+            }
+          }
+          x++;
+        });
+
+        if (y == 0) {
+          sliderThumbanil.forEach((e) => {
+            if (!e.dataset.variantid) {
+              e.style.display = 'block';
+            }
+          });
+        }
+      }
+      //// Thumbnails Change
+    }, '100');
+
+    let inputs = document.querySelectorAll('.product-form__input label');
+    [].forEach.call(inputs, function (input) {
+      input.classList.remove('active');
+    });
+
+    let form__label = document.querySelectorAll('.form__label');
+    [].forEach.call(form__label, function (label) {
+      if (label.innerText.includes(e.name)) {
+        let value = label.innerText.split(' ')[0] + ' ' + e.value;
+        label.innerText = value;
+      }
+    });
+
+    setTimeout(() => {
+      e.nextSibling.nextSibling.classList.add('active');
+    }, '100');
+
+    validateScrollArowDown();
+
+    let btnSwiper = document.querySelectorAll('.thumbnail-slider .slider-button');
+    btnSwiper.forEach((e) => {
+      setTimeout(() => {
+        e.disabled = false;
+      }, '500');
+    });
+  }
+</script>
