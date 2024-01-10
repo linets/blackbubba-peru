@@ -56,17 +56,17 @@
   margin-bottom: 1rem;
 }
 
-.collection__title--desktop-slider .title{
+.collection__title .title{
   font: normal normal bold 28px/34px Montserrat;
   letter-spacing: 0px;
 }
-.collection__title--desktop-slider .title.center{ text-align: center; }
-.collection__title--desktop-slider .title.left{ text-align: left; }
-.collection__title--desktop-slider .title.right{ text-align: right; }
+.collection__title .title.center{ text-align: center; }
+.collection__title .title.left{ text-align: left; }
+.collection__title .title.right{ text-align: right; }
 
 
 @media screen and (max-width: 990px) {
-  .collection__title--desktop-slider .title{
+  .collection__title .title{
     font: normal normal bold 24px/30px Montserrat;
   }
 }
