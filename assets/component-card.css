@@ -653,5 +653,13 @@
   .slider-mobile-gutter .slider-counter{ display: none; } 
   .slider-mobile-gutter .slider-button{ margin: 0 10px; }
   .slider-mobile-gutter .slider-button img{ display: none; }
-   
+  .slider-mobile-gutter .slider-button.dots{
+    background: #D3D3CB;
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+  }
+  .slider-mobile-gutter .slider-button.dots.active{
+    background: #333333;
+  }
 } 

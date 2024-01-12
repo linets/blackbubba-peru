@@ -406,10 +406,12 @@ slider-component.slider-component-full-width {
 
 .slider-button--next .icon {
   transform: rotate(90deg);
+  width: 20px;
 }
 
 .slider-button--prev .icon {
   transform: rotate(90deg);
+  width: 20px;
 }
 
 /*

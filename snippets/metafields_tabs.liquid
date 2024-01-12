@@ -36,4 +36,39 @@
   <div id="tab_changes" class="tabcontent">{{ changes }}</div>
 {% endif %}
 
+<div class="tab_accordition_mobile">
+  {% if description != blank %}
+    <div class="tab_accordition_mobile_container active">
+      <h3 onClick="tabsMobile(this)">DESCRIPCIÓN</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ description }}
+      </div>
+    </div>
+  {% endif %}
+  {% if prod.metafields.custom.especificaciones != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">ESPECIFICACIONES</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ prod.metafields.custom.especificaciones | metafield_tag }}
+      </div>
+    </div>
+  {% endif %}
+  {% if dispatch != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">DESPACHO</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ dispatch }}
+      </div>
+    </div>
+  {% endif %}
+  {% if changes != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">CAMBIOS</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ changes }}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
 <script src="{{ 'metafields_tabs.js' | asset_url }}" defer="defer"></script>

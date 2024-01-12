@@ -18,4 +18,8 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = 'block';
   evt.currentTarget.className += ' active';
 }
+
+function tabsMobile(e) {
+  e.parentElement.classList.toggle('active');
+}
 document.getElementById('defaultOpen').click();
