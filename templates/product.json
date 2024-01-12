@@ -58,6 +58,12 @@
             "metafields_description": true
           }
         },
+        "related_products_BynmEQ": {
+          "type": "related-products",
+          "settings": {
+            "title_related": "TAMBIÉN TE PUEDEN INTERESAR"
+          }
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "disabled": true,
@@ -116,6 +122,7 @@
         "buy_buttons",
         "40c62ae8-f737-4d85-a1ef-a1c0a031431f",
         "description",
+        "related_products_BynmEQ",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -127,11 +134,11 @@
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail_slider",
+        "gallery_layout": "thumbnail",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
         "enable_video_looping": false,
         "dispatch": "<p>DESPACHO - Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final<\/p>",
         "changes": "<p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final<\/p>",
