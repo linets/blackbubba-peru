@@ -653,5 +653,10 @@
   .slider-mobile-gutter .slider-counter{ display: none; } 
   .slider-mobile-gutter .slider-button{ margin: 0 10px; }
   .slider-mobile-gutter .slider-button img{ display: none; }
-   
+  .variant-option-container{
+    left: 0;
+    bottom: 0;
+    right: initial;
+  }
+  .card__information{ padding-bottom: 3rem; }
 } 
