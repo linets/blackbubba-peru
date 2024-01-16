@@ -131,6 +131,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "enable_breadcrumbs": true,
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -182,13 +183,13 @@
         "image-with-text-0": {
           "type": "heading",
           "settings": {
-            "heading": "DESCRIPCION COMPLETA DEL PRODUCTO"
+            "heading": "{{ product.metafields.custom.pdp_title_1.value }}"
           }
         },
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias.<\/p>",
+            "text": "{{ product.metafields.custom.pdp_content_1 | metafield_tag }}",
             "text_style": "body"
           }
         }
@@ -198,7 +199,7 @@
         "image-with-text-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/waist-bag-black-fb6927bd-209a-4a2a-b399-9b032808684a.jpg",
+        "image": "{{ product.metafields.custom.pdp_image_1.value }}",
         "full_width": true,
         "height": "large",
         "desktop_image_width": "medium",
@@ -239,13 +240,13 @@
         "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "DESCRIPCION COMPLETA DEL PRODUCTO"
+            "heading": "{{ product.metafields.custom.pdp_title_2.value }}"
           }
         },
         "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias.<\/p>",
+            "text": "{{ product.metafields.custom.pdp_content_2 | metafield_tag }}",
             "text_style": "body"
           }
         }
@@ -255,7 +256,7 @@
         "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-text-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/purchased-favorite-coffee.jpg",
+        "image": "{{ product.metafields.custom.pdp_image_2.value }}",
         "full_width": true,
         "height": "large",
         "desktop_image_width": "medium",
