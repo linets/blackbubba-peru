@@ -662,4 +662,10 @@
   .slider-mobile-gutter .slider-button.dots.active{
     background: #333333;
   }
+  .variant-option-container{
+    left: 0;
+    bottom: 0;
+    right: initial;
+  }
+  .card__information{ padding-bottom: 3rem; }
 } 
