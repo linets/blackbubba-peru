@@ -47,7 +47,7 @@
             "show_gift_card_recipient": true
           }
         },
-        "40c62ae8-f737-4d85-a1ef-a1c0a031431f": {
+        "venti_GhDVhm": {
           "type": "venti",
           "settings": {
           }
@@ -58,10 +58,10 @@
             "metafields_description": true
           }
         },
-        "related_products_BynmEQ": {
+        "related_products_Ee8MfB": {
           "type": "related-products",
           "settings": {
-            "title_related": "TAMBIÉN TE PUEDEN INTERESAR"
+            "title_related": ""
           }
         },
         "collapsible-row-0": {
@@ -120,9 +120,9 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "40c62ae8-f737-4d85-a1ef-a1c0a031431f",
+        "venti_GhDVhm",
         "description",
-        "related_products_BynmEQ",
+        "related_products_Ee8MfB",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -147,7 +147,7 @@
         "padding_bottom": 12
       }
     },
-    "4b0f87af-2b20-4e68-8440-39508f6e6d47": {
+    "featured_collection_XHUene": {
       "type": "featured-collection",
       "settings": {
         "title": "TAMBIÉN TE PUEDE INTERESAR",
@@ -189,7 +189,7 @@
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "{{ product.metafields.custom.pdp_content_1 | metafield_tag }}",
+            "text": "<p>{{ product.metafields.custom.pdp_content_1 | metafield_tag }}<\/p>",
             "text_style": "body"
           }
         }
@@ -234,26 +234,26 @@
         "padding_bottom": 28
       }
     },
-    "e5b0b929-da5f-4425-8adc-d417fbefef73": {
+    "image_with_text_U4Bxnr": {
       "type": "image-with-text",
       "blocks": {
-        "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-heading-1": {
+        "heading_wqD94p": {
           "type": "heading",
           "settings": {
             "heading": "{{ product.metafields.custom.pdp_title_2.value }}"
           }
         },
-        "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-text-1": {
+        "text_CEkNQt": {
           "type": "text",
           "settings": {
-            "text": "{{ product.metafields.custom.pdp_content_2 | metafield_tag }}",
+            "text": "<p>{{ product.metafields.custom.pdp_content_2 | metafield_tag }}<\/p>",
             "text_style": "body"
           }
         }
       },
       "block_order": [
-        "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-heading-1",
-        "template--16770082046115__e5b0b929-da5f-4425-8adc-d417fbefef73-text-1"
+        "heading_wqD94p",
+        "text_CEkNQt"
       ],
       "settings": {
         "image": "{{ product.metafields.custom.pdp_image_2.value }}",
@@ -272,7 +272,7 @@
         "padding_bottom": 36
       }
     },
-    "53e7e10a-fca9-45ea-9a0c-38e2bbed8062": {
+    "featured_collection_geCPp4": {
       "type": "featured-collection",
       "settings": {
         "title": "ESSENTIALS BLACK",
@@ -305,10 +305,10 @@
   },
   "order": [
     "main",
-    "4b0f87af-2b20-4e68-8440-39508f6e6d47",
+    "featured_collection_XHUene",
     "image-with-text",
     "related-products",
-    "e5b0b929-da5f-4425-8adc-d417fbefef73",
-    "53e7e10a-fca9-45ea-9a0c-38e2bbed8062"
+    "image_with_text_U4Bxnr",
+    "featured_collection_geCPp4"
   ]
 }
