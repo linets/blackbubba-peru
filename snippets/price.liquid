@@ -48,6 +48,27 @@
     {%- if show_badges %} price--show-badge{% endif -%}
   "
 >
+  {%- if show_badges -%}
+    {% if product.selected_or_first_available_variant.compare_at_price != blank %}
+      {% assign discount_percent = product.selected_or_first_available_variant.compare_at_price
+        | minus: product.selected_or_first_available_variant.price
+        | times: 100.0
+        | divided_by: product.selected_or_first_available_variant.compare_at_price
+        | round: 0
+      %}
+      <span class="badge-discount-pdp">-{{ discount_percent }}%</span>
+    {% endif %}
+    {% comment %}
+      <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
+        {{ 'products.product.on_sale' | t }}
+      </span>
+
+      <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+        {{ 'products.product.sold_out' | t }}
+      </span>
+    {% endcomment %}
+  {%- endif -%}
+
   <div class="price__container">
     {%- comment -%}
       Explanation of description list:
@@ -84,6 +105,10 @@
       {%- endif -%}
     </div>
     <div class="price__sale">
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+      <span class="price-item price-item--sale price-item--last">
+        {{ money_price }}
+      </span>
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span>
@@ -96,10 +121,6 @@
           </s>
         </span>
       {%- endunless -%}
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last">
-        {{ money_price }}
-      </span>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
@@ -116,13 +137,4 @@
       </span>
     </small>
   </div>
-  {%- if show_badges -%}
-    <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-      {{ 'products.product.on_sale' | t }}
-    </span>
-
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-      {{ 'products.product.sold_out' | t }}
-    </span>
-  {%- endif -%}
 </div>

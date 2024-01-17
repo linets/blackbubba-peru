@@ -1,0 +1,160 @@
+.related-title{
+    text-align: center;
+    color: #000000;
+    position: relative;
+    font: normal normal bold 20px/24px Montserrat;
+    letter-spacing: 0px;
+    margin-bottom: 45px;
+  }
+   
+  .related-container{  
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .related-container.desktop{ overflow-x: auto; }
+  
+  /* width */
+  .related-container.desktop::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  /* Track */
+  .related-container.desktop::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  .related-container.desktop::-webkit-scrollbar-thumb {
+    background: #aeb208;
+    border-radius: 10px;
+  }
+    
+  .related-container .related-items img{ 
+    border: none; 
+    margin: 0;
+    max-height: 180px;
+    object-fit: cover;
+  }
+  
+  .related-container .related-items button{
+    display: block;
+    width: 99%;
+    padding: 12px 0;
+    margin-top: 6px;
+    cursor: pointer;
+    background: transparent;
+    color: #000;
+    border: 1px solid #000000;
+    font: normal normal bold 11px/14px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  .related-container .related-items button:hover{
+    background: #000;
+    color: #fff;
+  }
+
+  .related-container .related-items button.agotado{ pointer-events: none; }
+  
+  .related-container .related-items h3{
+    margin: 8px 0 0;
+  }
+  .related-container .related-items h3 a{
+    text-decoration: none;
+    font: 600 14px/18px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    text-align: left;
+    display: block;
+  }
+  
+  .related-container .related-items p{
+    text-decoration: none;
+    font: 500 14px/18px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 350px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-button-next, .swiper-button-prev{ 
+    display: block !important;
+    bottom: 0px;
+    top: initial;
+  }
+  .swiper-button-next::after, .swiper-button-prev::after{ 
+    color: #000; 
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+  }
+  .swiper-pagination{
+    width: fit-content !important;
+    margin: 0 auto;
+    right: 0;
+    display: none;
+  }
+  .swiper-pagination-bullet{ 
+    background: transparent; 
+    border: 1px solid #000;
+    opacity: 1;
+   }
+  .swiper-pagination-bullet-active{ background: #000; }
+  .swiper.mobile{ display: none; }
+  div.swiper-button-next, div.swiper-button-prev{
+    display: none !important;
+  }
+  @media screen and (max-width: 750px){
+    span.swiper-pagination-bullet{
+      width: 16px;
+      height: 16px;
+      background: #CECECE;
+      border: none;
+      opacity: 1;
+    }
+    span.swiper-pagination-bullet-active{
+      width: 16px;
+      height: 16px;
+      background: #000000;
+    }
+    .swiper-pagination{ display: block; }
+    .related-container.desktop{ display: none; }
+    .swiper.mobile{ display: flex; }
+    .related-container{ gap: 0; }
+    .related-container .related-items{
+      display: inline-block;
+    }
+    .related-container .related-items p,
+    .related-container .related-items h3{ text-align: left; }
+    .related-container .related-items h3 a{ font: 600 11px/14px Montserrat; }
+    .related-container .related-items p{ font: 500 11px/14px Montserrat; }
+  }

@@ -1,0 +1,95 @@
+{{ 'custom-related-products.css' | asset_url | stylesheet_tag }}
+
+{% if prod.metafields.custom.productos_relacionados != blank %}
+  {% if title != blank %}
+    <h2 class="related-title">{{ title }}</h2>
+  {% endif %}
+  {% comment %}
+    <div class="related-container desktop">
+      {%- for relateds in prod.metafields.custom.productos_relacionados.value -%}
+        <div class="related-items">
+            <a target="_blank" href="{{ relateds.handle }}">
+              <img src="{{ relateds.featured_image | image_url: width: 1400, height: 1400 }}" loading="lazy">
+            </a>
+          <button data-variant="{{ relateds.selected_or_first_available_variant.id }}" onclick="addToCart(this)" class="{%- if relateds.selected_or_first_available_variant.available == false -%}agotado{%- endif -%}">
+            {%- if relateds.selected_or_first_available_variant.available == false -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- else -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- endif -%}
+          </button>
+          <h3><a target="_blank" href="{{ relateds.handle }}">{{ relateds.title }}</a></h3>
+          <p>{% comment %}{{ relateds.price | money_with_currency }}{% endcomment %}
+            {%- render 'price',
+              product: relateds,
+              use_variant: true,
+              show_badges: true,
+              price_class: 'price--large'
+            -%}
+          </p>
+        </div>
+      {%- endfor -%}
+    </div>
+  {% endcomment %}
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper related-container">
+      {%- for relateds in prod.metafields.custom.productos_relacionados.value -%}
+        {%- assign total_products = forloop.index -%}
+        <div class="swiper-slide related-items">
+          <a target="_blank" href="{{ relateds.handle }}">
+            <img src="{{ relateds.featured_image | image_url: width: 1400, height: 1400 }}" loading="lazy">
+          </a>
+          <button
+            data-variant="{{ relateds.selected_or_first_available_variant.id }}"
+            onclick="addToCart(this)"
+            class="{%- if relateds.selected_or_first_available_variant.available == false -%}agotado{%- endif -%}"
+          >
+            {%- if relateds.selected_or_first_available_variant.available == false -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- else -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- endif -%}
+          </button>
+          <h3>
+            <a target="_blank" href="{{ relateds.handle }}">{{ relateds.title }}</a>
+          </h3>
+          <p>{{ relateds.price | money_with_currency }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+    {% if total_products > 2 %}
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    {% endif %}
+    <div class="swiper-pagination"></div>
+  </div>
+{% endif %}
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.mySwiper', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
+  });
+</script>
+
+<script src="{{ 'custom-related-products.js' | asset_url }}" defer="defer"></script>

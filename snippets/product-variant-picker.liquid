@@ -13,7 +13,7 @@
   {%- if block.settings.picker_type == 'button' -%}
     <variant-radios
       id="variant-radios-{{ section.id }}"
-      class="no-js-hidden"
+      class="no-js-hidden color-container"
       data-section="{{ section.id }}"
       data-url="{{ product.url }}"
       {% if update_url == false %}
@@ -23,8 +23,17 @@
     >
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
-          <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options', product: product, option: option, block: block %}
+          <legend class="form__label">{{ option.name }}: {{ option.selected_value }}</legend>
+          {% assign variant_type = '' %}
+          {% if option.name == 'Color' %}
+            {% assign variant_type = 'color' %}
+          {% endif %}
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            variant_type: variant_type
+          %}
         </fieldset>
       {%- endfor -%}
       <script type="application/json">

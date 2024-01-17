@@ -13,10 +13,12 @@
   padding-top: 3rem;
   position: absolute;
   right: 0;
-  top: 100%;
+  /*top: 100%;*/
+  top: 75%;
   display: flex;
   /*justify-content: space-between;*/
   justify-content: center;
+  z-index: 1;
 }
 
 .mega-menu__content .header_container .promo_button{

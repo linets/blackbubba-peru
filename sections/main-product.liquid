@@ -1,6 +1,6 @@
 <section
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -8,6 +8,7 @@
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
@@ -61,8 +62,12 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="page-width">
-    <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  {% if section.settings.enable_breadcrumbs %}
+    <div class="breadcrumbs-container">
+      <a href="/">Home</a> <span> / {{ product.title }}</span>
+    </div>
+  {% endif %}
+  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
@@ -86,6 +91,31 @@
               >
                 {{- block.settings.text -}}
               </p>
+            {%- when 'title-price' -%}
+              <div class="title-price">
+                <div class="product__title" {{ block.shopify_attributes }}>
+                  <h1>{{ product.title | escape }}</h1>
+
+                  <a href="{{ product.url }}" class="product__title">
+                    <h2 class="h1">
+                      {{ product.title | escape }}
+                    </h2>
+                  </a>
+                </div>
+                <div
+                  class="no-js-hidden price-container"
+                  id="price-{{ section.id }}"
+                  role="status"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+              </div>
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
@@ -105,18 +135,18 @@
                 -%}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
-                <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
+                <div class="volume-pricing-note">
                   <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
-                <div class="product__tax caption rte">
-                  {%- if cart.taxes_included -%}
-                    {{ 'products.product.include_taxes' | t }}
-                  {%- endif -%}
-                  {%- if shop.shipping_policy.body != blank -%}
-                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                  {%- endif -%}
-                </div>
+              <div class="product__tax caption rte">
+                {%- if cart.taxes_included -%}
+                  {{ 'products.product.include_taxes' | t }}
+                {%- endif -%}
+                {%- if shop.shipping_policy.body != blank -%}
+                  {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {%- endif -%}
+              </div>
               <div {{ block.shopify_attributes }}>
                 {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                 {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -124,6 +154,40 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
+            {%- when 'venti' -%}
+              <div class="col-md-12 venti">
+                <div id="__ventipay_product_installments_block">
+                  <span
+                    >Paga hasta en <strong>3 cuotas</strong> de <strong>$8.996</strong> con débito y sin interés</span
+                  >
+                  <a
+                    href="https://www.ventipay.com/?utm_campaign=shopify_product_widget&amp;utm_medium=shopify&amp;utm_source=bubbabags.cl"
+                    target="ventipay.com"
+                    style="text-decoration:none!important;color:inherit!important;"
+                  >
+                    <img width="75" height="19" loading="lazy" src="{{ 'venti_logo.png' | asset_url }}">
+                  </a>
+                </div>
+
+                <script type="text/javascript">
+                  /*
+                // VentiPay Widget
+                // Setup
+                var __ventipay_color = '#e1e61e'; // Background color of the button. One of: primary, white, black, or an HEX color code
+                var __ventipay_text_color = 'black'; // Text color of the button. One of: primary, white, black, or an HEX color code
+                var __ventipay_language = 'es'; // One of: es, en
+                
+                // DO NOT CHANGE ANYTHING BELOW THIS LINE
+                var __ventipay_money_format = "${{amount_no_decimals_with_comma_separator}}";
+                var __ventipay_price_min = 2699000;
+                var __ventipay_cart_currency = "CLP";
+                var __ventipay_customer = null;
+                var __ventipay_cart = {"note":null,"attributes":{},"original_total_price":3198400,"total_price":3198400,"total_discount":0,"total_weight":2500.0,"item_count":4,"items":[{"id":39569806524566,"properties":null,"quantity":1,"variant_id":39569806524566,"key":"39569806524566:fd8b6b20bc7b6408ef04376c6232d9bd","title":"ANTEOJO ONYX 1,5 - Negro","price":799600,"original_price":799600,"discounted_price":799600,"line_price":799600,"original_line_price":799600,"total_discount":0,"discounts":[],"sku":"6902221313812","grams":1000,"vendor":"Bubba Essentials","taxable":true,"product_id":6649402654870,"product_has_only_default_variant":false,"gift_card":false,"final_price":799600,"final_line_price":799600,"url":"\/products\/anteojo-onyx-1-5-bubba-bags?variant=39569806524566","featured_image":{"aspect_ratio":1.0,"alt":"ANTEOJO ONYX 1,5","height":1500,"url":"\/\/bubbabags.cl\/cdn\/shop\/products\/negros_1-6e889f8e-5acb-498a-b1dd-694e07a5e94b.jpg?v=1693598236","width":1500},"image":"\/\/bubbabags.cl\/cdn\/shop\/products\/negros_1-6e889f8e-5acb-498a-b1dd-694e07a5e94b.jpg?v=1693598236","handle":"anteojo-onyx-1-5-bubba-bags","requires_shipping":true,"product_type":"Anteojos","product_title":"ANTEOJO ONYX 1,5","product_description":"Anteojos unisex de lectura con aumento de forma redonda y fina. De alta calidad, ligeros y cómodos, perfectos para el uso diario. Accesorio ondero.\n Especificaciones Técnicas Medidas: 14x 14 x 4.30 cmCapacidad\/Litros: - Material: Policarbonato Cierres: - Correas: - Compartimientos: -\n ","variant_title":"Negro","variant_options":["Negro"],"options_with_values":[{"name":"Color","value":"Negro"}],"line_level_discount_allocations":[],"line_level_total_discount":0},{"id":36551614627990,"properties":{},"quantity":1,"variant_id":36551614627990,"key":"36551614627990:41fa27f971593b1c145b7bcf2ca3e99c","title":"ANTEOJO ONYX 1,0 - Negro \/ Talla Única","price":799600,"original_price":799600,"discounted_price":799600,"line_price":799600,"original_line_price":799600,"total_discount":0,"discounts":[],"sku":"6902221313805","grams":500,"vendor":"Bubba Essentials","taxable":true,"product_id":5781484961942,"product_has_only_default_variant":false,"gift_card":false,"final_price":799600,"final_line_price":799600,"url":"\/products\/anteojo-onyx-1-0-bubba-bags?variant=36551614627990","featured_image":{"aspect_ratio":1.0,"alt":"ANTEOJO ONYX 1,0","height":1500,"url":"\/\/bubbabags.cl\/cdn\/shop\/products\/6902221300027_1-12ef1e2f-e082-4b52-b40a-160d2d06d235.jpg?v=1693574582","width":1500},"image":"\/\/bubbabags.cl\/cdn\/shop\/products\/6902221300027_1-12ef1e2f-e082-4b52-b40a-160d2d06d235.jpg?v=1693574582","handle":"anteojo-onyx-1-0-bubba-bags","requires_shipping":true,"product_type":"Anteojos","product_title":"ANTEOJO ONYX 1,0","product_description":"Anteojos unisex de lectura con aumento de forma redonda y fina. De alta calidad, ligeros y cómodos, perfectos para el uso diario. Accesorio ondero.\n Especificaciones Técnicas Medidas: 14x 14 x 4.30 cmCapacidad\/Litros: - Material: Policarbonato Cierres: - Correas: - Compartimientos: -\n ","variant_title":"Negro \/ Talla Única","variant_options":["Negro","Talla Única"],"options_with_values":[{"name":"Color","value":"Negro"},{"name":"Tamaño","value":"Talla Única"}],"line_level_discount_allocations":[],"line_level_total_discount":0},{"id":36551611973782,"properties":{},"quantity":1,"variant_id":36551611973782,"key":"36551611973782:c33ec0b813f14fd1bbcbd6d24450c824","title":"ANTEOJO CHERRY 1,0 - Rojo","price":799600,"original_price":799600,"discounted_price":799600,"line_price":799600,"original_line_price":799600,"total_discount":0,"discounts":[],"sku":"6902221313768","grams":500,"vendor":"Bubba Essentials","taxable":true,"product_id":5781483520150,"product_has_only_default_variant":false,"gift_card":false,"final_price":799600,"final_line_price":799600,"url":"\/products\/anteojo-cherry-1-0-bubba-bags?variant=36551611973782","featured_image":{"aspect_ratio":1.0,"alt":"ANTEOJO CHERRY 1,0","height":1500,"url":"\/\/bubbabags.cl\/cdn\/shop\/products\/rojo_1-7c9ef4bb-e1d9-4066-ae4f-15a7b79e0426.jpg?v=1693606208","width":1500},"image":"\/\/bubbabags.cl\/cdn\/shop\/products\/rojo_1-7c9ef4bb-e1d9-4066-ae4f-15a7b79e0426.jpg?v=1693606208","handle":"anteojo-cherry-1-0-bubba-bags","requires_shipping":true,"product_type":"Anteojos","product_title":"ANTEOJO CHERRY 1,0","product_description":"Anteojos unisex de lectura con aumento de forma redonda y fina. De alta calidad, ligeros y cómodos, perfectos para el uso diario. Accesorio ondero.\n Especificaciones Técnicas Medidas: 14x 14 x 4.30 cmCapacidad\/Litros: - Material: Policarbonato Cierres: - Correas: - Compartimientos: -\n ","variant_title":"Rojo","variant_options":["Rojo"],"options_with_values":[{"name":"Color","value":"Rojo"}],"line_level_discount_allocations":[],"line_level_total_discount":0},{"id":41185292943510,"properties":{},"quantity":1,"variant_id":41185292943510,"key":"41185292943510:0db724f751a5864327fe793834d10257","title":"ANTEOJO CLOUDY 1,0 - Blanco \/ Talla Única","price":799600,"original_price":799600,"discounted_price":799600,"line_price":799600,"original_line_price":799600,"total_discount":0,"discounts":[],"sku":"6902221313782","grams":500,"vendor":"Bubba Essentials","taxable":true,"product_id":7286702309526,"product_has_only_default_variant":false,"gift_card":false,"final_price":799600,"final_line_price":799600,"url":"\/products\/anteojo-cloudy-1-0-bubba-essentials?variant=41185292943510","featured_image":{"aspect_ratio":1.0,"alt":"ANTEOJO CLOUDY 1,0","height":1500,"url":"\/\/bubbabags.cl\/cdn\/shop\/products\/6902221293763_1-1669adc0-8301-4257-adf8-1c33ca481237-cedfd7f6-ad3b-44e7-a403-67a0d46f1262.jpg?v=1693571624","width":1500},"image":"\/\/bubbabags.cl\/cdn\/shop\/products\/6902221293763_1-1669adc0-8301-4257-adf8-1c33ca481237-cedfd7f6-ad3b-44e7-a403-67a0d46f1262.jpg?v=1693571624","handle":"anteojo-cloudy-1-0-bubba-essentials","requires_shipping":true,"product_type":"Anteojos","product_title":"ANTEOJO CLOUDY 1,0","product_description":"Anteojos unisex de lectura con aumento de forma redonda y fina. De alta calidad, ligeros y cómodos, perfectos para el uso diario. Accesorio ondero.Especificaciones14 x 14 x 4.30   Policarbonato  ","variant_title":"Blanco \/ Talla Única","variant_options":["Blanco","Talla Única"],"options_with_values":[{"name":"Color","value":"Blanco"},{"name":"Tamaño","value":"Talla Única"}],"line_level_discount_allocations":[],"line_level_total_discount":0}],"requires_shipping":true,"currency":"CLP","items_subtotal_price":3198400,"cart_level_discount_applications":[]};
+                */
+                </script>
+                <script type="text/javascript" src="https://js.ventipay.com/widgets/shopify/product/"></script>
+              </div>
+
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -133,13 +197,18 @@
               >
                 {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
                   {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-                    {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
+                    {%- if product.selected_or_first_available_variant.inventory_quantity
+                        <= block.settings.inventory_threshold
+                    -%}
                       <svg width="15" height="15" aria-hidden="true">
                         <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(238,148,65, 0.3)"/>
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
+                        {{-
+                          'products.product.inventory_low_stock_show_count'
+                          | t: quantity: product.selected_or_first_available_variant.inventory_quantity
+                        -}}
                       {%- else -%}
                         {{- 'products.product.inventory_low_stock' | t -}}
                       {%- endif -%}
@@ -149,9 +218,12 @@
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
+                        {{-
+                          'products.product.inventory_in_stock_show_count'
+                          | t: quantity: product.selected_or_first_available_variant.inventory_quantity
+                        -}}
                       {%- else -%}
-                          {{- 'products.product.inventory_in_stock' | t -}}
+                        {{- 'products.product.inventory_in_stock' | t -}}
                       {%- endif -%}
                     {%- endif -%}
                   {%- else -%}
@@ -174,9 +246,20 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                  {{ product.description }}
+                  {% if block.settings.metafields_description %}
+                    {% render 'metafields_tabs',
+                      prod: product,
+                      description: product.description,
+                      dispatch: section.settings.dispatch,
+                      changes: section.settings.changes
+                    %}
+                  {% else %}
+                    {{ product.description }}
+                  {% endif %}
                 </div>
               {%- endif -%}
+            {% when 'related-products' %}
+              {% render 'custom-related-products', prod: product, title: block.settings.title_related %}
             {%- when 'sku' -%}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -184,7 +267,8 @@
                 role="status"
                 {{ block.shopify_attributes }}
               >
-                <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
+                <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
+                {{- product.selected_or_first_available_variant.sku -}}
               </p>
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
@@ -219,8 +303,24 @@
                 <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                   <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
-                    {%- render 'loading-spinner' -%}
-                    <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
+                    <span class="loading-overlay hidden">
+                      <span class="loading-overlay__spinner">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          class="spinner"
+                          viewBox="0 0 66 66"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      >(
+                      {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
+                      )</span
+                    >
                   </span>
                 </label>
                 <div class="price-per-item__container">
@@ -246,7 +346,7 @@
                       step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
                       value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                       form="{{ product_form_id }}"
-                    />
+                    >
                     <button class="quantity__button no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
@@ -260,10 +360,14 @@
                     if cart_qty > 0
                       assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.increment
                     endif
-
                   -%}
                   {%- if product.quantity_price_breaks_configured? -%}
-                    <price-per-item class="no-js-hidden" id="Price-Per-Item-{{ section.id }}" data-section-id="{{ section.id }}" data-variant-id="{{ product.selected_or_first_available_variant.id }}">
+                    <price-per-item
+                      class="no-js-hidden"
+                      id="Price-Per-Item-{{ section.id }}"
+                      data-section-id="{{ section.id }}"
+                      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    >
                       {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
                         {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
                         <div class="price-per-item">
@@ -280,20 +384,28 @@
                             </dl>
                           {%- endif -%}
                           {%- if current_qty_for_volume_pricing < volume_pricing_array.last.minimum_quantity -%}
-                            {%- assign variant_price = product.selected_or_first_available_variant.price | money_with_currency -%}
-                            <span class="price-per-item--current">{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}</span>
+                            {%- assign variant_price = product.selected_or_first_available_variant.price
+                              | money_with_currency
+                            -%}
+                            <span class="price-per-item--current">
+                              {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
+                            </span>
                           {%- else -%}
                             {%- for price_break in volume_pricing_array -%}
                               {%- if current_qty_for_volume_pricing >= price_break.minimum_quantity -%}
                                 {%- assign price_break_price = price_break.price | money_with_currency -%}
-                                <span class="price-per-item--current">{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}</span>
+                                <span class="price-per-item--current">
+                                  {{- 'products.product.volume_pricing.price_at_each' | t: price: price_break_price -}}
+                                </span>
                                 {%- break -%}
                               {%- endif -%}
                             {%- endfor -%}
                           {%- endif -%}
                         </div>
                       {%- else -%}
-                        {%- assign variant_price = product.selected_or_first_available_variant.price | money_with_currency -%}
+                        {%- assign variant_price = product.selected_or_first_available_variant.price
+                          | money_with_currency
+                        -%}
                         {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
                         <div class="price-per-item">
                           {%- if variant_price_compare -%}
@@ -310,18 +422,22 @@
                                 {{ 'products.product.price.sale_price' | t }}
                               </dt>
                               <dd>
-                                <span class="price-per-item--current">{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}</span>
+                                <span class="price-per-item--current">
+                                  {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
+                                </span>
                               </dd>
                             </dl>
                           {%- else -%}
-                            <span class="price-per-item--current">{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}</span>
+                            <span class="price-per-item--current">
+                              {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
+                            </span>
                           {%- endif -%}
                         </div>
                       {%- endif -%}
                     </price-per-item>
                   {%- endif -%}
                 </div>
-                <div class="quantity__rules caption no-js-hidden" id="Quantity-Rules-{{ section.id }}">
+                <div class="quantity__rules caption no-js-hidden">
                   {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                     <span class="divider">
                       {{-
@@ -355,13 +471,20 @@
                         <li>
                           <span>{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
                           {%- assign price = product.selected_or_first_available_variant.price | money_with_currency -%}
-                          <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}">{{ 'sections.quick_order_list.each' | t: money: price }}</span>
+                          <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}">
+                            {{- 'sections.quick_order_list.each' | t: money: price -}}
+                          </span>
                         </li>
                         {%- for price_break in product.selected_or_first_available_variant.quantity_price_breaks -%}
                           {%- assign price_break_price = price_break.price | money_with_currency -%}
                           <li class="{%- if forloop.index >= 3 -%}show-more-item hidden{%- endif -%}">
-                            <span>{{ price_break.minimum_quantity }}<span aria-hidden="true">+</span></span>
-                            <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}">{{ 'sections.quick_order_list.each' | t: money: price_break_price }}</span>
+                            <span>
+                              {{- price_break.minimum_quantity -}}
+                              <span aria-hidden="true">+</span></span
+                            >
+                            <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}">
+                              {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
+                            </span>
                           </li>
                         {%- endfor -%}
                       </ul>
@@ -377,8 +500,8 @@
                             </span>
                           </button>
                         </show-more-button>
+                      {%- endif -%}
                     {%- endif -%}
-                  {%- endif -%}
                   </volume-pricing>
                 {%- endif -%}
               </div>
@@ -402,15 +525,18 @@
               </a>
             {%- when 'share' -%}
               {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
-              {% render 'share-button',
-                block: block,
-                share_link: share_url
-              %}
+              {% render 'share-button', block: block, share_link: share_url %}
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
-              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              {%- render 'buy-buttons',
+                block: block,
+                product: product,
+                product_form_id: product_form_id,
+                section_id: section.id,
+                show_pickup_availability: true
+              -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -448,9 +574,18 @@
                 </p>
               {%- endif -%}
             {%- when 'complementary' -%}
-              <product-recommendations class="complementary-products quick-add-hidden no-js-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.product_list_limit }}&intent=complementary">
+              <product-recommendations
+                class="complementary-products quick-add-hidden no-js-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
+                data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.product_list_limit }}&intent=complementary"
+              >
                 {%- if recommendations.performed and recommendations.products_count > 0 -%}
-                  <aside aria-label="{{ 'accessibility.complementary_products' | t }}" {{ block.shopify_attributes }}{% if block.settings.make_collapsible_row %} class="product__accordion accordion"{% endif %}>
+                  <aside
+                    aria-label="{{ 'accessibility.complementary_products' | t }}"
+                    {{ block.shopify_attributes -}}
+                    {% if block.settings.make_collapsible_row %}
+                      class="product__accordion accordion"
+                    {% endif %}
+                  >
                     <div class="complementary-products__container">
                       {%- if block.settings.make_collapsible_row -%}
                         <details id="Details-{{ block.id }}-{{ section.id }}" open>
@@ -465,16 +600,39 @@
                         {%- endif -%}
                       </div>
                       {%- if block.settings.make_collapsible_row -%}
-                          {% render 'icon-caret' %}
+                        {% render 'icon-caret' %}
                         </summary>
                       {%- endif -%}
                       <slideshow-component class="slider-mobile-gutter">
-                        {%- assign number_of_slides = recommendations.products_count | plus: 0.0 | divided_by: block.settings.products_per_page | ceil -%}
-                        <div id="Slider-{{ block.id }}" class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere" role="list"{% if number_of_slides > 1 %} aria-label="{{ 'general.slider.name' | t }}"{% endif %}>
+                        {%- assign number_of_slides = recommendations.products_count
+                          | plus: 0.0
+                          | divided_by: block.settings.products_per_page
+                          | ceil
+                        -%}
+                        <div
+                          id="Slider-{{ block.id }}"
+                          class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere"
+                          role="list"
+                          {% if number_of_slides > 1 %}
+                            aria-label="{{ 'general.slider.name' | t }}"
+                          {% endif %}
+                        >
                           {%- for i in (1..number_of_slides) -%}
-                            <div id="Slide-{{ block.id }}-{{ forloop.index }}" class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide" tabindex="-1" role="group"{% if number_of_slides > 1 %} aria-roledescription="{{ 'sections.slideshow.slide' | t }}" aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"{% endif %}>
+                            <div
+                              id="Slide-{{ block.id }}-{{ forloop.index }}"
+                              class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide"
+                              tabindex="-1"
+                              role="group"
+                              {% if number_of_slides > 1 %}
+                                aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+                                aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                              {% endif %}
+                            >
                               <ul class="list-unstyled" role="list">
-                                {%- for product in recommendations.products limit: block.settings.products_per_page offset: continue -%}
+                                {%- for product in recommendations.products
+                                  limit: block.settings.products_per_page
+                                  offset: continue
+                                -%}
                                   <li>
                                     {% render 'card-product',
                                       card_product: product,
@@ -494,7 +652,14 @@
                         </div>
                         {%- if number_of_slides > 1 -%}
                           <div class="slider-buttons no-js-hidden">
-                            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+                            <button
+                              type="button"
+                              class="slider-button slider-button--prev"
+                              name="previous"
+                              aria-label="{{ 'general.slider.previous_slide' | t }}"
+                            >
+                              {% render 'icon-caret' %}
+                            </button>
                             <div class="slider-counter slider-counter--{{ block.settings.pagination_style }}{% if block.settings.pagination_style == 'counter' or block.settings.pagination_style == 'numbers' %} caption{% endif %}">
                               {%- if block.settings.pagination_style == 'counter' -%}
                                 <span class="slider-counter--current">1</span>
@@ -504,14 +669,29 @@
                               {%- else -%}
                                 <div class="slideshow__control-wrapper">
                                   {%- for i in (1..number_of_slides) -%}
-                                    <button class="slider-counter__link slider-counter__link--{{ block.settings.pagination_style }} link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ block.id }}">
-                                      {%- if block.settings.pagination_style == 'numbers' -%}{{ forloop.index }}{% else %}<span class="dot"></span>{%- endif -%}
+                                    <button
+                                      class="slider-counter__link slider-counter__link--{{ block.settings.pagination_style }} link"
+                                      aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                                      aria-controls="Slider-{{ block.id }}"
+                                    >
+                                      {%- if block.settings.pagination_style == 'numbers' -%}
+                                        {{ forloop.index -}}
+                                      {%- else -%}
+                                        <span class="dot"></span>
+                                      {%- endif -%}
                                     </button>
                                   {%- endfor -%}
                                 </div>
                               {%- endif -%}
                             </div>
-                            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+                            <button
+                              type="button"
+                              class="slider-button slider-button--next"
+                              name="next"
+                              aria-label="{{ 'general.slider.next_slide' | t }}"
+                            >
+                              {% render 'icon-caret' %}
+                            </button>
                           </div>
                         {%- endif -%}
                       </slideshow-component>
@@ -529,9 +709,7 @@
                 {%- endif -%}
               </product-recommendations>
             {%- when 'icon-with-text' -%}
-              {% render 'icon-with-text',
-                block: block
-              %}
+              {% render 'icon-with-text', block: block %}
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -548,7 +726,7 @@
     {%- endif -%}
   </div>
 
-  {% render 'product-media-modal' variant_images: variant_images %}
+  {% render 'product-media-modal', variant_images: variant_images %}
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
   {%- for block in popups -%}
@@ -667,8 +845,217 @@
       ]
     }
   </script>
-  </div>
 </section>
+
+<div class="mobile-sticky-buttons" {{ block.shopify_attributes }}>
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+
+    <product-form
+      class="product-form"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+      data-section-id="{{ section.id }}"
+    >
+      <div class="product-form__error-message-wrapper" role="alert" hidden>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="icon icon-error"
+          viewBox="0 0 13 13"
+        >
+          <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+          <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+          <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+          <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+        </svg>
+        <span class="product-form__error-message"></span>
+      </div>
+
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          disabled
+          class="product-variant-id"
+        >
+
+        {%- if gift_card_recipient_feature_active -%}
+          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+
+        <div class="product-form__buttons">
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <div class="loading-overlay__spinner hidden">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+          {{ form | payment_button }}
+        </div>
+      {%- endform -%}
+    </product-form>
+  {%- else -%}
+    <div class="product-form">
+      <div class="product-form__buttons form">
+        <button
+          type="submit"
+          name="add"
+          class="product-form__submit button button--full-width button--primary"
+          disabled
+        >
+          {{ 'products.product.sold_out' | t }}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if show_pickup_availability -%}
+    {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+      | where: 'pick_up_enabled', true
+    -%}
+
+    <pickup-availability
+      class="product__pickup-availabilities no-js-hidden quick-add-hidden"
+      {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+        available
+      {% endif %}
+      data-root-url="{{ routes.root_url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-has-only-default-variant="{{ product.has_only_default_variant }}"
+    >
+      <template>
+        <pickup-availability-preview class="pickup-availability-preview">
+          {% render 'icon-unavailable' %}
+          <div class="pickup-availability-info">
+            <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+            <button class="pickup-availability-button link link--text underlined-link">
+              {{ 'products.product.pickup_availability.refresh' | t }}
+            </button>
+          </div>
+        </pickup-availability-preview>
+      </template>
+    </pickup-availability>
+
+    <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</div>
+
+<script>
+  window.addEventListener('load', (event) => {
+    updateVariantThumbnails();
+
+    const element = document.querySelector('.main-buttons-desktop');
+    const rect = element.getBoundingClientRect();
+    let value =
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+    if (value) {
+      document.querySelector('.mobile-sticky-buttons').style.display = 'none';
+    } else {
+      document.querySelector('.mobile-sticky-buttons').style.display = 'initial';
+    }
+  });
+
+  window.addEventListener('scroll', (event) => {
+    const element = document.querySelector('.main-buttons-desktop');
+    const rect = element.getBoundingClientRect();
+    let value =
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+    if (value) {
+      document.querySelector('.mobile-sticky-buttons').style.display = 'none';
+    } else {
+      document.querySelector('.mobile-sticky-buttons').style.display = 'initial';
+    }
+  });
+
+  function updateVariantThumbnails() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let variant_id = urlParams.get('variant');
+
+    if (variant_id) {
+      let sliderThumbanil = document.querySelectorAll('.thumbnail-list.slider li');
+      let x = 0;
+      let y = 0;
+      sliderThumbanil.forEach((e) => {
+        if (x != 0) {
+          if (e.dataset.variantid == variant_id) {
+            e.style.display = 'block';
+            y++;
+          } else {
+            e.style.display = 'none';
+          }
+        }
+        x++;
+      });
+
+      if (y == 0) {
+        sliderThumbanil.forEach((e) => {
+          if (!e.dataset.variantid) {
+            e.style.display = 'block';
+          }
+        });
+      }
+    }
+  }
+</script>
 
 {% schema %}
 {
@@ -710,6 +1097,16 @@
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
         }
       ]
+    },
+    {
+      "type": "venti",
+      "name": "Venti",
+      "limit": 1
+    },
+    {
+      "type": "title-price",
+      "name": "Title + Price",
+      "limit": 1
     },
     {
       "type": "title",
@@ -843,7 +1240,27 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "metafields_description",
+          "label": "Use Metafields Settings",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "related-products",
+      "name": "Related Products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_related",
+          "label": "Title"
+        }
+      ]
     },
     {
       "type": "share",
@@ -2009,10 +2426,10 @@
       "label": "t:sections.main-product.settings.enable_sticky_info.label"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "type": "checkbox",
+      "id": "enable_breadcrumbs",
+      "default": true,
+      "label": "Breadcrumbs"
     },
     {
       "type": "header",
@@ -2155,6 +2572,20 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "header",
+      "content": "Contenido TAB"
+    },
+    {
+      "type": "richtext",
+      "id": "dispatch",
+      "label": "Despacho Content"
+    },
+    {
+      "type": "richtext",
+      "id": "changes",
+      "label": "Cambios Content"
     },
     {
       "type": "header",

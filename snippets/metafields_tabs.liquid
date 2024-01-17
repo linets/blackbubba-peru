@@ -1,0 +1,74 @@
+{{ 'metafields_tabs.css' | asset_url | stylesheet_tag }}
+
+<!-- Tab links -->
+<div class="tab">
+  {% if description != blank %}
+    <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'tab_description')">DESCRIPCIÓN</button>
+  {% endif %}
+
+  {% if prod.metafields.custom.especificaciones != blank %}
+    <button class="tablinks" onclick="openCity(event, 'tab_specifications')">ESPECIFICACIONES</button>
+  {% endif %}
+
+  {% if dispatch != blank %}
+    <button class="tablinks" onclick="openCity(event, 'tab_dispatch')">DESPACHO</button>
+  {% endif %}
+
+  {% if changes != blank %}
+    <button class="tablinks" onclick="openCity(event, 'tab_changes')">CAMBIOS</button>
+  {% endif %}
+</div>
+
+<!-- Tab content -->
+{% if description != blank %}
+  <div id="tab_description" class="tabcontent">{{ description }}</div>
+{% endif %}
+
+{% if prod.metafields.custom.especificaciones != blank %}
+  <div id="tab_specifications" class="tabcontent">{{ prod.metafields.custom.especificaciones | metafield_tag }}</div>
+{% endif %}
+
+{% if dispatch != blank %}
+  <div id="tab_dispatch" class="tabcontent">{{ dispatch }}</div>
+{% endif %}
+
+{% if changes != blank %}
+  <div id="tab_changes" class="tabcontent">{{ changes }}</div>
+{% endif %}
+
+<div class="tab_accordition_mobile">
+  {% if description != blank %}
+    <div class="tab_accordition_mobile_container active">
+      <h3 onClick="tabsMobile(this)">DESCRIPCIÓN</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ description }}
+      </div>
+    </div>
+  {% endif %}
+  {% if prod.metafields.custom.especificaciones != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">ESPECIFICACIONES</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ prod.metafields.custom.especificaciones | metafield_tag }}
+      </div>
+    </div>
+  {% endif %}
+  {% if dispatch != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">DESPACHO</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ dispatch }}
+      </div>
+    </div>
+  {% endif %}
+  {% if changes != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">CAMBIOS</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ changes }}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<script src="{{ 'metafields_tabs.js' | asset_url }}" defer="defer"></script>

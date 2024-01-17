@@ -365,11 +365,15 @@
 
 .image-with-text__heading {
   margin-bottom: 0;
+  font: normal normal bold 26px/28px Montserrat;
+  letter-spacing: 0px;
 }
 
 .image-with-text__text p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font: normal normal normal 22px/26px Montserrat;
+  letter-spacing: 0px;
 }
 
 @media screen and (max-width: 749px) {
