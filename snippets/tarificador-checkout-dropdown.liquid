@@ -1,0 +1,256 @@
+<script>
+  window.HACIENDOLA = window.HACIENDOLA || {};
+  window.HACIENDOLA.TARIFICADOR = window.HACIENDOLA.TARIFICADOR || {};
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS = window.HACIENDOLA.TARIFICADOR.FUNCTIONS || {};
+  window.HACIENDOLA.TARIFICADOR.HANDLERS = window.HACIENDOLA.TARIFICADOR.HANDLERS || {};
+  window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS = window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS || {};
+  window.HACIENDOLA.TARIFICADOR.CONFIGURATION = {
+    shopUrl: '{{ shop.permanent_domain }}',
+    zipValue: 'CL',
+    hideCountry: true,
+    hideZip: true,
+    cityLabel: 'Comuna',
+    provinceLabel: 'Región',
+  };
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.customizeProvinceWithCities = function () {
+    console.log(window.HACIENDOLA.TARIFICADOR.provinceWithCitiesList);
+  };
+  window.HACIENDOLA.TARIFICADOR.provinceWithCitiesList = [];
+  window.HACIENDOLA.TARIFICADOR.cityDivInnerHtmlBackup = '';
+  window.HACIENDOLA.TARIFICADOR.provinceDivInnerHtmlBackup = '';
+
+  /* INICIO DECLARACIÓN FUNCIONES */
+
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.initDesplegableCheckout = function () {
+    // OBTENEMOS LOS ELEMENTOS HTML DEL FORM DE SHIPPING INFO
+
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv = document.querySelector("div[data-address-field='city']");
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv = document.querySelector(
+      "div[data-address-field='province']"
+    );
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryDiv = document.querySelector(
+      "div[data-address-field='country']"
+    );
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.zipDiv = document.querySelector("div[data-address-field='zip']");
+
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryInput = document.getElementById(
+      'checkout_shipping_address_country'
+    );
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceInput = document.getElementById(
+      'checkout_shipping_address_province'
+    );
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityInput = document.getElementById('checkout_shipping_address_city');
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.zipInput = document.getElementById('checkout_shipping_address_zip');
+
+    // GUARDAMOS EL HTML INICIAL DEL DIV CITY Y PROVINCE QUE SERÁN REEMPLAZADOS
+
+    window.HACIENDOLA.TARIFICADOR.cityDivInnerHtmlBackup =
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv.innerHTML;
+    window.HACIENDOLA.TARIFICADOR.provinceDivInnerHtmlBackup =
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv.innerHTML;
+
+    window.HACIENDOLA.TARIFICADOR.FUNCTIONS.getProvinceWithCitiesList();
+    setTimeout(() => {
+      const provinceValue = window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceInput.value;
+      console.log('provinceValue', provinceValue);
+      if (provinceValue != 'Seleccionar Región') {
+        window.HACIENDOLA.TARIFICADOR.HANDLERS.provinceChangeHandler(null);
+      }
+    }, 1000);
+  };
+
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.replaceShippingForm = function () {
+    const divComunas = document.createElement('div');
+    divComunas.setAttribute('class', 'field__input-wrapper field__input-wrapper--select');
+    // Label de input
+    const labelComuna = document.createElement('label');
+    labelComuna.setAttribute('class', 'field__label field__label--visible');
+    labelComuna.setAttribute('for', 'checkout_shipping_address_city');
+    labelComuna.textContent = window.HACIENDOLA.TARIFICADOR.CONFIGURATION.cityLabel;
+    divComunas.appendChild(labelComuna);
+    // Input select
+    const selectComunas = document.createElement('select');
+    selectComunas.setAttribute('autocomplete', 'shipping address-level2');
+    selectComunas.setAttribute('data-trekkie-id', 'shipping_city_field');
+    selectComunas.setAttribute('data-backup', 'city');
+    selectComunas.setAttribute('class', 'field__input field__input--select');
+    selectComunas.setAttribute('aria-required', 'true');
+    selectComunas.setAttribute('name', 'checkout[shipping_address][city]');
+    selectComunas.setAttribute('id', 'checkout_shipping_address_city');
+    selectComunas.setAttribute('disabled', true);
+    // Opción por defecto
+    const defaultOption = document.createElement('option');
+    defaultOption.setAttribute('selected', '');
+    defaultOption.setAttribute('disabled', '');
+    defaultOption.text = 'Seleccionar ' + window.HACIENDOLA.TARIFICADOR.CONFIGURATION.cityLabel;
+    selectComunas.appendChild(defaultOption);
+    divComunas.appendChild(selectComunas);
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityInput = selectComunas;
+    // Caret del div
+    const divCaret = document.querySelector("div[class='field__caret']");
+    const divCaretClone = divCaret.cloneNode(true);
+    divComunas.appendChild(divCaretClone);
+    // ---------- FIN CREACIÓN COMUNAS ----------
+
+    // ---------- INICIO CREACIÓN REGIONES ----------
+    const divRegiones = document.createElement('div');
+    divRegiones.setAttribute('class', 'field__input-wrapper field__input-wrapper--select');
+    // LABEL DEL INPUT
+    labelProvince = document.createElement('label');
+    labelProvince.setAttribute('class', 'field__label field__label--visible');
+    labelProvince.setAttribute('for', 'checkout_shipping_address_province');
+    labelProvince.textContent = window.HACIENDOLA.TARIFICADOR.CONFIGURATION.provinceLabel;
+    divRegiones.appendChild(labelProvince);
+    // INPUT SELECT
+    const selectRegiones = document.createElement('select');
+    selectRegiones.setAttribute('autocomplete', 'shipping address-level1');
+    selectRegiones.setAttribute('data-trekkie-id', 'shipping_province_field');
+    selectRegiones.setAttribute('data-backup', 'province');
+    selectRegiones.setAttribute('class', 'field__input field__input--select');
+    selectRegiones.setAttribute('name', 'checkout[shipping_address][province]');
+    selectRegiones.setAttribute('id', 'checkout_shipping_address_province');
+    selectRegiones.addEventListener('change', window.HACIENDOLA.TARIFICADOR.HANDLERS.provinceChangeHandler);
+    // DEFAULT OPTION
+    const defaultRegionOption = document.createElement('option');
+    defaultRegionOption.setAttribute('selected', '');
+    defaultRegionOption.setAttribute('disabled', '');
+    defaultRegionOption.text = 'Seleccionar Región';
+    selectRegiones.appendChild(defaultRegionOption);
+    divRegiones.appendChild(selectRegiones);
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceInput = selectRegiones;
+    // CARET
+    const divCaretClone2 = divCaret.cloneNode(true);
+    divRegiones.appendChild(divCaretClone2);
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityInput = selectComunas;
+    // ---------- FIN CREACIÓN REGIONES ----------
+
+    // Acortamos estos dos divs a la mitad
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv.setAttribute(
+      'class',
+      'field field--required field--half field--show-floating-label'
+    );
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv.setAttribute(
+      'class',
+      'field field--required field--half field--show-floating-label'
+    );
+    // Seleccionamos el parent del divCity, que es el div con todos lso campos de dirección
+    const divCityParent = window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv.parentNode;
+
+    // Movemos las comunas a despues de las regiones
+    divCityParent.removeChild(window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv);
+    divCityParent.removeChild(window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryDiv);
+    divCityParent.insertBefore(
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv,
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv.nextSibling
+    );
+    divCityParent.insertBefore(
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryDiv,
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv
+    );
+
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv.innerHTML = '';
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv.appendChild(divComunas);
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv.innerHTML = '';
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv.appendChild(divRegiones);
+
+    for (const region of window.HACIENDOLA.TARIFICADOR.provinceWithCitiesList) {
+      const regionOption = document.createElement('option');
+      regionOption.setAttribute('value', region.regionShopifyCode);
+      regionOption.text = region.regionName;
+      selectRegiones.appendChild(regionOption);
+    }
+
+    if (window.HACIENDOLA.TARIFICADOR.CONFIGURATION.hideZip) {
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.zipDiv.classList.add('hidden');
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.zipInput.value = window.HACIENDOLA.TARIFICADOR.CONFIGURATION.zipValue;
+      if (!window.HACIENDOLA.TARIFICADOR.CONFIGURATION.hideCountry) {
+        window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryDiv.classList.remove('field--half');
+      }
+    }
+  };
+
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.restoreShippingForm = function () {
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityDiv.innerHTML =
+      window.HACIENDOLA.TARIFICADOR.cityDivInnerHtmlBackup;
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceDiv.innerHTML =
+      window.HACIENDOLA.TARIFICADOR.provinceDivInnerHtmlBackup;
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.zipInput.value = '';
+  };
+
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.getProvinceWithCitiesList = function () {
+    fetch(
+      `https://prod.haciendola.dev/backend/tarificador/api/regions/getShopEnabledRegions/${window.HACIENDOLA.TARIFICADOR.CONFIGURATION.shopUrl}`
+    )
+      .then((response) => response.json())
+      .then((provinceWithCitiesList) => {
+        if (provinceWithCitiesList.statusCode == 500 || provinceWithCitiesList.length == 0) {
+          // SI OCURRE UN ERROR AL RESCATAR LA LISTA DE PROVINCIAS Y CIUDADES, O BIEN VIENE LA LISTA VACÍA, ABORTAMOS MISIÓN
+          return;
+        }
+        window.HACIENDOLA.TARIFICADOR.provinceWithCitiesList = provinceWithCitiesList;
+        window.HACIENDOLA.TARIFICADOR.FUNCTIONS.customizeProvinceWithCities();
+
+        // UNA VEZ QUE ES RESCATADA CORRECTAMENTE LA INFO DEL SERVIDOR, SE AGREGA EL HANDLER PARA EL SELECT DE PAÍS
+        window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryInput.addEventListener(
+          'change',
+          window.HACIENDOLA.TARIFICADOR.HANDLERS.countryChangeHandler
+        );
+
+        // SI YA VIENE SELECCIONADO CHILE, REEMPLAZAMOS EL FORMULARIO
+        if (window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryInput.value === 'Chile') {
+          setTimeout(() => window.HACIENDOLA.TARIFICADOR.FUNCTIONS.replaceShippingForm(), 0);
+        }
+        if (window.HACIENDOLA.TARIFICADOR.CONFIGURATION.hideCountry) {
+          window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryDiv.classList.add('hidden');
+        }
+      });
+  };
+
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.populateCitiesDropdown = function () {
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityInput.innerHTML = '';
+    const region = window.HACIENDOLA.TARIFICADOR.provinceWithCitiesList.find(
+      (x) => x.regionShopifyCode === window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.provinceInput.value
+    );
+    for (const commune of region.communes) {
+      const communeOption = document.createElement('option');
+      communeOption.setAttribute('value', commune.communeCode);
+      communeOption.text = commune.communeName;
+      window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityInput.appendChild(communeOption);
+    }
+    window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.cityInput.removeAttribute('disabled');
+  };
+
+  /* FIN DECLARACIÓN FUNCIONES */
+
+  /* INICIO DECLARACIÓN HANDLERS */
+
+  window.HACIENDOLA.TARIFICADOR.HANDLERS.countryChangeHandler = function (event) {
+    if (window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryInput.value === 'Chile') {
+      window.HACIENDOLA.TARIFICADOR.FUNCTIONS.replaceShippingForm();
+    } else {
+      window.HACIENDOLA.TARIFICADOR.FUNCTIONS.restoreShippingForm();
+    }
+  };
+
+  document.getElementById('delivery_option_home').addEventListener('click', (event) => {
+    if (event.target.checked) {
+      window.HACIENDOLA.TARIFICADOR.FUNCTIONS.replaceShippingForm();
+    }
+  });
+
+  document.getElementById('delivery_option_storepickup').addEventListener('click', (event) => {
+    if (event.target.checked) {
+      window.HACIENDOLA.TARIFICADOR.FUNCTIONS.restoreShippingForm();
+    }
+  });
+
+  window.HACIENDOLA.TARIFICADOR.HANDLERS.provinceChangeHandler = function (event) {
+    if (window.HACIENDOLA.TARIFICADOR.HTML_ELEMENTS.countryInput.value === 'Chile') {
+      window.HACIENDOLA.TARIFICADOR.FUNCTIONS.populateCitiesDropdown();
+    }
+  };
+
+  /* FIN DECLARACIÓN HANDLERS */
+
+  window.HACIENDOLA.TARIFICADOR.FUNCTIONS.initDesplegableCheckout();
+</script>
