@@ -177,6 +177,9 @@ cart-drawer {
 .cart-drawer tbody {
   display: block;
   width: 100%;
+  background: #FFF;
+  position: sticky;
+  z-index: 3;
 }
 
 .cart-drawer thead {
