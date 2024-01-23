@@ -183,7 +183,7 @@ cart-drawer {
   display: inline-table;
   width: 100%;
   position: sticky;
-  top: 0;
+  top: -1px;
   z-index: 2;
   background: #FFF;
 }
