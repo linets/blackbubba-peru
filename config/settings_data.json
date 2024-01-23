@@ -114,6 +114,11 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo_web-black.png",
+    "checkout_logo_size": "large",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_accent_color": "#939191",
+    "checkout_button_color": "#939191",
     "mobile_menu": "f-necesitas-ayuda",
     "sections": {
       "main-password-header": {
