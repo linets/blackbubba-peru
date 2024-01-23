@@ -10,6 +10,10 @@
     <button class="tablinks" onclick="openCity(event, 'tab_specifications')">ESPECIFICACIONES</button>
   {% endif %}
 
+  {% if prod.metafields.custom.talla != blank %}
+    <button class="tablinks" onclick="openCity(event, 'tab_talla')">TALLAS</button>
+  {% endif %}
+
   {% if dispatch != blank %}
     <button class="tablinks" onclick="openCity(event, 'tab_dispatch')">DESPACHO</button>
   {% endif %}
@@ -26,6 +30,10 @@
 
 {% if prod.metafields.custom.especificaciones != blank %}
   <div id="tab_specifications" class="tabcontent">{{ prod.metafields.custom.especificaciones | metafield_tag }}</div>
+{% endif %}
+
+{% if prod.metafields.custom.talla != blank %}
+  <div id="tab_talla" class="tabcontent">{{ prod.metafields.custom.talla | metafield_tag }}</div>
 {% endif %}
 
 {% if dispatch != blank %}
@@ -50,6 +58,14 @@
       <h3 onClick="tabsMobile(this)">ESPECIFICACIONES</h3>
       <div class="tab_accordition_mobile_container_content">
         {{ prod.metafields.custom.especificaciones | metafield_tag }}
+      </div>
+    </div>
+  {% endif %}
+  {% if prod.metafields.custom.talla != blank %}
+    <div class="tab_accordition_mobile_container">
+      <h3 onClick="tabsMobile(this)">TALLAS</h3>
+      <div class="tab_accordition_mobile_container_content">
+        {{ prod.metafields.custom.talla | metafield_tag }}
       </div>
     </div>
   {% endif %}
