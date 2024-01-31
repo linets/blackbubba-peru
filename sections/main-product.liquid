@@ -991,8 +991,10 @@
 </div>
 
 <script>
+  choseFirstVariant();
   window.addEventListener('load', (event) => {
     updateVariantThumbnails();
+    choseFirstVariant();
 
     const element = document.querySelector('.main-buttons-desktop');
     const rect = element.getBoundingClientRect();
@@ -1025,6 +1027,15 @@
     }
   });
 
+  function choseFirstVariant(){
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    if(urlParams.get('variant') == null){
+      let variantID = document.querySelector('variant-radios fieldset label').dataset.variantid; 
+      window.location.href = window.location.href + '?variant=' + variantID;
+    }    
+  }
+  
   function updateVariantThumbnails() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
