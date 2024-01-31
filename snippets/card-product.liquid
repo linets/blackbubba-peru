@@ -321,7 +321,6 @@
                 <ul>
                   {% assign countVariantAvailable = 0 %}
                   {% for variant in card_product.variants %}
-                    {{ variant.metafields.custom.media }} --- bbbb
                     {% if variant.metafields.custom.color %}
                       <li
                         data-featured-img="{{ variant.featured_media }}"
@@ -614,7 +613,6 @@
               <ul>
                 {% assign countVariantAvailable = 0 %}
                 {% for variant in card_product.variants %}
-                  {{ variant.metafields.custom.media }} --- aaaa
                   {% if variant.metafields.custom.color %}
                     <li
                       data-featured-img="{{ variant.featured_media }}"
