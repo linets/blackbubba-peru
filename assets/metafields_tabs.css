@@ -14,7 +14,7 @@
   cursor: pointer;
   padding: 14px 0px;
   color: #000000;
-  margin-left: 21px;
+  margin-left: 15px;
   font: normal normal bold 14px/18px Montserrat;
   letter-spacing: 0px;
 }
@@ -34,6 +34,10 @@
   letter-spacing: 0.8px;
   color: #000000;
 }
+
+.tabcontent br{ display: none; }
+
+.tabcontent ul{ padding: 0; }
 
 .tabcontent h1,
 .tabcontent h2,
@@ -109,6 +113,8 @@ height: 0;
 opacity: 0;
 transition: all 0.3s ease-in-out;
 }
+.tab_accordition_mobile_container .tab_accordition_mobile_container_content ul{ padding: 0; }
+.tab_accordition_mobile_container .tab_accordition_mobile_container_content br{ display: none; }
 .tab_accordition_mobile_container.active .tab_accordition_mobile_container_content{
 height: 100%;
 opacity: 1;
