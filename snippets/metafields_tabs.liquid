@@ -6,7 +6,7 @@
     <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'tab_description')">DESCRIPCIÓN</button>
   {% endif %}
 
-  {% if prod.metafields.custom.especificaciones != blank %}
+  {% if prod.metafields.custom.especificaciones_2 != blank %}
     <button class="tablinks" onclick="openCity(event, 'tab_specifications')">ESPECIFICACIONES</button>
   {% endif %}
 
@@ -28,12 +28,12 @@
   <div id="tab_description" class="tabcontent">{{ description }}</div>
 {% endif %}
 
-{% if prod.metafields.custom.especificaciones != blank %}
-  <div id="tab_specifications" class="tabcontent">{{ prod.metafields.custom.especificaciones | metafield_tag }}</div>
+{% if prod.metafields.custom.especificaciones_2 != blank %}
+  <div id="tab_specifications" class="tabcontent">{{ prod.metafields.custom.especificaciones_2 }}</div>
 {% endif %}
 
 {% if prod.metafields.custom.talla != blank %}
-  <div id="tab_talla" class="tabcontent">{{ prod.metafields.custom.talla | metafield_tag }}</div>
+  <div id="tab_talla" class="tabcontent">{{ prod.metafields.custom.talla }}</div>
 {% endif %}
 
 {% if dispatch != blank %}
@@ -53,19 +53,19 @@
       </div>
     </div>
   {% endif %}
-  {% if prod.metafields.custom.especificaciones != blank %}
+  {% if prod.metafields.custom.especificaciones_2 != blank %}
     <div class="tab_accordition_mobile_container">
       <h3 onClick="tabsMobile(this)">ESPECIFICACIONES</h3>
-      <div class="tab_accordition_mobile_container_content">
-        {{ prod.metafields.custom.especificaciones | metafield_tag }}
+      <div class="tab_accordition_mobile_container_content specifications">
+        {{ prod.metafields.custom.especificaciones_2 }}
       </div>
     </div>
   {% endif %}
   {% if prod.metafields.custom.talla != blank %}
     <div class="tab_accordition_mobile_container">
       <h3 onClick="tabsMobile(this)">TALLAS</h3>
-      <div class="tab_accordition_mobile_container_content">
-        {{ prod.metafields.custom.talla | metafield_tag }}
+      <div class="tab_accordition_mobile_container_content talla">
+        {{ prod.metafields.custom.talla }}
       </div>
     </div>
   {% endif %}
