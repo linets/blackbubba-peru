@@ -28,7 +28,7 @@
             "text_alignment_mobile": "center"
           }
         },
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-2": {
+        "slide_kb6hxF": {
           "type": "slide",
           "settings": {
             "desktop_video": "",
@@ -39,22 +39,94 @@
             "button_label": "Button label",
             "link": "",
             "btn_color_text": "#ffffff",
-            "btn_color_bg": "#8b8b8b",
+            "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
             "button_style_secondary": false,
             "box_align": "middle-center",
-            "show_text_box": false,
+            "show_text_box": true,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_wB9RPK": {
+          "type": "slide",
+          "settings": {
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_QikmmR": {
+          "type": "slide",
+          "settings": {
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_njgiED": {
+          "type": "slide",
+          "settings": {
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "Image Tag",
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
         "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-2"
+        "slide_kb6hxF",
+        "slide_wB9RPK",
+        "slide_QikmmR",
+        "slide_njgiED"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -114,7 +186,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "bolsos-y-maletas",
+        "collection": "mochilas-bananos",
         "products_to_show": 7,
         "columns_desktop": 4,
         "full_width": false,
