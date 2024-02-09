@@ -78,7 +78,7 @@
       {% if variant_color_id != blank %}
         style="background-color:{{ variant_color_id }};"
       {% endif %}
-      class="{% if variant_color_id != blank %}color-type{% endif %}"
+      class="{% if variant_color_id != blank %}color-type{% endif %}  {% if option.selected_value == value %} active {% endif %}"
       data-variantId="{{ product.variants[counter].id }}"
       data-color="{{ value }}"
       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"

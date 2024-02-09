@@ -22,7 +22,36 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-
+{%- capture variant_option_container -%}
+    <div class="variant-option-container">
+        {% if card_product.variants.size > 1 %}
+            <ul>
+              {% assign countVariantAvailable = 0 %}
+              {% assign option1_values = "" %}
+              {% for variant in card_product.variants %}
+                {% capture current_option1 %}{{ variant.option1 }}{% endcapture %}
+                {% unless option1_values contains current_option1 %}
+                  {% assign option1_values = option1_values | append: current_option1 | append: "," %}
+                  {% if variant.metafields.custom.color %}
+                    <li
+                      data-discount="{% if variant.compare_at_price %}{{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 }}{% endif %}"
+                      data-featured-img="{{ variant.featured_media }}"
+                      data-second-img="{% for media in variant.metafields.custom.media.value %}{{ media }}{% break %}{% endfor %}"
+                      style="background: {{ variant.metafields.custom.color }};"
+                      onClick="validateVariantSelected(this, {{ variant.id }})"
+                      class="
+                        available-{{ variant.available }}
+                        {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
+                      "
+                    ></li>
+                  {% endif %}
+                {% endunless %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+          
+      </div>
+{%- endcapture -%}
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -315,28 +344,7 @@
                 {%- if variant.title != blank %} - {{ variant.title | upcase }}{% endif %}
               </a>
             </h3>
-
-            <div class="variant-option-container">
-              {% if card_product.variants.size > 1 %}
-                <ul>
-                  {% assign countVariantAvailable = 0 %}
-                  {% for variant in card_product.variants %}
-                    {% if variant.metafields.custom.color %}
-                      <li
-                        data-featured-img="{{ variant.featured_media }}"
-                        data-second-img="{{ variant.metafields.custom.media.value[0] }}"
-                        style="background: {{ variant.metafields.custom.color }};"
-                        onClick="validateVariantSelected(this, {{ variant.id }})"
-                        class="
-                          available-{{ variant.available }}
-                          {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
-                        "
-                      ></li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </div>
+            {{ variant_option_container }}
           </div>
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
@@ -426,29 +434,7 @@
               </div>
             {%- endif -%}
           </div>
-
-          <div class="variant-option-container">
-            {% if card_product.variants.size > 1 %}
-              <ul>
-                {% assign countVariantAvailable = 0 %}
-                {% for variant in card_product.variants %}
-                  {% if variant.metafields.custom.color %}
-                    <li
-                      data-discount="{% if variant.compare_at_price %}{{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 }}{% endif %}"
-                      data-featured-img="{{ variant.featured_media }}"
-                      data-second-img="{% for media in variant.metafields.custom.media.value %}{{ media }}{% break %}{% endfor %}"
-                      style="background: {{ variant.metafields.custom.color }};"
-                      onClick="validateVariantSelected(this, {{ variant.id }})"
-                      class="
-                        available-{{ variant.available }}
-                        {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
-                      "
-                    ></li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </div>
+          {{ variant_option_container }}
         </div>
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden mobile">
@@ -607,28 +593,7 @@
             {%- endif -%}
             {% render 'price', show_compare_at_price: true %}
           </div>
-
-          <div class="variant-option-container">
-            {% if card_product.variants.size > 1 %}
-              <ul>
-                {% assign countVariantAvailable = 0 %}
-                {% for variant in card_product.variants %}
-                  {% if variant.metafields.custom.color %}
-                    <li
-                      data-featured-img="{{ variant.featured_media }}"
-                      data-second-img="{{ variant.metafields.custom.media.value[0] }}"
-                      style="background: {{ variant.metafields.custom.color }};"
-                      onClick="validateVariantSelected(this, {{ variant.id }})"
-                      class="
-                        available-{{ variant.available }}
-                        {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
-                      "
-                    ></li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </div>
+          {{ variant_option_container }}
         </div>
       </div>
     </div>
