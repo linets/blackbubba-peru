@@ -296,34 +296,10 @@
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
-        },
-        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-2": {
-          "type": "slide",
-          "settings": {
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "Image Tag",
-            "heading": "Image slide",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#8b8b8b",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
-        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1",
-        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-2"
+        "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -372,8 +348,8 @@
         "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/london-uk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/chicago-city-lights-at-night.jpg",
+            "image": "shopify:\/\/shop_images\/Slider-Sublime_5433c142-09ef-4a00-822a-1d26f5e1185a.png",
+            "image_mobile": "shopify:\/\/shop_images\/Slider_1400x2120_copia_71a4fffd-9d5c-4642-84ad-7f3f8b5a7319.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "New Collection",
@@ -393,34 +369,10 @@
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
-        },
-        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-2": {
-          "type": "slide",
-          "settings": {
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "Image Tag",
-            "heading": "Image slide",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#8b8b8b",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
-        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1",
-        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-2"
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1"
       ],
       "settings": {
         "layout": "full_bleed",
