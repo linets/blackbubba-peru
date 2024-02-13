@@ -103,7 +103,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/man-in-suit-on-stairs.jpg",
             "btn_label": "FOR HIM",
-            "btn_link": "shopify:\/\/collections\/vestuario-hombre",
+            "btn_link": "shopify:\/\/collections\/hombre",
             "v_position": "center_v",
             "h_position": "center_h"
           }
