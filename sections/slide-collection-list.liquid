@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 312px;
+    min-width: 312px;
     height: 595px;
     overflow: hidden;
     cursor: pointer;
@@ -87,6 +87,7 @@
     .swiper-collection-list .swiper-slide{
       height: 290px;
       max-height: 290px;
+      min-width: initial;
     }
   }
 
@@ -195,9 +196,7 @@
     },
     breakpoints: {
       750: {
-        centeredSlides: true,
-        loop: true,
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 32,
       },
     },
