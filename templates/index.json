@@ -6,7 +6,7 @@
         "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2000x900.png",
+            "image": "shopify:\/\/shop_images\/Slider_2000x1350_copiaA.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Slider_500x700_copiaA.jpg",
             "desktop_video": "",
             "mobile_video": "",
@@ -86,7 +86,7 @@
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
+        "slide_height": "adapt_image",
         "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5,
