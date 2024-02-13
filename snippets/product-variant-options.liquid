@@ -78,7 +78,7 @@
       {% if variant_color_id != blank %}
         style="background-color:{{ variant_color_id }};"
       {% endif %}
-      class="{% if variant_color_id != blank %}color-type{% endif %}"
+      class="{% if variant_color_id != blank %}color-type{% endif %}  {% if option.selected_value == value %} active {% endif %}"
       data-variantId="{{ product.variants[counter].id }}"
       data-color="{{ value }}"
       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -128,18 +128,47 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     let variant_id = urlParams.get('variant');
+    let thumbnailItems = document.querySelectorAll('.thumbnail-list__item');
+    thumbnailItems.forEach((item) => {
+      if (item.dataset.variantid == '') {
+        item.style.display = 'block';
+      }
+    });
+    // if (variant_id) {
+    //   let inputs = document.querySelectorAll('.product-form__input label');
+    //   [].forEach.call(inputs, function (input) {
+    //     input.classList.remove('active');
+    //     if (variant_id == input.dataset.variantid) {
+    //       input.classList.add('active');
+    //     }
+    //   });
+    // }
+    validateScrollArowDown();
+    let labels = document.querySelectorAll('.product-form__input label');
 
     if (variant_id) {
-      let inputs = document.querySelectorAll('.product-form__input label');
-      [].forEach.call(inputs, function (input) {
-        input.classList.remove('active');
-        if (variant_id == input.dataset.variantid) {
-          input.classList.add('active');
+      labels.forEach((label) => {
+        if (!label.classList.contains('talla')) {
+          if (!label.classList.contains('color-type')) {
+            label.click();
+          }
         }
       });
+    } else {
+      let checkedRadioButton = document.querySelector('input[name="Tamaño"]:checked');
+      let radioButtons = document.querySelectorAll('input[name="Tamaño"]');
+      radioButtons.forEach((radioButton) => {
+        if (!radioButton.checked) {
+          radioButton.click();
+        }
+      });
+
+      if (checkedRadioButton) {
+        checkedRadioButton.click();
+      }
     }
-    validateScrollArowDown();
   });
+
   function validateScrollArowDown() {
     setTimeout(() => {
       let sliderThumbanil = document.querySelectorAll('.thumbnail-list.slider li');
@@ -161,6 +190,15 @@
     }, '200');
   }
   function validateVariantSelection(e) {
+    if (e.name === 'Tamaño') {
+      let activeColorLabel = document.querySelector('.product-form__input label.color-type.active');
+      if (activeColorLabel) {
+        setTimeout(() => {
+          activeColorLabel.classList.add('active');
+        }, 500);
+      }
+    }
+
     setTimeout(() => {
       //// Thumbnails Change
       const queryString = window.location.search;
