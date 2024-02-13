@@ -247,6 +247,7 @@
             data-target="{{ section.id }}-{{ featured_media.id }}"
             data-media-position="{{ media_index }}"
             data-variantid="{{ variant.id }}"
+            style="display: none;"
           >
             {%- capture thumbnail_id -%}
               Thumbnail-{{ section.id }}-0{{ id_append }}
@@ -357,6 +358,7 @@
               data-target="{{ section.id }}-{{ media.id }}"
               data-variantid="{{ variant.id }}"
               data-media-position="{{ media_index }}"
+              style="display: none;"
             >
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">
