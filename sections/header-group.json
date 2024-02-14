@@ -11,25 +11,34 @@
             "position": "end",
             "ubicacion_img": "shopify:\/\/shop_images\/location_2x_edbdead6-4aab-4a7a-a9e0-de04859d17d2.png",
             "ubicacion": "Tiendas",
-            "ubicacion_url": "shopify:\/\/collections\/all",
+            "ubicacion_url": "shopify:\/\/pages\/store-locator",
             "contacto_img": "shopify:\/\/shop_images\/phone_top-icon_2x_c1641e9e-4028-44fa-b9a3-34a55d0e3465.png",
             "contacto": "contacto@bubba-bags.com",
             "contacto_url": "",
             "envio_img": "shopify:\/\/shop_images\/delivery-_3_2x_36f91535-b952-4181-9347-57ff85b23e38.png",
-            "envio": "Free Shipping",
-            "envio_url": ""
+            "envio": "Sigue tu pedido",
+            "envio_url": "shopify:\/\/pages\/seguimiento-de-tu-pedido"
+          }
+        },
+        "announcement_thfy3Q": {
+          "type": "announcement",
+          "settings": {
+            "position": "center",
+            "text": "Envío gratis por compras sobre $60.000",
+            "link": "shopify:\/\/pages\/faqs"
           }
         }
       },
       "block_order": [
-        "e4bafdab-8ff7-4e04-a956-75f8950d49fc"
+        "e4bafdab-8ff7-4e04-a956-75f8950d49fc",
+        "announcement_thfy3Q"
       ],
       "settings": {
         "color_scheme": "",
         "show_line_separator": true,
         "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
         "enable_country_selector": false,
         "enable_language_selector": false
       }
