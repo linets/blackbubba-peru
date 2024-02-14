@@ -3,11 +3,20 @@
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-    @media screen and (max-width: 749px) {
-      .custom-slideshow .slider-counter{ display: block !important; }
+  .overlink-focus {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    z-index: 9;
+    display: block !important;
+  }
+  @media screen and (max-width: 749px) {
+    .custom-slideshow .slider-counter {
+      display: block !important;
     }
-  {%- endstyle -%}
-  
+  }
+{%- endstyle -%}
+
 {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
@@ -124,9 +133,7 @@
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
       </style>
-      {% if block.settings.link != blank %}
-        <a style="position: absolute; width: 100%; height: 95%; z-index: 2; display: block; font: 700 10px/14px Montserrat;" href="{{ block.settings.link }};"></a>
-      {% endif %}  
+
       <div
         class="slideshow__slide grid__item grid--1-col slider__slide"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -136,6 +143,9 @@
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
       >
+        {% if block.settings.link != blank %}
+          <a class="overlink-focus" href="{{ block.settings.link }}"></a>
+        {% endif %}
         <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
           {%- if block.settings.image -%}
             {%- liquid
@@ -165,9 +175,18 @@
                 | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
               }}
             {%- endif -%}
-            
+
           {%- elsif block.settings.desktop_video != blank -%}
-            <video data-lazy-video="" playsinline="" loop="" data-video-autoplay="" autoplay="" muted="" title="" class="video--desktop">
+            <video
+              data-lazy-video=""
+              playsinline=""
+              loop=""
+              data-video-autoplay=""
+              autoplay=""
+              muted=""
+              title=""
+              class="video--desktop"
+            >
               <source src="{{ block.settings.desktop_video }}" data-src="{{ block.settings.desktop_video }}">
               Sorry, your browser doesn't support embedded videos.
             </video>
@@ -182,14 +201,26 @@
           {%- if block.settings.image_mobile -%}
             <img class="slide_mobile_image" loading="lazy" src="{{ block.settings.image_mobile | img_url: 'master' }}">
           {%- elsif block.settings.mobile_video != blank -%}
-            <video data-lazy-video="" playsinline="" loop="" data-video-autoplay="" autoplay="" muted="" title="" class="video--desktop">
+            <video
+              data-lazy-video=""
+              playsinline=""
+              loop=""
+              data-video-autoplay=""
+              autoplay=""
+              muted=""
+              title=""
+              class="video--desktop"
+            >
               <source src="{{ block.settings.mobile_video }}" data-src="{{ block.settings.mobile_video }}">
               Sorry, your browser doesn't support embedded videos.
             </video>
           {%- endif -%}
         </div>
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
-          <div style="max-width: {{ block.settings.box_max_width }}%;" class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
+          <div
+            style="max-width: {{ block.settings.box_max_width }}%;"
+            class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}"
+          >
             {%- if block.settings.tag != blank -%}
               <p class="banner__tag">
                 {{ block.settings.tag }}
@@ -206,8 +237,12 @@
               </div>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
-              <div class="banner__buttons" style="background: {{ block.settings.btn_color_bg }}; border: 2px solid {{ block.settings.btn_color_border }};">
-                <a style="color: {{ block.settings.btn_color_text }}; background: {{ block.settings.btn_color_bg }};"
+              <div
+                class="banner__buttons"
+                style="background: {{ block.settings.btn_color_bg }}; border: 2px solid {{ block.settings.btn_color_border }};"
+              >
+                <a
+                  style="color: {{ block.settings.btn_color_text }}; background: {{ block.settings.btn_color_bg }};"
                   {% if block.settings.link %}
                     href="{{ block.settings.link }}"
                   {% else %}
@@ -469,7 +504,7 @@
           "id": "heading",
           "default": "Image slide",
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
-        }, 
+        },
         {
           "type": "inline_richtext",
           "id": "subheading",

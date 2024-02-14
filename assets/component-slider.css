@@ -135,7 +135,7 @@ slider-component.slider-component-full-width {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .slider.slider--everywhere .slider__slide {
@@ -405,7 +405,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button--next .icon {
-  transform: rotate(90deg);
+  transform: rotate(270deg);
   width: 20px;
 }
 
