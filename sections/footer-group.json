@@ -14,14 +14,14 @@
           "type": "link_list",
           "settings": {
             "heading": "SOBRE NOSOTROS",
-            "menu": "f-sobre-nosotros"
+            "menu": ""
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
             "heading": "SERVICIO AL CLIENTE",
-            "menu": "f-servicio-al-cliente"
+            "menu": ""
           }
         },
         "40a48a59-7a72-4de2-9ee3-c6494ca253ea": {
