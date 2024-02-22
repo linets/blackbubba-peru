@@ -14,7 +14,7 @@
           "type": "link_list",
           "settings": {
             "heading": "SOBRE NOSOTROS",
-            "menu": ""
+            "menu": "f-sobre-nosotros"
           }
         },
         "footer-1": {
