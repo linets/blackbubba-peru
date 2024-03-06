@@ -3,31 +3,6 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
       "type": "slideshow",
       "blocks": {
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Slider1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/slider1mobile.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify:\/\/collections\/fragancias",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#000000",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        },
         "slide_kb6hxF": {
           "type": "slide",
           "settings": {
@@ -39,7 +14,7 @@
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/get-ready",
+            "link": "shopify:\/\/collections\/mochila",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
@@ -56,15 +31,15 @@
         "slide_wB9RPK": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slider3.png",
-            "image_mobile": "shopify:\/\/shop_images\/slider3Mobile.jpg",
+            "image": "shopify:\/\/shop_images\/Slider-Sublime_5433c142-09ef-4a00-822a-1d26f5e1185a.png",
+            "image_mobile": "shopify:\/\/shop_images\/Slider_1400x2120_copia_71a4fffd-9d5c-4642-84ad-7f3f8b5a7319.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/sale",
+            "link": "shopify:\/\/collections\/mochila-de-viaje",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
@@ -78,36 +53,62 @@
             "text_alignment_mobile": "center"
           }
         },
-        "slide_a4Ey4Y": {
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/slider4.png",
-            "image_mobile": "shopify:\/\/shop_images\/slider4mobile.jpg",
+            "image": "shopify:\/\/shop_images\/BANNER_PRINCIPAL_2000_X_900_PX_ESSENTIALS.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/BANNER_PRINCIPAL_RESPONSIVE_ESSENTIALS.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/campana-active",
+            "link": "shopify:\/\/collections\/organizadores",
             "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
+            "btn_color_bg": "#000000",
             "btn_color_border": "#ffffff",
             "button_style_secondary": false,
-            "box_align": "middle-center",
+            "box_align": "bottom-center",
             "show_text_box": false,
-            "text_alignment": "center",
+            "text_alignment": "left",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BANNER_WEB_GENERICO_2000_X_900_PX_92964311-7d35-429a-989f-1af2c39f54a8.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/03_vestuario_BannerWeb_2b9be113-e4bc-4ecc-b0cd-de68e72068e4.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "BLACK ICONS",
+            "link": "shopify:\/\/collections\/ropa-hombre",
+            "btn_color_text": "#FFF",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
         "slide_kb6hxF",
         "slide_wB9RPK",
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
         "slide_a4Ey4Y"
       ],
       "settings": {
