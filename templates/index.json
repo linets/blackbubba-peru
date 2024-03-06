@@ -283,7 +283,7 @@
     "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
       "type": "featured-collection",
       "settings": {
-        "title": "BAGS FOR EVERYWHERE",
+        "title": "#ALWAYSBETONBLACK",
         "heading_size": "h1",
         "content_alignment": "center",
         "description": "",
@@ -315,6 +315,7 @@
       "blocks": {
         "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/BannerHorizontal_BLACK.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
