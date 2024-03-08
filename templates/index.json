@@ -7,7 +7,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/BannerBTI_2001x900_38efed67-70ca-40e6-a57a-5215880d065c.png",
-            "image_mobile": "shopify:\/\/shop_images\/slider2mobile.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-BTI.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
@@ -32,7 +32,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/Banner_2001x900-EDIT.png",
-            "image_mobile": "shopify:\/\/shop_images\/BANNER_PRINCIPAL_RESPONSIVE_ESSENTIALS.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-Manson_1.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
@@ -250,7 +250,7 @@
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/get-ready",
+            "link": "shopify:\/\/collections\/back-to-it",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#000000",
             "btn_color_border": "#000000",
