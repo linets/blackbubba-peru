@@ -28,6 +28,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Banner_2001x900-EDIT.png",
+            "image_mobile": "shopify:\/\/shop_images\/BANNER_PRINCIPAL_RESPONSIVE_ESSENTIALS.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify:\/\/products\/mochila-manson-travel",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#000000",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_wB9RPK": {
           "type": "slide",
           "settings": {
@@ -47,32 +72,6 @@
             "box_align": "middle-center",
             "show_text_box": false,
             "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Banner_2001x900-EDIT.png",
-            "image_mobile": "shopify:\/\/shop_images\/BANNER_PRINCIPAL_RESPONSIVE_ESSENTIALS.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify:\/\/collections\/organizadores",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#000000",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "left",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
             "color_scheme": "scheme-1",
@@ -107,8 +106,8 @@
       },
       "block_order": [
         "slide_kb6hxF",
-        "slide_wB9RPK",
         "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
+        "slide_wB9RPK",
         "slide_a4Ey4Y"
       ],
       "settings": {
