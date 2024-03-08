@@ -9,10 +9,8 @@
           "type": "info",
           "settings": {
             "position": "end",
-            "ubicacion_img": "shopify:\/\/shop_images\/location_2x_edbdead6-4aab-4a7a-a9e0-de04859d17d2.png",
             "ubicacion": "Tiendas",
-            "ubicacion_url": "shopify:\/\/pages\/store-locator",
-            "contacto_img": "shopify:\/\/shop_images\/phone_top-icon_2x_c1641e9e-4028-44fa-b9a3-34a55d0e3465.png",
+            "ubicacion_url": "",
             "contacto": "contacto@bubba-bags.com",
             "contacto_url": "",
             "envio_img": "shopify:\/\/shop_images\/delivery-_3_2x_36f91535-b952-4181-9347-57ff85b23e38.png",
@@ -24,7 +22,7 @@
           "type": "announcement",
           "settings": {
             "position": "center",
-            "text": "Envío gratis por compras sobre $60.000",
+            "text": "Delivery gratis por compras mayores a S\/.300",
             "link": "shopify:\/\/pages\/faqs"
           }
         }
