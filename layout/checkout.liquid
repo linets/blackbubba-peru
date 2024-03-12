@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+<!-- geolocacion y dropdown comunas-->
+  <script type="text/javascript">
+     var zip,
+      zip_input,
+      country,
+      region,
+      distrito,
+      city,
+      select,
+      carret,
+      select_html,
+      province_container,
+      city_container;
+
+    function handleRegionChange() {
+
+      if (!distrito.hasOwnProperty(region.value)) return;
+
+      c = distrito[region.value];
+      select_html = ["<option value='' >Seleccione Distrito</option>"];
+      for (var i = 0; i < c.length; i++) {
+        select_html.push("<option value='" + c[i] + "'>" + c[i] + "</option>");
+      }
+
+      select.innerHTML = select_html.join("");
+      handleProvinceChange();
+    }
+
+    function handleProvinceChange() {
+      city.value = select.value;
+    }
+
+    // PE-AMA -> Amazonas
+    // PE-ANC -> Áncash
+    // PE-APU -> Apurimac
+    // PE-ARE -> Arequipa
+    // PE-AYA -> Ayacucho
+    // PE-CAJ -> Cajamarca
+    // PE-CAL -> Callao
+    // PE-CUS -> Cuzco
+    // PE-HUV -> Huancavelica
+    // PE-HUC -> Huánuco
+    // PE-ICA -> Ica
+    // PE-JUN -> Junín
+    // PE-LAL -> La Libertad
+    // PE-LAM -> Lambayeque
+    // PE-LIM -> Lima (departamento)
+    // PE-LMA -> Lima (provincia)
+    // PE-LOR -> Loreto
+    // PE-MDD -> Madre de Dios
+    // PE-MOQ -> Moquegua
+    // PE-PAS -> Pasco
+    // PE-PIU -> Piura
+    // PE-PUN -> Puno
+    // PE-SAM -> San Martín
+    // PE-TAC -> Tacna
+    // PE-TUM -> Tumbes
+    // PE-UCA -> Ucayali
+    
+    distrito = {
+      'PE-AMA': 
+      [ 'Chachapoyas',
+        'Bagua Grande'],
+      'PE-ANC': 
+      [ 'Huaraz',
+        'Chimbote',
+        'Casma',
+        'Huarmey'],
+      'PE-APU': 
+      [ 'Abancay',
+        'Andahuaylas'],
+      'PE-ARE': 
+      [ 'Arequipa',
+        'Camana'],
+      'PE-AYA': 
+      [ 'Ayacucho'],
+      'PE-CAJ': 
+      [ 'Cajamarca',
+        'Jaen'],
+      'PE-CAL': 
+      [ 'Bellavista',
+        'Callao',
+        'Carmen De La Legua',
+        'La Perla',
+        'La Punta'],
+      'PE-CUS': 
+      [ 'Cusco'],
+      'PE-HUV': 
+      [ 'Huancavelica'],
+      'PE-HUC': 
+      [ 'Huanuco',
+        'Tingo Maria'],
+      'PE-ICA': 
+      [ 'Chincha  Alta',
+        'Chincha  Baja',
+        'Pisco',
+        'Ica',
+        'Nazca',
+        'Marcona'],
+      'PE-JUN': 
+      [ 'Huancayo',
+        'La Oroya',
+        'Tarma',
+        'La Merced',
+        'Pichanaki',
+        'Jauja'],
+      'PE-LAL': 
+      [ 'Pacasmayo',
+        'Chepen',
+        'Guadalupe',
+        'Trujillo'],
+      'PE-LAM': 
+      [ 'Chiclayo',
+        'Ferreñafe',
+        'Lambayeque'],
+      'PE-LIM': 
+      ['Barranca',
+       'Paramonga',
+       'Cañete',
+       'Huaura',
+       'Huaral',
+       'Huacho'],
+      'PE-LMA': 
+      ['Barranco',
+       'Breña',
+       'Cercado De Lima',
+       'Jesus Maria',
+       'La Victoria',
+       'Lince',
+       'Magdalena',
+       'Miraflores',
+       'Pueblo Libre',
+       'San Borja',
+       'San Isidro',
+       'San Luis',
+       'San Miguel',
+       'Santiago De Surco',
+       'Surquillo',
+       'Ate ',
+       'Chorrillos',
+       'Comas',
+       'El Agustino',
+       'Independencia',
+       'La Molina',
+       'Los Olivos',
+       'Rimac',
+       'San Juan De Lurigancho',
+       'San Juan De Miraflores',
+       'San Martin De Porres',
+       'Santa Anita',
+       'Villa El Salvador',
+       'Villa Maria Del Triunfo',
+       'Ancon',
+       'Carabayllo',
+       'Chaclacayo',
+       'Cieneguilla',
+       'Lurin',
+       'Mi Peru',
+       'Pachacamac',
+       'Puente Piedra',
+       'Santa Rosa',
+       'Sur Chico',
+       'Ventanilla'],
+      'PE-LOR': 
+      [ 'Iquitos',
+        'Yurimaguas'],
+      'PE-MDD': 
+      [ 'Puerto Maldonado',
+        'Madre De Dios'],
+      'PE-MOQ': 
+      [ 'Ilo',
+        'Moquegua'],    
+      'PE-PAS': 
+      [ 'Cerro De Pasco',
+        'Oxapampa'],
+      'PE-PIU': 
+      [ 'Piura',
+        'Paita',
+        'Sullana',
+        'Pariñas',
+        'Mancora',
+        'Talara'],
+      'PE-PUN': 
+      [ 'Juliaca',
+        'Puno'],
+      'PE-SAM': 
+      [ 'Tarapoto',
+        'Moyobamba',
+        'Bellavista'],
+      'PE-TAC': 
+      [ 'Tacna'],
+      'PE-TUM': 
+      [ 'Tumbes',
+        'Zarumilla'],
+      'PE-UCA': 
+      [ 'Pucallpa']  
+    };
+
+    function docReady(fn) {
+      // see if DOM is already available
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+      } else {
+        document.addEventListener("DOMContentLoaded", fn);
+      }
+    }
+
+    docReady(function () {
+      zip_input = document.getElementById("checkout_shipping_address_zip");
+      zip = document.querySelectorAll("[data-address-field=zip]")[0];
+      country = document.querySelectorAll("[data-address-field=country]")[0];
+      city = document.getElementById("checkout_shipping_address_city");
+      region = document.getElementById("checkout_shipping_address_province");
+      document.getElementById("checkout_shipping_address_address2").setAttribute("maxlength","20");
+      if (zip_input !== null)
+        zip_input.value = "";
+      if (zip !== undefined)
+        zip.style = "display:none";
+      if (country !== undefined)
+        country.classList.remove("field--half");
+
+      // region y distrito
+      if (city !== null) {
+        select = document.createElement("select");
+        select.id = "dropdown-distritos";
+        select.classList.add("field__input");
+        select.classList.add("field__input--select");
+        select.attributes["data-trekkie-id"] = "shipping_city_field";
+        select.innerHTML = "<option disabled value='' >Seleccione Región</option>";
+
+        carret = document.createElement("div");
+        carret.classList.add("field__caret");
+        carret.classList.add("shown-if-js");
+        carret.innerHTML = '<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down"></use> </svg>';
+
+        city.parentNode.insertBefore(carret, city);
+        city.parentNode.insertBefore(select, city);
+
+        select.addEventListener("change", handleProvinceChange);
+
+        city.value = "";
+        city.style = "display:none";
+		
+        document.querySelector("[data-address-field='city']").classList.add("field--show-floating-label");
+        
+        handleRegionChange();
+        handleProvinceChange();
+        region.addEventListener("change", handleRegionChange);
+
+        province_container = document.querySelectorAll("[data-address-field=province]")[0];
+        city_container = document.querySelectorAll("[data-address-field=city]")[0];
+        city_container.parentElement.insertBefore(province_container, city_container);
+        country.style = "display:none";
+
+      }
+    });
+  </script>
+
+    <!-- agregar referencia -->
+<script>
+  
+  function docReady2(fn) {
+    if (Shopify.Checkout.step == 'contact_information'){
+      // see if DOM is already available
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+      } else {
+        document.addEventListener("DOMContentLoaded", fn);
+      }
+    }
+    }
+  
+  docReady2(function () {
+    var divdpto = document.querySelector("[data-address-field='address2']");
+  	var divref = document.createElement("div");
+        divref.classList.add("field", "field--optional");
+    	divref.setAttribute("data-address-field", "addressref");
+        divref.setAttribute("data-autocomplete-field-container", "true");
+    divref.innerHTML = `  <div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_address_addressref">Referencia de dirección - Ej.: Puerta verde</label>
+        <input placeholder="Referencia de dirección - Ej.: Puerta verde" autocomplete="shipping address-ref" autocorrect="off" data-backup="addressref" class="field__input" size="30" type="text" value="" name="checkout[attributes][referencia]" id="checkout_shipping_address_addressref"><div class="fieldset"><div data-address-field="addr_ref" id="addr_ref" class="field field--required field--show-floating-label">
+    </div>`
+    // checkout[attributes][YOUR_ID_HERE]. 
+    // name="checkout[shipping_address][addressref]"
+     divdpto.parentNode.insertBefore(divref, divdpto.nextSibling);
+  })
+    </script>
+   
+    <!----- validar DNI -------->
+<script>
+(function($) {
+
+$(document).on('page:load page:change', function() {
+
+var $DNIField;
+var errorClass = 'field--error-plus-dynamic';
+var errorMessageSelector = '.field__message--error-plus-dynamic';
+//console.log("carga inicial")
+
+  // Check input for character limit and remove letters
+  var validateDNIField = function(DNIField) {
+    console.log("valida: "+DNIField)
+    var minChars = 7;
+var maxChars =11 ;
+var errorMessage = "Debe ingresar entre 7 y 11 números (DNI o RUC)";
+var numbers = DNIField.val().match(/^\d+$/g) || [];
+var numbersLength = DNIField.val().length;
+var DNIVal = DNIField.val();
+    //console.log("Datos: "+numbers.toString()+","+typeof(numbers)+","+numbersLength+","+DNIVal+".")
+
+if ((numbers.length == 0 && numbersLength !== 0) || (numbersLength < minChars || numbersLength > maxChars)) {
+	//console.log("No valida")
+  	// Not enough characters, show error on input.
+  	if($('[name="checkout[id]"]:checked').val() == 'delivery-pickup') {
+		    $("#continue_button").removeAttr("disabled", "disabled");
+            return true;
+          } else {
+            
+	if (!DNIField.hasClass(errorClass)) {
+		DNIField.addClass(errorClass);
+		DNIField.closest('#checkout_shipping_address_company').after("<p class='field__message field__message--error-plus-dynamic' style='color:#df1670;margin-left: 8px;'>"+ errorMessage +"</p>");
+		$("#continue_button").attr("disabled","disabled");
+	}
+            return false;}
+} else {
+  	//console.log("valida")
+	// DNI is valid. Remove errors and continue.
+	$("#continue_button").removeAttr("disabled", "disabled");
+	DNIField.removeClass(errorClass);
+	DNIField.closest('#checkout_shipping_address_company').nextAll(errorMessageSelector).remove();
+	return true;
+}
+
+}
+
+if (Shopify.Checkout.step === 'contact_information') {
+	var $DNIField = $('[name="checkout[shipping_address][company]"]:not([aria-hidden="true"])');
+
+	// Check for enter keypress on form and click button instead.
+
+	//$('[data-step] form').on('keypress', function(e) {
+	//	if (event.keyCode === 13) {
+	//		e.preventDefault();
+	//		$(this).find('[type="submit"]').trigger('click');
+	//	}
+
+	//});
+
+  /*
+ // Run validator when the user has switched focus from the phone field
+
+$phoneField.on('blur', phoneNumberValidation);
+
+// Run the function when the continue button is clicked or the enter key is pressed
+
+$('[data-step] form [type="submit"]').on('click', function(e) {
+
+e.preventDefault();
+
+phoneNumberValidation();
+
+if (phoneFormatValidated) {
+
+$('[data-step] form').trigger('submit');
+
+}
+
+*/
+// Handle form submit by validating button click.
+$('[data-step] form [type="submit"]').on('click', function(e) {
+e.preventDefault();
+if (validateDNIField($DNIField)) {
+$('[data-step] form').trigger('submit');
+
+}
+
+});
+
+// Reactivar boton envio cuando cambia tipo despacho
+  $('[name="checkout[id]"]').on('click', function () {
+    $("#continue_button").removeAttr("disabled", "disabled");
+});
+
+// Validate DNI when modified
+//$DNIField.on('input', function() {
+$DNIField.on('blur', function() {
+validateDNIField($(this));
+});
+}
+});
+})(Checkout.$);
+</script>
+<!--- end DNI validation ------>
+
+    
+    {{ tracking_code }}
+  </body>
+</html>
