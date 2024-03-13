@@ -525,7 +525,11 @@
     "checkout": {
       "contact": {
         "company_label": "DNI",
-        "address_title": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245"
+        "address_title": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245",
+        "address2_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
+      },
+      "shipping": {
+        "address2_add_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
       }
     }
   }
