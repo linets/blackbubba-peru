@@ -404,7 +404,7 @@
       "last_name": "Apellido",
       "company": "Empresa",
       "address1": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245",
-      "address2": "Depto / Bloque / Oficina - Ej.: Depto 303",
+      "address2": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303",
       "city": "Ciudad",
       "country": "País\/región",
       "province": "Provincia",
@@ -526,7 +526,8 @@
       "contact": {
         "company_label": "DNI",
         "address_title": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245",
-        "address2_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
+        "address2_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303",
+        "address1_label": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245"
       },
       "shipping": {
         "address2_add_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
