@@ -524,7 +524,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "company_label": "DNI"
+        "company_label": "DNI",
+        "address_title": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245"
       }
     }
   }
