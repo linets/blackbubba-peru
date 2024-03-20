@@ -34,6 +34,7 @@
     },
     "featured_collection_V9wLhJ": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h1",
@@ -41,8 +42,8 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "bolsos-y-maletas",
-        "products_to_show": 4,
+        "collection": "billeteras",
+        "products_to_show": 5,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": false,
