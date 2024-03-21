@@ -405,7 +405,7 @@
       "company": "Empresa",
       "address1": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245",
       "address2": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303",
-      "city": "Comuna",
+      "city": "Distrito",
       "country": "País\/región",
       "province": "Provincia",
       "zip": "Código postal",
@@ -529,7 +529,7 @@
         "address2_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303",
         "address1_label": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245",
         "optional_address2_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303",
-        "city_label": "Comuna"
+        "city_label": "Distrito"
       },
       "shipping": {
         "address2_add_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
