@@ -405,7 +405,7 @@
       "company": "Empresa",
       "address1": "Dirección (Calle y Número) - Ej.: Camino el Sol 1245",
       "address2": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303",
-      "city": "Ciudad",
+      "city": "Comuna",
       "country": "País\/región",
       "province": "Provincia",
       "zip": "Código postal",
