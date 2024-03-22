@@ -28,27 +28,27 @@
             "text_alignment_mobile": "center"
           }
         },
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
+        "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Banner_2001x900-EDIT.png",
-            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-Manson_1.png",
+            "image": "shopify:\/\/shop_images\/Banner_Black_TraveI_2001x900_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/BannerMobile_Black_TraveI_1.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/products\/mochila-manson-travel",
+            "link": "shopify:\/\/collections\/travel",
             "btn_color_text": "#ffffff",
-            "btn_color_bg": "#000000",
+            "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
             "button_style_secondary": false,
-            "box_align": "bottom-center",
+            "box_align": "middle-center",
             "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
@@ -72,6 +72,31 @@
             "box_align": "middle-center",
             "show_text_box": false,
             "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Banner_2001x900-EDIT.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-Manson_1.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify:\/\/products\/mochila-manson-travel",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#000000",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "left",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
             "color_scheme": "scheme-1",
@@ -102,39 +127,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_dQ4dhE": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Banner_Black_TraveI_2001x900_1.png",
-            "image_mobile": "shopify:\/\/shop_images\/BannerMobile_Black_TraveI_1.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify:\/\/collections\/travel",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_kb6hxF",
-        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
+        "slide_dQ4dhE",
         "slide_wB9RPK",
-        "slide_a4Ey4Y",
-        "slide_dQ4dhE"
+        "template--16708066443427__3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c-slide-1",
+        "slide_a4Ey4Y"
       ],
       "settings": {
         "layout": "full_bleed",
