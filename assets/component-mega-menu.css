@@ -14,11 +14,14 @@
   position: absolute;
   right: 0;
   /*top: 100%;*/
-  top: 75%;
+  top: 100%;
   display: flex;
   /*justify-content: space-between;*/
   justify-content: center;
   z-index: 1;
+  
+  margin-top: -30px;
+  padding-top: 36px;
 }
 
 .mega-menu__content .header_container .promo_button{
