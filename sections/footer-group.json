@@ -38,6 +38,9 @@
         "footer-1",
         "40a48a59-7a72-4de2-9ee3-c6494ca253ea"
       ],
+      "custom_css": [
+        ".footer__content-bottom{width:100%;}"
+      ],
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": true,
