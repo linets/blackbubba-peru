@@ -5,7 +5,6 @@
       "blocks": {
         "slide_FPgTaj": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/banner_web_desktop.jpg",
             "image_mobile": "shopify:\/\/shop_images\/banner_web_mobil.jpg",
