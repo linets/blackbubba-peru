@@ -7,8 +7,8 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Banner_Black_-_Cyber_Web.png",
-            "image_mobile": "shopify:\/\/shop_images\/Banner_Black_-_Cyber_Mobile.png",
+            "image": "shopify:\/\/shop_images\/banner_web_desktop.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/banner_web_mobil.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
