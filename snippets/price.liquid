@@ -49,9 +49,7 @@
   "
 >
   {%- if show_badges -%}
-    {% if product.selected_or_first_available_variant.compare_at_price != blank
-      and product.selected_or_first_available_variant.compare_at_price > 0
-    %}
+    {% if product.selected_or_first_available_variant.compare_at_price != blank %}
       {% assign discount_percent = product.selected_or_first_available_variant.compare_at_price
         | minus: product.selected_or_first_available_variant.price
         | times: 100.0

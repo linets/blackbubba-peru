@@ -1,4 +1,5 @@
 {% comment %}
+  product-media-gallery
   Renders a product media gallery. Should be used with 'media-gallery.js'
   Also see 'product-media-modal'
 
@@ -10,6 +11,90 @@
   Usage:
   {% render 'product-media-gallery', is_duplicate: true %}
 {% endcomment %}
+{% assign has_media = false %}
+{% assign has_color_metafield = false %}
+{% assign has_color = false %}
+{% assign has_size = false %}
+{% assign has_color_variant = false %}
+{% assign color_value_count = 0 %}
+{% assign size_value_count = 0 %}
+
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.media != blank %}
+    {% assign has_media = true %}
+  {% endif %}
+  {% if variant.metafields.custom.color != blank %}
+    {% assign has_color_metafield = true %}
+  {% endif %}
+  {% if product.options contains 'Color' %}
+    {% assign has_color = true %}
+    {% assign has_color_variant = true %}
+    {% unless variant.option1 == blank %}
+      {% assign color_value_count = color_value_count | plus: 1 %}
+    {% endunless %}
+  {% endif %}
+  {% if product.options contains 'Tamaño' %}
+    {% assign has_size = true %}
+    {% assign size_value_count = size_value_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{%- if has_media -%}
+  <script>
+    var intervalId;
+    var attempts = 0;
+    var maxAttempts = 3;
+
+    function hideProductMedia() {
+      attempts++;
+      var productMediaElements = document.querySelectorAll('li.x-product-media, li.x-feature-media, li.x-metafields');
+
+      if (productMediaElements.length > 0) {
+        productMediaElements.forEach(function (element) {
+          if (element.classList.contains('x-metafields')) {
+            var buttons = element.querySelectorAll('button');
+            buttons.forEach(function (button) {
+              button.removeAttribute('aria-current');
+            });
+          } else {
+            element.style.display = 'none';
+          }
+        });
+
+        setTimeout(() => {
+          const slides = document.querySelectorAll('li.x-product-media, li.x-feature-media, li.x-metafields');
+          let found = false;
+          slides.forEach((slide) => {
+            if (!found && slide.style.display == 'block') {
+              slide.querySelector('button').setAttribute('aria-current', 'true');
+              found = true;
+            }
+          });
+        }, 2000);
+      }
+
+      if (attempts >= maxAttempts) {
+        clearInterval(intervalId);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      intervalId = setInterval(hideProductMedia, 1000);
+
+      if (document.readyState === 'complete') {
+        hideProductMedia();
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(() => {
+        var elementsWithInvisibility = document.querySelectorAll('.invisibility');
+        elementsWithInvisibility.forEach(function (element) {
+          element.classList.remove('invisibility');
+        });
+      }, 3000);
+    });
+  </script>
+{%- endif -%}
 
 {%- liquid
   if section.settings.hide_variants and variant_images.size == product.media.size
@@ -195,7 +280,7 @@
       {{ 'products.product.xr_button' | t }}
     </button>
   {%- endif -%}
-  {%- if media_count > 1
+  {%- if media_count > 0
     and section.settings.gallery_layout contains 'thumbnail'
     or section.settings.mobile_thumbnails == 'show'
   -%}
@@ -219,7 +304,7 @@
       </button>
       <ul
         id="Slider-Thumbnails-{{ section.id }}{{ id_append }}"
-        class="thumbnail-list list-unstyled slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}"
+        class="invisibility thumbnail-list list-unstyled slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}"
       >
         {%- capture sizes -%}
           (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4),
@@ -243,11 +328,11 @@
           -%}
           <li
             id="Slide-Thumbnails-{{ section.id }}-0{{ id_append }}"
-            class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}"
+            class="x-feature-media thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}"
             data-target="{{ section.id }}-{{ featured_media.id }}"
             data-media-position="{{ media_index }}"
             data-variantid="{{ variant.id }}"
-            style="display: none;"
+            style="display: none"
           >
             {%- capture thumbnail_id -%}
               Thumbnail-{{ section.id }}-0{{ id_append }}
@@ -291,12 +376,12 @@
               -%}
               <li
                 id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}"
-                class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
+                class="x-metafields thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
                 data-target="{{ section.id }}-{{ media.id }}"
                 data-media-position="{{ media_index }}"
                 data-stock="{{ variant.available }}"
                 data-variantid="{{ variant.id }}"
-                style="display: none;"
+                style="display: none"
               >
                 {%- if media.media_type == 'model' -%}
                   <span class="thumbnail__badge" aria-hidden="true">
@@ -354,11 +439,14 @@
             -%}
             <li
               id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}"
-              class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
+              class="x-product-media thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
               data-target="{{ section.id }}-{{ media.id }}"
               data-variantid="{{ variant.id }}"
               data-media-position="{{ media_index }}"
-              style="display: none;"
+              {% if has_media == false and has_color_metafield == false and has_color and has_size == false %}
+              {%- else -%}
+                style="display: none"
+              {% endif %}
             >
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">

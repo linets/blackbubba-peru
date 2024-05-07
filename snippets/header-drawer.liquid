@@ -26,14 +26,39 @@
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                      <summary
-                        id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
-                      >
-                        {{ link.title | escape }}
-                        {% render 'icon-arrow' %}
-                        {% render 'icon-caret' %}
-                      </summary>
+                      {% assign booColor = false %}
+                      {% for promo in shop.metaobjects.menu_colors.values %}
+                        {% assign promoText = promo.title | downcase | replace: ' ', '' %}
+                        {% assign linkText = link.title | downcase | replace: ' ', '' %}
+                        {% if promoText == linkText %}
+                          {% assign booColor = true %}
+                          {% assign currColor = promo.color %}
+                          {% assign booIcon = promo.use_icon %}
+                          {% continue %}
+                        {% endif %}
+                      {% endfor %}
+                      {% if booColor %}
+                        <summary
+                          style="color: {{ currColor }};"
+                          id="HeaderDrawer-{{ link.handle }}"
+                          class="color-Active menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                        >
+                          {{ link.title | escape -}}
+                          {%- if booIcon %} &nbsp; <i class="fa-solid fa-heart"></i>{% endif %}
+                          {% render 'icon-arrow' %}
+                          {% render 'icon-caret' %}
+                        </summary>
+
+                      {% else %}
+                        <summary
+                          id="HeaderDrawer-{{ link.handle }}"
+                          class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                        >
+                          {{ link.title | escape }}
+                          {% render 'icon-arrow' %}
+                          {% render 'icon-caret' %}
+                        </summary>
+                      {% endif %}
                       <div
                         id="link-{{ link.handle | escape }}"
                         class="menu-drawer__submenu has-submenu gradient motion-reduce"
@@ -142,16 +167,42 @@
                       </div>
                     </details>
                   {%- else -%}
-                    <a
-                      id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                      {% if link.current %}
-                        aria-current="page"
+                    {% assign booColor = false %}
+                    {% for promo in shop.metaobjects.menu_colors.values %}
+                      {% assign promoText = promo.title | downcase | replace: ' ', '' %}
+                      {% assign linkText = link.title | downcase | replace: ' ', '' %}
+                      {% if promoText == linkText %}
+                        {% assign booColor = true %}
+                        {% assign currColor = promo.color %}
+                        {% assign booIcon = promo.use_icon %}
+                        {% continue %}
                       {% endif %}
-                    >
-                      {{ link.title | escape }}
-                    </a>
+                    {% endfor %}
+                    {% if booColor %}
+                      <a
+                        style="color: {{currColor }};"
+                        id="HeaderDrawer-{{ link.handle }}"
+                        href="{{ link.url }}"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ link.title | escape -}}
+                        {%- if booIcon %} &nbsp; <i class="fa-solid fa-heart"></i>{% endif %}
+                      </a>
+                    {% else %}
+                      <a
+                        id="HeaderDrawer-{{ link.handle }}"
+                        href="{{ link.url }}"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ link.title | escape }}
+                      </a>
+                    {% endif %}
                   {%- endif -%}
                 </li>
               {%- endfor -%}

@@ -257,5 +257,25 @@
         e.disabled = false;
       }, '500');
     });
+    setTimeout(() => {
+      const slides = document.querySelectorAll('li.x-product-media, li.x-feature-media, li.x-metafields');
+      let found = false;
+      slides.forEach((slide) => {
+        if (!found && slide.style.display == 'block') {
+          slide.querySelector('button').setAttribute('aria-current', 'true');
+          found = true;
+        }
+      });
+    }, 1000);
   }
+  const elements = document.querySelectorAll(
+    'li.x-product-media button, li.x-feature-media button, li.x-metafields button'
+  );
+  elements.forEach((element) => {
+    element.addEventListener('click', function () {
+      setTimeout(() => {
+        this.setAttribute('aria-current', 'true');
+      }, 500);
+    });
+  });
 </script>
