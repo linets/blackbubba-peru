@@ -75,7 +75,7 @@
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     {%- if variant -%}
-      {% if variant.compare_at_price != blank and variant.compare_at_price > 0 %}
+      {% if variant.compare_at_price != blank and variant.compare_at_price > 0 and variant.compare_at_price != variant.price %}
         {% assign discount_percent = variant.compare_at_price
           | minus: variant.price
           | times: 100.0
@@ -86,8 +86,7 @@
       {% endif %}
     {%- else -%}
       {%- if card_product -%}
-        {{ card_product.variants[0].compare_at_price }} --- AAA
-        {%- if card_product.variants[0].compare_at_price != blank and card_product.variants[0].compare_at_price > 0 -%}
+        {%- if card_product.variants[0].compare_at_price != blank and card_product.variants[0].compare_at_price > 0 and card_product.variants[0].compare_at_price != card_product.variants[0].price -%}
           {% assign discount_percent = card_product.variants[0].compare_at_price
             | minus: card_product.variants[0].price
             | times: 100.0
