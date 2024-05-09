@@ -86,6 +86,7 @@
       {% endif %}
     {%- else -%}
       {%- if card_product -%}
+        {{ card_product.variants[0].compare_at_price }} --- AAA
         {%- if card_product.variants[0].compare_at_price != blank and card_product.variants[0].compare_at_price > 0 -%}
           {% assign discount_percent = card_product.variants[0].compare_at_price
             | minus: card_product.variants[0].price
