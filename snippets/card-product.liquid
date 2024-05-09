@@ -23,35 +23,44 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 {%- capture variant_option_container -%}
-    <div class="variant-option-container">
-        {% if card_product.variants.size > 1 %}
-            <ul>
+  <div class="variant-option-container">
+      {% if card_product.variants.size > 1 %}
+          <ul>
               {% assign countVariantAvailable = 0 %}
               {% assign option1_values = "" %}
+              {% assign colorToShow = "" %}
               {% for variant in card_product.variants %}
-                {% capture current_option1 %}{{ variant.option1 }}{% endcapture %}
-                {% unless option1_values contains current_option1 %}
-                  {% assign option1_values = option1_values | append: current_option1 | append: "," %}
-                  {% if variant.metafields.custom.color %}
-                    <li
-                      data-discount="{% if variant.compare_at_price %}{{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 }}{% endif %}"
-                      data-featured-img="{{ variant.featured_media }}"
-                      data-second-img="{% for media in variant.metafields.custom.media.value %}{{ media }}{% break %}{% endfor %}"
-                      style="background: {{ variant.metafields.custom.color }};"
-                      onClick="validateVariantSelected(this, {{ variant.id }})"
-                      class="
-                        available-{{ variant.available }}
-                        {% if variant.available and  countVariantAvailable == 0%} active{% assign countVariantAvailable = countVariantAvailable | plus: 1 %}{% endif %}
-                      "
-                    ></li>
-                  {% endif %}
-                {% endunless %}
+                  {% capture current_option1 %}{{ variant.option1 }}{% endcapture %}
+                  {% unless option1_values contains current_option1 %}
+                      {% assign option1_values = option1_values | append: current_option1 | append: "," %}
+                      {% if variant.metafields.custom.color %}
+                          {% assign variantAvailable = false %}
+                          {% for v in card_product.variants %}
+                              {% if v.option1 == current_option1 and v.available %}
+                                  {% assign variantAvailable = true %}
+                                  {% break %}
+                              {% endif %}
+                          {% endfor %}
+                          {% if variantAvailable %}
+                              {% assign colorToShow = variant.metafields.custom.color %}
+                          {% endif %}
+                          {% assign colorVariant = "" | append: variant.metafields.custom.color %}
+                          <li
+                              data-discount="{% if variant.compare_at_price %}{{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 }}{% endif %}"
+                              data-featured-img="{{ variant.featured_media }}"
+                              data-second-img="{% for media in variant.metafields.custom.media.value %}{{ media }}{% break %}{% endfor %}"
+                              style="background: {{ variant.metafields.custom.color }};"
+                              onClick="validateVariantSelected(this, {{ variant.id }})"
+                              class="available-{{ variantAvailable }}{% if colorVariant == "#ffffff" %} white-label{% endif %}"
+                          ></li>
+                      {% endif %}
+                  {% endunless %}
               {% endfor %}
-            </ul>
-          {% endif %}
-          
-      </div>
+          </ul>
+      {% endif %}
+  </div>
 {%- endcapture -%}
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -73,7 +82,7 @@
           | divided_by: variant.compare_at_price
           | round: 0
         %}
-        <span class="badge-discount">-{{ discount_percent }}%</span>
+        <span class="badge-discount active">-{{ discount_percent }}%</span>
       {% endif %}
     {%- else -%}
       {%- if card_product -%}
@@ -84,7 +93,9 @@
             | divided_by: card_product.variants[0].compare_at_price
             | round: 0
           %}
-          <span class="badge-discount">-{{ discount_percent }}%</span>
+          <span class="badge-discount active">-{{ discount_percent }}%</span>
+        {%- else -%}
+          <span class="badge-discount"></span>
         {%- endif -%}
       {%- endif -%}
     {%- endif -%}
@@ -121,7 +132,9 @@
               endif
             -%}
             {% comment %}{%- if card_product.variants.size > 1 or qty_rules -%}{%- endif -%}{% endcomment %}
-            {%- if card_product.options_with_values.size > 1 -%}
+            {%- if card_product.options_with_values.size > 1
+              or card_product.options_with_values.first.name == 'Tamaño'
+            -%}
               <modal-opener data-modal="#QuickAdd-{{ card_product.id }}">
                 <button
                   id="{{ product_form_id }}-submit"
@@ -261,7 +274,7 @@
                 {%- endif -%}
                 {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
-                {%- if card_product.media[1] != null and show_secondary_image -%}
+                {%- if show_secondary_image -%}
                   {% assign videos = card_product.media[1] | where: 'media_type', 'video' %}
                   {% if videos.size > 0 %}
                     <div
@@ -277,6 +290,7 @@
                   {% else %}
                     {% if variant.metafields.custom.media != blank %}
                       {% for media in variant.metafields.custom.media.value %}
+                        
                         <img
                           srcset="
                             {%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
@@ -637,6 +651,15 @@
   function validateVariantSelected(e, id) {
     let quick_add_parent = e.parentElement.parentElement.parentElement.parentElement.parentElement;
     let elements = quick_add_parent.getElementsByClassName('product-variant-id');
+
+    let newSpanContainer = quick_add_parent.parentElement;
+    let badgeDiscount = newSpanContainer.querySelector('.badge-discount');
+    if (e.dataset.discount) {
+      badgeDiscount.innerText = '-' + e.dataset.discount + '%';
+      badgeDiscount.classList.add('active');
+    } else {
+      badgeDiscount.classList.remove('active');
+    }
 
     for (let x = 0; x <= elements.length; x++) {
       if (elements[x] != undefined) {

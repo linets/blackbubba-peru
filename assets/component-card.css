@@ -331,20 +331,20 @@
 
   .card .media.media--hover-effect>img:only-child,
   .card-wrapper .media.media--hover-effect>img:only-child {
-    transition: transform var(--duration-long) ease;
+    /* transition: transform var(--duration-long) ease; */
   }
 
-  .card:hover .media.media--hover-effect a>img:first-child:only-child,
-  .card-wrapper:hover .media.media--hover-effect a>img:first-child:only-child {
+  .card .media.media--hover-effect:hover a>img:first-child:only-child,
+  .card-wrapper .media.media--hover-effect:hover a>img:first-child:only-child {
     transform: scale(1.03);
   }
 
-  .card-wrapper:hover .media.media--hover-effect a>img:first-child:not(:only-child) {
+  .card-wrapper .media.media--hover-effect:hover a>img:first-child:not(:only-child) {
     opacity: 0;
   }
 
-  .card-wrapper:hover .media.media--hover-effect a .video,
-  .card-wrapper:hover .media.media--hover-effect a>img+img {
+  .card-wrapper .media.media--hover-effect:hover a .video,
+  .card-wrapper .media.media--hover-effect:hover a>img+img {
     opacity: 1;
     /*transition: transform var(--duration-long) ease;
     transform: scale(1.03);*/
@@ -664,19 +664,32 @@
   pointer-events: none;
   position: relative;
   overflow: hidden;
+  padding: 0 !important;
+  width: 20px;
+  border: 0;
 }
 
-.variant-option-container ul li.available-false:before {
-  content: 'X';
+.variant-option-container ul li.available-false.white-label:before {
+  content: '';
+  background-image: url('data:image/svg+xml,<%3Fxml version="1.0" %3F><svg class="feather feather-x" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
-  margin: auto auto;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
-  text-align: center;
-  top: -13px;
-  font-size: 23px;
+  bottom: 0; 
+}
+.variant-option-container ul li.available-false:before{
+  content: '';
+  background-image: url('data:image/svg+xml,<%3Fxml version="1.0" %3F><svg class="feather feather-x" fill="white" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; 
 }
 
 @media screen and (max-width: 750px) {
