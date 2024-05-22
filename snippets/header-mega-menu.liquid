@@ -16,36 +16,38 @@
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
               >
-                {% assign booColor = false %}
-                {% for promo in shop.metaobjects.menu_colors.values %}
-                  {% assign promoText = promo.title | downcase | replace: ' ', '' %}
-                  {% assign linkText = link.title | downcase | replace: ' ', '' %}
-                  {% if promoText == linkText %}
-                    {% assign booColor = true %}
-                    {% assign currColor = promo.color %}
-                    {% assign booIcon = promo.use_icon %}
-                    {% continue %}
-                  {% endif %}
-                {% endfor %}
-                {% if booColor %}
-                  <span
-                    style="color: {{ currColor }};"
-                    class="color-Active {%- if link.child_active %}header__active-menu-item{% endif %}"
-                  >
-                    {{- link.title | escape -}}
-                    {% if booIcon %} &nbsp; <i class="fa-solid fa-heart"></i>{% endif %}
-                  </span>
-                  {% render 'icon-caret' %}
-                {% else %}
-                  <span
-                    {%- if link.child_active %}
-                      class="header__active-menu-item"
+                <a href="{{ link.url }}">
+                  {% assign booColor = false %}
+                  {% for promo in shop.metaobjects.menu_colors.values %}
+                    {% assign promoText = promo.title | downcase | replace: ' ', '' %}
+                    {% assign linkText = link.title | downcase | replace: ' ', '' %}
+                    {% if promoText == linkText %}
+                      {% assign booColor = true %}
+                      {% assign currColor = promo.color %}
+                      {% assign booIcon = promo.use_icon %}
+                      {% continue %}
                     {% endif %}
-                  >
-                    {{- link.title | escape -}}
-                  </span>
-                  {% render 'icon-caret' %}
-                {% endif %}
+                  {% endfor %}
+                  {% if booColor %}
+                    <span
+                      style="color: {{ currColor }};"
+                      class="color-Active {%- if link.child_active %}header__active-menu-item{% endif %}"
+                    >
+                      {{- link.title | escape -}}
+                      {% if booIcon %} &nbsp; <i class="fa-solid fa-heart"></i>{% endif %}
+                    </span>
+                    {% render 'icon-caret' %}
+                  {% else %}
+                    <span
+                      {%- if link.child_active %}
+                        class="header__active-menu-item"
+                      {% endif %}
+                    >
+                      {{- link.title | escape -}}
+                    </span>
+                    {% render 'icon-caret' %}
+                  {% endif %}
+                </a>
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
