@@ -107,15 +107,15 @@
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/BANNER_WEB_GENERICO_2000_X_900_PX_92964311-7d35-429a-989f-1af2c39f54a8.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/03_vestuario_BannerWeb_2b9be113-e4bc-4ecc-b0cd-de68e72068e4.jpg",
+            "image": "shopify:\/\/shop_images\/Banner-Web-BLACK-DDPP_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-DDPP.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "BLACK ICONS",
-            "link": "shopify:\/\/collections\/ropa-hombre",
+            "link": "shopify:\/\/collections\/hombre",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#121212",
             "btn_color_border": "#000000",
