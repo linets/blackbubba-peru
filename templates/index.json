@@ -29,6 +29,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Banner-Web-BLACK-DDPP_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-DDPP.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "BLACK ICONS",
+            "link": "shopify:\/\/collections\/hombre",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_kb6hxF": {
           "type": "slide",
           "settings": {
@@ -103,39 +128,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_a4Ey4Y": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Banner-Web-BLACK-DDPP_1.png",
-            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-DDPP.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "BLACK ICONS",
-            "link": "shopify:\/\/collections\/hombre",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#121212",
-            "btn_color_border": "#000000",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_FPgTaj",
+        "slide_a4Ey4Y",
         "slide_kb6hxF",
         "slide_dQ4dhE",
-        "slide_wB9RPK",
-        "slide_a4Ey4Y"
+        "slide_wB9RPK"
       ],
       "settings": {
         "layout": "full_bleed",
