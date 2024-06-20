@@ -41,15 +41,15 @@
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Banner-Web-BLACK-DDPP_1.png",
-            "image_mobile": "shopify:\/\/shop_images\/Banner-Mobile-BLACK-DDPP.png",
+            "image": "shopify:\/\/shop_images\/Slider_2000x700_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/Slider_500x700_copia.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/hombre",
+            "link": "https:\/\/blackbubba.com.pe\/search?q=CHROME&options%5Bprefix%5D=last",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#121212",
             "btn_color_border": "#000000",
