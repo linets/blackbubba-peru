@@ -199,7 +199,6 @@
       "blocks": {
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1": {
           "type": "featured_collection",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Vitrinas7-CYBER-Black.png",
             "title": "CALZADO",
@@ -208,7 +207,6 @@
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
           "type": "featured_collection",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Vitrinas3-CYBER-Black.png",
             "title": "CARTERAS",
@@ -226,9 +224,9 @@
         "b7b71698-f983-48c0-9e2e-27ca98bfbd9e": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Esenciales_425x595_0d27c206-58ab-4532-9fa3-56ae9a688122.jpg",
-            "title": "ESENCIALES",
-            "url": "shopify:\/\/collections\/drinkware"
+            "image": "shopify:\/\/shop_images\/Vitrinas5-CYBER-Black.png",
+            "title": "BILLETERAS",
+            "url": "shopify:\/\/collections\/billeteras"
           }
         },
         "03b0d026-2469-4c3f-9b70-35caaec084fb": {
