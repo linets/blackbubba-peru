@@ -199,6 +199,7 @@
       "blocks": {
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Vitrinas7-CYBER-Black.png",
             "title": "CALZADO",
@@ -208,9 +209,9 @@
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Jockeys_425x595_4e0fa54d-15ce-4ada-93df-c7c382047cae.jpg",
-            "title": "JOCKEYS",
-            "url": "shopify:\/\/collections\/jockey"
+            "image": "shopify:\/\/shop_images\/Vitrinas3-CYBER-Black.png",
+            "title": "CARTERAS",
+            "url": "shopify:\/\/collections\/carteras"
           }
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
