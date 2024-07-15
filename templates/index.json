@@ -239,6 +239,7 @@
         },
         "32431df5-baea-43d1-8419-772f3d02172a": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/vestuario_425x595_813747d7-fa29-4ccc-9da1-01229575ccaa.jpg",
             "title": "VESTUARIO",
@@ -247,6 +248,7 @@
         },
         "c2263196-b278-46ae-8511-559ade5f8c9d": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
             "title": "TRAVEL",
