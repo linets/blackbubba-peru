@@ -208,6 +208,7 @@
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Vitrinas3-CYBER-Black.png",
             "title": "CARTERAS",
@@ -217,7 +218,7 @@
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Accesorios_425x595_0afb12a8-efc1-49e4-8e15-1bf77c97bc2f.jpg",
+            "image": "shopify:\/\/shop_images\/Vitrinas6-CYBER-Black.png",
             "title": "ACCESORIOS",
             "url": "shopify:\/\/collections\/accesorios"
           }
