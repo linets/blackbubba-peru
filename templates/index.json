@@ -205,20 +205,12 @@
             "url": "shopify:\/\/collections\/calzado"
           }
         },
-        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
-          "type": "featured_collection",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Bolsos_425x595_d874e536-2651-4a63-a770-8e22558581ea.jpg",
-            "title": "BOLSOS",
-            "url": "shopify:\/\/collections\/bolsos"
-          }
-        },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ACCESORIOS.png",
-            "title": "ACCESORIOS",
-            "url": "shopify:\/\/collections\/accesorios"
+            "image": "shopify:\/\/shop_images\/Jockeys_425x595_f85720c0-7dec-4450-8c8e-f2cdf252918f.jpg",
+            "title": "JOCKEYS",
+            "url": "shopify:\/\/collections\/jockey"
           }
         },
         "b7b71698-f983-48c0-9e2e-27ca98bfbd9e": {
@@ -227,6 +219,14 @@
             "image": "shopify:\/\/shop_images\/Accesorios_425x595_df039eae-df26-419d-9000-95b6d6e6f401.jpg",
             "title": "BILLETERAS",
             "url": "shopify:\/\/collections\/billeteras"
+          }
+        },
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bolsos_425x595_d874e536-2651-4a63-a770-8e22558581ea.jpg",
+            "title": "BOLSOS",
+            "url": "shopify:\/\/collections\/bolsos"
           }
         },
         "03b0d026-2469-4c3f-9b70-35caaec084fb": {
@@ -239,7 +239,6 @@
         },
         "32431df5-baea-43d1-8419-772f3d02172a": {
           "type": "featured_collection",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/vestuario_425x595_813747d7-fa29-4ccc-9da1-01229575ccaa.jpg",
             "title": "VESTUARIO",
@@ -248,7 +247,6 @@
         },
         "c2263196-b278-46ae-8511-559ade5f8c9d": {
           "type": "featured_collection",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
             "title": "TRAVEL",
@@ -258,9 +256,9 @@
       },
       "block_order": [
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1",
-        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2",
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3",
         "b7b71698-f983-48c0-9e2e-27ca98bfbd9e",
+        "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2",
         "03b0d026-2469-4c3f-9b70-35caaec084fb",
         "32431df5-baea-43d1-8419-772f3d02172a",
         "c2263196-b278-46ae-8511-559ade5f8c9d"
