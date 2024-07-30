@@ -547,7 +547,10 @@
         "postcode_placeholder": "Distrito",
         "optional_zip_code_label": "Distrito",
         "optional_postal_code_label": "Distrito",
-        "optional_postcode_label": "Distrito"
+        "optional_postcode_label": "Distrito",
+        "region_label": "Departamento",
+        "region_placeholder": "Departamento",
+        "region_none": "Departamento"
       },
       "shipping": {
         "address2_add_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
@@ -570,7 +573,8 @@
       "zip_code": "Distrito",
       "postal_code": "Distrito",
       "postcode": "Distrito",
-      "pincode": "Distrito"
+      "pincode": "Distrito",
+      "region": "Departamento"
     }
   }
 }
