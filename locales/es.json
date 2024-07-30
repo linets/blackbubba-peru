@@ -552,7 +552,9 @@
         "region_placeholder": "Departamento",
         "region_none": "Departamento",
         "first_name_label": "Razón Social (opcional)",
-        "optional_first_name_label": "Razón Social (opcional)"
+        "optional_first_name_label": "Razón Social (opcional)",
+        "last_name_label": "Nombre completo",
+        "optional_last_name_label": "Nombre completo"
       },
       "shipping": {
         "address2_add_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
