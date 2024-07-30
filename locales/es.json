@@ -550,7 +550,9 @@
         "optional_postcode_label": "Distrito",
         "region_label": "Departamento",
         "region_placeholder": "Departamento",
-        "region_none": "Departamento"
+        "region_none": "Departamento",
+        "first_name_label": "Razón Social (opcional)",
+        "optional_first_name_label": "Razón Social (opcional)"
       },
       "shipping": {
         "address2_add_label": "Depto \/ Bloque \/ Oficina - Ej.: Depto 303"
