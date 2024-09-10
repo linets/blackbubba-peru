@@ -83,28 +83,29 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
-  {%- if card_product.metafields.custom.labels != blank -%}
-    {% assign labels = card_product.metafields.custom.labels | split: ',' %}
-    <ul class="labels-container">
-      {% for label in labels %}
-        <li>{{ label }}</li>
-      {% endfor %}
-    </ul>
-  {%- elsif variant -%}
-      {% if variant.compare_at_price != blank %}
-        {%- if variant.compare_at_price > 0 -%}
-          {% assign discount_percent = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round: 0 %}     
-          <span class="badge-discount">{{ discount_percent | replace: '-', '' }}% OFF</span>
-        {%- endif -%}
+    {%- if variant -%}
+      {% if variant.compare_at_price > 0 %}
+        {% assign discount_percent = variant.compare_at_price
+          | minus: variant.price
+          | times: 100.0
+          | divided_by: variant.compare_at_price
+          | round: 0
+        %}
+        <span class="badge-discount active">-{{ discount_percent }}%</span>
       {% endif %}
     {%- else -%}
       {%- if card_product -%}
-        {%- if card_product.variants[0].compare_at_price != blank -%}
-          {% if card_product.variants[0].compare_at_price > 0 %}
-            {% assign discount_percent = card_product.variants[0].compare_at_price | minus: card_product.variants[0].price | times: 100.0 | divided_by: card_product.variants[0].compare_at_price | round: 0 %}     
-              <span class="badge-discount">{{ discount_percent | replace: '-', '' }}% OFF</span>
-            {%- endif -%}
-          {% endif %}
+        {%- if card_product.variants[0].compare_at_price > 0 -%}
+          {% assign discount_percent = card_product.variants[0].compare_at_price
+            | minus: card_product.variants[0].price
+            | times: 100.0
+            | divided_by: card_product.variants[0].compare_at_price
+            | round: 0
+          %}
+          <span class="badge-discount active">-{{ discount_percent }}%</span>
+        {%- else -%}
+          <span class="badge-discount"></span>
+        {%- endif -%}
       {%- endif -%}
     {%- endif -%}
     <div
