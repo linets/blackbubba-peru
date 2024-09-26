@@ -15,15 +15,15 @@
         "slide_FPgTaj": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Slider_2000x700_2_a719b0fc-61ee-4436-9304-d45664c5c306.png",
-            "image_mobile": "shopify:\/\/shop_images\/Slider_500x700_2.png",
+            "image": "shopify://shop_images/Slider_2000x700_2_a719b0fc-61ee-4436-9304-d45664c5c306.png",
+            "image_mobile": "shopify://shop_images/Slider_500x700_2.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/drinkware",
+            "link": "shopify://collections/drinkware",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
@@ -40,15 +40,15 @@
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Slider_2000x700_2.png",
-            "image_mobile": "shopify:\/\/shop_images\/Slider_500x700_copia.jpg",
+            "image": "shopify://shop_images/Slider_2000x700_2.png",
+            "image_mobile": "shopify://shop_images/Slider_500x700_copia.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "https:\/\/blackbubba.com.pe\/search?q=CHROME&options%5Bprefix%5D=last",
+            "link": "https://blackbubba.com.pe/search?q=CHROME&options%5Bprefix%5D=last",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#121212",
             "btn_color_border": "#000000",
@@ -65,15 +65,15 @@
         "slide_kb6hxF": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/BannerFWW_2001x900_d66d247c-ed4f-49ef-89e4-ce123d26925d.png",
-            "image_mobile": "shopify:\/\/shop_images\/BannerFWW-Mobile-BLACK.png",
+            "image": "shopify://shop_images/BannerFWW_2001x900_d66d247c-ed4f-49ef-89e4-ce123d26925d.png",
+            "image_mobile": "shopify://shop_images/BannerFWW-Mobile-BLACK.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/chompas-y-cardigans",
+            "link": "shopify://collections/chompas-y-cardigans",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
@@ -90,15 +90,15 @@
         "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Banner_Black_TraveI_2001x900_1.png",
-            "image_mobile": "shopify:\/\/shop_images\/BannerMobile_Black_TraveI_2.png",
+            "image": "shopify://shop_images/Banner_Black_TraveI_2001x900_1.png",
+            "image_mobile": "shopify://shop_images/BannerMobile_Black_TraveI_2.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/travel",
+            "link": "shopify://collections/travel",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
@@ -115,15 +115,15 @@
         "slide_wB9RPK": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Slider-Sublime_5433c142-09ef-4a00-822a-1d26f5e1185a.png",
-            "image_mobile": "shopify:\/\/shop_images\/Slider_1400x2120_copia_71a4fffd-9d5c-4642-84ad-7f3f8b5a7319.jpg",
+            "image": "shopify://shop_images/Slider-Sublime_5433c142-09ef-4a00-822a-1d26f5e1185a.png",
+            "image_mobile": "shopify://shop_images/Slider_1400x2120_copia_71a4fffd-9d5c-4642-84ad-7f3f8b5a7319.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/mochila-de-viaje",
+            "link": "shopify://collections/mochila-de-viaje",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
@@ -162,9 +162,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FOR_HIM1_90c8e739-bc49-47d0-973c-3b4b4c934c9f.png",
+            "image": "shopify://shop_images/FOR_HIM1_90c8e739-bc49-47d0-973c-3b4b4c934c9f.png",
             "btn_label": "MEN",
-            "btn_link": "shopify:\/\/collections\/hombre",
+            "btn_link": "shopify://collections/hombre",
             "v_position": "bottom",
             "h_position": "center_h"
           }
@@ -172,9 +172,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FOR_HER2_e234138e-27bc-4e8c-9b05-c4059ba6d84d.png",
+            "image": "shopify://shop_images/FOR_HER2_e234138e-27bc-4e8c-9b05-c4059ba6d84d.png",
             "btn_label": "WOMEN",
-            "btn_link": "shopify:\/\/collections\/mujer",
+            "btn_link": "shopify://collections/mujer",
             "v_position": "bottom",
             "h_position": "center_h"
           }
@@ -188,9 +188,9 @@
         "title": "CLOTHING",
         "heading_position": "center",
         "mobile_btn_label_1": "SHOP MEN",
-        "mobile_btn_url_1": "shopify:\/\/collections\/hombre",
+        "mobile_btn_url_1": "shopify://collections/hombre",
         "mobile_btn_label_2": "SHOP WOMEN",
-        "mobile_btn_url_2": "shopify:\/\/collections\/mujer"
+        "mobile_btn_url_2": "shopify://collections/mujer"
       }
     },
     "f2ffa51e-a382-4bed-b53f-b538884ea068": {
@@ -199,57 +199,57 @@
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Esenciales_425x595_7cc152ef-edd2-4343-b183-52352f6a750f.jpg",
+            "image": "shopify://shop_images/Esenciales_425x595_7cc152ef-edd2-4343-b183-52352f6a750f.jpg",
             "title": "ESENCIALES",
-            "url": "shopify:\/\/collections\/accesorios"
+            "url": "shopify://collections/accesorios"
           }
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Jockeys_425x595_f85720c0-7dec-4450-8c8e-f2cdf252918f.jpg",
+            "image": "shopify://shop_images/Jockeys_425x595_f85720c0-7dec-4450-8c8e-f2cdf252918f.jpg",
             "title": "JOCKEYS",
-            "url": "shopify:\/\/collections\/jockey"
+            "url": "shopify://collections/jockey"
           }
         },
         "b7b71698-f983-48c0-9e2e-27ca98bfbd9e": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Accesorios_425x595_df039eae-df26-419d-9000-95b6d6e6f401.jpg",
+            "image": "shopify://shop_images/Accesorios_425x595_df039eae-df26-419d-9000-95b6d6e6f401.jpg",
             "title": "BILLETERAS",
-            "url": "shopify:\/\/collections\/billeteras"
+            "url": "shopify://collections/billeteras"
           }
         },
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Bolsos_425x595_d874e536-2651-4a63-a770-8e22558581ea.jpg",
+            "image": "shopify://shop_images/Bolsos_425x595_d874e536-2651-4a63-a770-8e22558581ea.jpg",
             "title": "BOLSOS",
-            "url": "shopify:\/\/collections\/bolsos"
+            "url": "shopify://collections/bolsos"
           }
         },
         "03b0d026-2469-4c3f-9b70-35caaec084fb": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Mochilas_425x595_f691cd69-d38e-4c64-a46d-12f045279e45.jpg",
+            "image": "shopify://shop_images/Mochilas_425x595_f691cd69-d38e-4c64-a46d-12f045279e45.jpg",
             "title": "MOCHILAS",
-            "url": "shopify:\/\/collections\/mochila"
+            "url": "shopify://collections/mochila"
           }
         },
         "32431df5-baea-43d1-8419-772f3d02172a": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vestuario_425x595_813747d7-fa29-4ccc-9da1-01229575ccaa.jpg",
-            "title": "VESTUARIO",
-            "url": "shopify:\/\/collections\/vestuario"
+            "image": "shopify://shop_images/Copia_de_425X5956_4f6cb683-90bd-48f4-bbf2-06bc96e2a8b8.jpg",
+            "title": "SHOPPING DAYS",
+            "url": "shopify://collections/sale"
           }
         },
         "c2263196-b278-46ae-8511-559ade5f8c9d": {
           "type": "featured_collection",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
+            "image": "shopify://shop_images/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
             "title": "TRAVEL",
-            "url": "shopify:\/\/collections\/travel"
+            "url": "shopify://collections/travel"
           }
         }
       },
@@ -279,13 +279,13 @@
         "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1": {
           "type": "slide",
           "settings": {
-            "desktop_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6355403933cd432c919fc4339a89d574.mov",
-            "mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6355403933cd432c919fc4339a89d574.mov",
+            "desktop_video": "https://cdn.shopify.com/videos/c/o/v/6355403933cd432c919fc4339a89d574.mov",
+            "mobile_video": "https://cdn.shopify.com/videos/c/o/v/6355403933cd432c919fc4339a89d574.mov",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections\/back-to-it",
+            "link": "shopify://collections/back-to-it",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#000000",
             "btn_color_border": "#000000",
@@ -351,15 +351,15 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/BannerHorizontal_BLACK.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
+            "image": "shopify://shop_images/BannerHorizontal_BLACK.jpg",
+            "image_mobile": "shopify://shop_images/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify:\/\/collections",
+            "link": "shopify://collections",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#000000",
             "btn_color_border": "#000000",
