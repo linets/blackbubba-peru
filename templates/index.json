@@ -236,20 +236,20 @@
             "url": "shopify://collections/mochila"
           }
         },
-        "32431df5-baea-43d1-8419-772f3d02172a": {
-          "type": "featured_collection",
-          "settings": {
-            "image": "shopify://shop_images/Copia_de_425X5956_4f6cb683-90bd-48f4-bbf2-06bc96e2a8b8.jpg",
-            "title": "SHOPPING DAYS",
-            "url": "shopify://collections/sale"
-          }
-        },
         "c2263196-b278-46ae-8511-559ade5f8c9d": {
           "type": "featured_collection",
           "settings": {
             "image": "shopify://shop_images/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
             "title": "TRAVEL",
             "url": "shopify://collections/travel"
+          }
+        },
+        "32431df5-baea-43d1-8419-772f3d02172a": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify://shop_images/Copia_de_425X5956_4f6cb683-90bd-48f4-bbf2-06bc96e2a8b8.jpg",
+            "title": "SHOPPING DAYS",
+            "url": "shopify://collections/sale"
           }
         }
       },
@@ -259,8 +259,8 @@
         "b7b71698-f983-48c0-9e2e-27ca98bfbd9e",
         "template--16708066443427__f2ffa51e-a382-4bed-b53f-b538884ea068-featured_collection-2",
         "03b0d026-2469-4c3f-9b70-35caaec084fb",
-        "32431df5-baea-43d1-8419-772f3d02172a",
-        "c2263196-b278-46ae-8511-559ade5f8c9d"
+        "c2263196-b278-46ae-8511-559ade5f8c9d",
+        "32431df5-baea-43d1-8419-772f3d02172a"
       ],
       "settings": {
         "title": "FOR ALL YOUR NEEDS",
