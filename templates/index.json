@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
@@ -65,15 +65,15 @@
         "slide_kb6hxF": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BannerFWW_2001x900_d66d247c-ed4f-49ef-89e4-ce123d26925d.png",
-            "image_mobile": "shopify://shop_images/BannerFWW-Mobile-BLACK.png",
+            "image": "shopify://shop_images/BANNER_PRINCIPAL.png",
+            "image_mobile": "shopify://shop_images/BANNER_PRINCIPAL_MOBILE.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/chompas-y-cardigans",
+            "link": "shopify://collections/sale",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
