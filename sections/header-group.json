@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -22,17 +22,16 @@
             "ubicacion_url": "",
             "contacto": "",
             "contacto_url": "",
-            "envio_img": "shopify:\/\/shop_images\/delivery-_3_2x_36f91535-b952-4181-9347-57ff85b23e38.png",
-            "envio": "Sigue tu pedido",
-            "envio_url": "shopify:\/\/pages\/seguimiento-de-tu-pedido"
+            "envio": "",
+            "envio_url": ""
           }
         },
         "announcement_thfy3Q": {
           "type": "announcement",
           "settings": {
             "position": "center",
-            "text": "DELIVERY GRATIS POR COMPRAS MAYORES A  S\/200",
-            "link": "shopify:\/\/pages\/faqs"
+            "text": "DELIVERY GRATIS POR COMPRAS MAYORES A  S/200",
+            "link": "shopify://pages/faqs"
           }
         }
       },
