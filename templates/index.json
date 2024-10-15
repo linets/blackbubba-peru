@@ -163,9 +163,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/FOR_HIM1_90c8e739-bc49-47d0-973c-3b4b4c934c9f.png",
-            "btn_label": "MEN",
-            "btn_link": "shopify://collections/hombre",
+            "image": "shopify://shop_images/BANNER_1-1_MOCHILAS_Y_ACCESORIOS.png",
+            "btn_label": "",
+            "btn_link": "shopify://collections/sale",
             "v_position": "bottom",
             "h_position": "center_h"
           }
@@ -247,6 +247,7 @@
         },
         "32431df5-baea-43d1-8419-772f3d02172a": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Copia_de_425X5956_4f6cb683-90bd-48f4-bbf2-06bc96e2a8b8.jpg",
             "title": "SHOPPING DAYS",
