@@ -115,6 +115,7 @@
         },
         "slide_kb6hxF": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER_PRINCIPAL.png",
             "image_mobile": "shopify://shop_images/BANNER_PRINCIPAL_MOBILE.png",
