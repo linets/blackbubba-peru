@@ -165,7 +165,7 @@
           "settings": {
             "image": "shopify://shop_images/BANNER_MOCHILAS_664x670_f95ecda2-934b-426e-9db2-b3e18b1f0460.png",
             "btn_label": "",
-            "btn_link": "shopify://collections/mujer",
+            "btn_link": "shopify://collections/sale",
             "v_position": "center_v",
             "h_position": "center_h"
           }
