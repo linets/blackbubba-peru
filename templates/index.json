@@ -174,9 +174,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BANNERCALZADO_Y_VESTUARIO_664x670_7a809726-4192-40a2-968a-0ee220c27c5b.png",
-            "btn_label": "",
-            "btn_link": "shopify://collections/sale",
+            "image": "shopify://shop_images/FOR_HIM1_f63ba041-c488-440a-9882-a5f0b92aa7d3.png",
+            "btn_label": "FOR HIM",
+            "btn_link": "shopify://collections/hombre",
             "v_position": "center_v",
             "h_position": "center_h"
           }
