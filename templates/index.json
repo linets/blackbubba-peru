@@ -63,6 +63,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Slider_2000x700_2.png",
+            "image_mobile": "shopify://shop_images/Slider_500x700_copia.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "https://blackbubba.com.pe/search?q=CHROME&options%5Bprefix%5D=last",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_FPgTaj": {
           "type": "slide",
           "settings": {
@@ -113,39 +138,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_a4Ey4Y": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Slider_2000x700_2.png",
-            "image_mobile": "shopify://shop_images/Slider_500x700_copia.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "https://blackbubba.com.pe/search?q=CHROME&options%5Bprefix%5D=last",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#121212",
-            "btn_color_border": "#000000",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_kb6hxF",
         "slide_wB9RPK",
+        "slide_a4Ey4Y",
         "slide_FPgTaj",
-        "slide_dQ4dhE",
-        "slide_a4Ey4Y"
+        "slide_dQ4dhE"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -187,7 +187,7 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
       ],
       "settings": {
-        "title": "CYBER BLACK",
+        "title": "CLOTHING",
         "heading_position": "center",
         "mobile_btn_label_1": "SHOP MEN",
         "mobile_btn_url_1": "shopify://collections/hombre",
