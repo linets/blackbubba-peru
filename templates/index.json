@@ -65,15 +65,15 @@
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Slider_2000x700_2.png",
-            "image_mobile": "shopify://shop_images/Slider_500x700_copia.jpg",
+            "image": "shopify://shop_images/Banner_2000_x700_81c6284a-f8fe-4f61-84aa-df26f397ae23.png",
+            "image_mobile": "shopify://shop_images/Banner_500_x700_81f2d7a3-025a-4a91-8732-2789c67d8974.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "https://blackbubba.com.pe/search?q=CHROME&options%5Bprefix%5D=last",
+            "link": "shopify://collections/perfect-gif",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#121212",
             "btn_color_border": "#000000",
