@@ -12,6 +12,31 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
       "type": "slideshow",
       "blocks": {
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Banner_2000_x700_81c6284a-f8fe-4f61-84aa-df26f397ae23.png",
+            "image_mobile": "shopify://shop_images/Banner_500_x700_81f2d7a3-025a-4a91-8732-2789c67d8974.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/perfect-gif",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_kb6hxF": {
           "type": "slide",
           "settings": {
@@ -58,31 +83,6 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_a4Ey4Y": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Banner_2000_x700_81c6284a-f8fe-4f61-84aa-df26f397ae23.png",
-            "image_mobile": "shopify://shop_images/Banner_500_x700_81f2d7a3-025a-4a91-8732-2789c67d8974.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/perfect-gif",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#121212",
-            "btn_color_border": "#000000",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
@@ -140,9 +140,9 @@
         }
       },
       "block_order": [
+        "slide_a4Ey4Y",
         "slide_kb6hxF",
         "slide_wB9RPK",
-        "slide_a4Ey4Y",
         "slide_FPgTaj",
         "slide_dQ4dhE"
       ],
