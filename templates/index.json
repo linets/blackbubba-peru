@@ -38,8 +38,34 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_dQ4dhE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_7.jpg",
+            "image_mobile": "shopify://shop_images/BANNER2_5.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/summer",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_kb6hxF": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Banner-Navidad-web.png",
             "image_mobile": "shopify://shop_images/Banner-Navidad-mobile.png",
@@ -112,40 +138,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_dQ4dhE": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/BANNER_7.jpg",
-            "image_mobile": "shopify://shop_images/BANNER2_5.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/summer",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_a4Ey4Y",
+        "slide_dQ4dhE",
         "slide_kb6hxF",
         "slide_wB9RPK",
-        "slide_FPgTaj",
-        "slide_dQ4dhE"
+        "slide_FPgTaj"
       ],
       "settings": {
         "layout": "full_bleed",
