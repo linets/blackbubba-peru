@@ -180,7 +180,7 @@
                 </div>
               </quick-add-modal>
             {%- else -%}
-              <!-- <span>{{ card_product.selected_or_first_available_variant.id }}</span> -->
+              <span>{{ card_product.selected_or_first_available_variant.id }}</span>
               <product-form data-section-id="{{ section.id }}">
                 {%- form 'product',
                   card_product,
