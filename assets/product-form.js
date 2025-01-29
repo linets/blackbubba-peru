@@ -24,10 +24,10 @@ if (!customElements.get('product-form')) {
 
         this.submitButton.setAttribute('aria-disabled', true);
         this.submitButton.classList.add('loading');
-        if (this.querySelector('.loading__spinner').classList) {
+        if (this.querySelector('.loading__spinner')) {
           this.querySelector('.loading__spinner').classList.remove('hidden');
         }
-        if (this.querySelector('.loading-overlay__spinner').classList) {
+        if (this.querySelector('.loading-overlay__spinner')) {
           this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
         }
 
