@@ -14,6 +14,7 @@
       "blocks": {
         "slide_a4Ey4Y": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER_WEB_2000x700_ffd26b5a-c243-49f0-8588-8899f4f30502.png",
             "image_mobile": "shopify://shop_images/BANNER_WEB_500x700_8ad7e00d-61ec-48ac-8a3d-e7db18b21363.png",
