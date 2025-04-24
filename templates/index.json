@@ -91,15 +91,15 @@
         "slide_FPgTaj": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Slider_2000x700_2_a719b0fc-61ee-4436-9304-d45664c5c306.png",
-            "image_mobile": "shopify://shop_images/Slider_500x700_2.png",
+            "image": "shopify://shop_images/BANNER-WEB-DESK.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/drinkware",
+            "link": "shopify://collections/made-for-mom",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
