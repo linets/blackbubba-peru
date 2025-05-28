@@ -38,6 +38,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK_3.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_3.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/beast",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
@@ -87,38 +112,13 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_a4Ey4Y": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_3.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_3.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/beast",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#121212",
-            "btn_color_border": "#000000",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_wB9RPK",
+        "slide_a4Ey4Y",
         "slide_dQ4dhE",
-        "slide_FPgTaj",
-        "slide_a4Ey4Y"
+        "slide_FPgTaj"
       ],
       "settings": {
         "layout": "full_bleed",
