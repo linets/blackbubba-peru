@@ -139,7 +139,7 @@
             "image": "shopify://shop_images/FOR_HER2_1e058b42-04b2-4587-8981-c2d62ceae43e.png",
             "btn_label": "FOR HER",
             "btn_link": "shopify://collections/mujer",
-            "v_position": "center_v",
+            "v_position": "bottom",
             "h_position": "center_h"
           }
         },
