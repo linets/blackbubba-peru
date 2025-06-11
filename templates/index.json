@@ -14,7 +14,6 @@
       "blocks": {
         "slide_wB9RPK": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-WEB-DESK_89233880-c476-464c-9683-6079a81f7817.png",
             "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_1_3f3594d3-48fe-4e45-bfc6-81f91bebdb6a.png",
@@ -255,8 +254,8 @@
         "template--16708066443427__84dc5cd3-0bc3-4041-8235-1b55e2811c82-slide-1": {
           "type": "slide",
           "settings": {
-            "desktop_video": "https://cdn.shopify.com/videos/c/o/v/6355403933cd432c919fc4339a89d574.mov",
-            "mobile_video": "https://cdn.shopify.com/videos/c/o/v/6355403933cd432c919fc4339a89d574.mov",
+            "desktop_video": "https://cdn.shopify.com/videos/c/o/v/5e9a75816c424e95a3c7e43bfd8be745.mp4",
+            "mobile_video": "https://cdn.shopify.com/videos/c/o/v/4be49b6f662b4bddb0b5d730f62499fc.mp4",
             "tag": "",
             "heading": "",
             "subheading": "",
