@@ -149,7 +149,7 @@
             "image": "shopify://shop_images/FOR_HIM1_f63ba041-c488-440a-9882-a5f0b92aa7d3.png",
             "btn_label": "FOR HIM",
             "btn_link": "shopify://collections/hombre",
-            "v_position": "center_v",
+            "v_position": "bottom",
             "h_position": "center_h"
           }
         }
