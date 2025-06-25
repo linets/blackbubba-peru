@@ -1485,6 +1485,23 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      },
+      
+       {
+        "type": "header",
+        "content": "Envío gratis"
+      },
+      {
+        "type": "checkbox",
+        "label": "¿Activar mensaje de envío gratis en el carrito lateral?",
+        "id": "activate_free_shipping",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "mini_cart_free",
+        "label": "Envío gratis",
+        "info": "Ingresa el mínimo para envío gratis"
       }
     ]
   }
