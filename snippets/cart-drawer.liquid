@@ -70,6 +70,9 @@
           {% render 'icon-close' %}
         </button>
       </div>
+      {% if settings.activate_free_shipping %}
+          {% render 'free_shipping_cart' %}
+        {% endif %}
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"
