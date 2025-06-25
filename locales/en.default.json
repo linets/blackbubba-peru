@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -302,7 +311,9 @@
       "login": {
         "title": "Have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in<\/a> to check out faster."
-      }
+      },
+       "free_shipping_html": "You have <b>free shipping</b> on this purchase 🔥!",
+      "progress_html": "You're almost there! <b class=\"orange-txt\">Add $remaining_price</b> for <b>free shipping.</b>"
     },
     "footer": {
       "payment": "Payment methods"
