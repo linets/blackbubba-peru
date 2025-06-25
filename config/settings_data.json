@@ -125,6 +125,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "activate_free_shipping": true,
+    "mini_cart_free": "400",
     "checkout_logo_image": "shopify://shop_images/logo_web-black.png",
     "checkout_logo_size": "large",
     "checkout_sidebar_background_color": "#fafafa",
