@@ -162,6 +162,7 @@
       "settings": {
         "title": "CLOTHING",
         "heading_position": "center",
+        "mobile_image": "shopify://shop_images/FOR_HER2_1e058b42-04b2-4587-8981-c2d62ceae43e.png",
         "mobile_btn_label_1": "SHOP MEN",
         "mobile_btn_url_1": "shopify://collections/hombre",
         "mobile_btn_label_2": "SHOP WOMEN",
