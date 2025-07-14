@@ -162,9 +162,9 @@
         "title": "BLACK WOW",
         "heading_position": "center",
         "mobile_image": "shopify://shop_images/BANNER-VESTUARIO.png",
-        "mobile_btn_label_1": "SHOP MEN",
+        "mobile_btn_label_1": "",
         "mobile_btn_url_1": "shopify://collections/hombre",
-        "mobile_btn_label_2": "SHOP WOMEN",
+        "mobile_btn_label_2": "",
         "mobile_btn_url_2": "shopify://collections/mujer"
       }
     },
