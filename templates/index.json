@@ -147,7 +147,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/BANNER-VESTUARIO.png",
-            "btn_label": "",
+            "btn_label": "VESTUARIO",
             "btn_link": "shopify://collections/vestuario-1",
             "v_position": "bottom",
             "h_position": "center_h"
@@ -162,8 +162,8 @@
         "title": "BLACK WOW",
         "heading_position": "center",
         "mobile_image": "shopify://shop_images/BANNER-VESTUARIO.png",
-        "mobile_btn_label_1": "",
-        "mobile_btn_url_1": "shopify://collections/hombre",
+        "mobile_btn_label_1": "VESTUARIO",
+        "mobile_btn_url_1": "shopify://collections/vestuario-1",
         "mobile_btn_label_2": "",
         "mobile_btn_url_2": "shopify://collections/mujer"
       }
