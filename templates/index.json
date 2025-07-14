@@ -137,7 +137,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/BANNER-MOCHILAS.png",
-            "btn_label": "MOCHILAS",
+            "btn_label": "VER MÁS",
             "btn_link": "shopify://collections/mochila",
             "v_position": "bottom",
             "h_position": "center_h"
