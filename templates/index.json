@@ -148,7 +148,7 @@
           "settings": {
             "image": "shopify://shop_images/BANNER-VESTUARIO.png",
             "btn_label": "",
-            "btn_link": "shopify://collections/ropa-hombre",
+            "btn_link": "shopify://collections/vestuario-1",
             "v_position": "bottom",
             "h_position": "center_h"
           }
