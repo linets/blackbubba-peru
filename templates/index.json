@@ -12,31 +12,6 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
       "type": "slideshow",
       "blocks": {
-        "slide_wB9RPK": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_1_bfcc09a8-761f-4f34-be7c-d75b768d3205.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_2_96a7b563-ee6a-482e-9b34-34956f22bcda.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/sport",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        },
         "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
@@ -58,6 +33,31 @@
             "text_alignment": "center",
             "image_overlay_opacity": 20,
             "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_wB9RPK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK_1_bfcc09a8-761f-4f34-be7c-d75b768d3205.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_2_96a7b563-ee6a-482e-9b34-34956f22bcda.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/sport",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
@@ -114,8 +114,8 @@
         }
       },
       "block_order": [
-        "slide_wB9RPK",
         "slide_dQ4dhE",
+        "slide_wB9RPK",
         "slide_a4Ey4Y",
         "slide_FPgTaj"
       ],
@@ -161,7 +161,7 @@
       "settings": {
         "title": "CLOTHING",
         "heading_position": "center",
-        "mobile_image": "shopify://shop_images/FOR_HER2_1e058b42-04b2-4587-8981-c2d62ceae43e.png",
+        "mobile_image": "shopify://shop_images/BANNER-VESTUARIO.png",
         "mobile_btn_label_1": "SHOP MEN",
         "mobile_btn_url_1": "shopify://collections/hombre",
         "mobile_btn_label_2": "SHOP WOMEN",
