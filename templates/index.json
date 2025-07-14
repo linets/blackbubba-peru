@@ -65,15 +65,15 @@
         "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_1.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_1.png",
+            "image": "shopify://shop_images/BANNER-WEB-DESK-OPCA.png",
+            "image_mobile": "shopify://shop_images/BANNER_WEB_MOB_2.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/snake",
+            "link": "shopify://products/mochila-aspire-wheels",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
