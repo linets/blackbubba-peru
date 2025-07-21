@@ -147,9 +147,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BANNER-VESTUARIO_86e0374b-7026-42d0-99dd-3872c3f5092a.png",
+            "image": "shopify://shop_images/FOR_HIM1_559d1ec1-841a-4f2a-8b23-ca332828ddd4.png",
             "btn_label": "VER MÁS",
-            "btn_link": "shopify://collections/vestuario-1",
+            "btn_link": "shopify://collections/ropa-hombre",
             "v_position": "bottom",
             "h_position": "center_h"
           }
