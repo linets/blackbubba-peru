@@ -12,6 +12,31 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
       "type": "slideshow",
       "blocks": {
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK_94b0a4ff-21ef-4f79-bdbb-b17e6e40e610.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_0c95ffcf-bbee-4fd5-91d7-1d5f62525b3f.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/bananos",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_FPgTaj": {
           "type": "slide",
           "settings": {
@@ -86,38 +111,13 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_a4Ey4Y": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_3.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_3.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/beast",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#121212",
-            "btn_color_border": "#000000",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
+        "slide_a4Ey4Y",
         "slide_FPgTaj",
         "slide_dQ4dhE",
-        "slide_wB9RPK",
-        "slide_a4Ey4Y"
+        "slide_wB9RPK"
       ],
       "settings": {
         "layout": "full_bleed",
