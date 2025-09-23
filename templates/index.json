@@ -207,7 +207,7 @@
         "color_scheme": "",
         "show_view_all": false,
         "padding_top": 24,
-        "padding_bottom": 64
+        "padding_bottom": 56
       }
     },
     "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
@@ -237,7 +237,7 @@
         "enable_quick_add": true,
         "swipe_on_mobile": true,
         "padding_top": 12,
-        "padding_bottom": 52
+        "padding_bottom": 36
       }
     },
     "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
