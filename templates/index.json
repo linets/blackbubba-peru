@@ -240,6 +240,50 @@
         "padding_bottom": 32
       }
     },
+    "bda69723-dbfb-4e98-a695-134c8c8f9141": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/BannerHorizontal_BLACK.jpg",
+            "image_mobile": "shopify://shop_images/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#000000",
+            "btn_color_border": "#000000",
+            "button_style_secondary": false,
+            "box_align": "middle-right",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 40,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
     "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
       "type": "two-images",
       "blocks": {
@@ -318,58 +362,14 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
-    },
-    "bda69723-dbfb-4e98-a695-134c8c8f9141": {
-      "type": "slideshow",
-      "blocks": {
-        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/BannerHorizontal_BLACK.jpg",
-            "image_mobile": "shopify://shop_images/Travel_425x595_7adcc65c-6ab1-42ac-9d8c-e20e1d90ab6a.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#000000",
-            "btn_color_border": "#000000",
-            "button_style_secondary": false,
-            "box_align": "middle-right",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 40,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--16708066443427__bda69723-dbfb-4e98-a695-134c8c8f9141-slide-1"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
     }
   },
   "order": [
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c",
-    "f2ffa51e-a382-4bed-b53f-b538884ea068",
-    "8dddbaca-717e-445f-a54d-320cc7aff9cc",
     "8b8fdd54-6390-49d5-9974-bef4b0b24c26",
-    "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
-    "bda69723-dbfb-4e98-a695-134c8c8f9141"
+    "8dddbaca-717e-445f-a54d-320cc7aff9cc",
+    "f2ffa51e-a382-4bed-b53f-b538884ea068",
+    "bda69723-dbfb-4e98-a695-134c8c8f9141",
+    "84dc5cd3-0bc3-4041-8235-1b55e2811c82"
   ]
 }
