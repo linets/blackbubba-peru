@@ -37,6 +37,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_dQ4dhE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK3.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_5.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/travel",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
@@ -86,38 +111,13 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_dQ4dhE": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_4.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_5.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/travel",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_wB9RPK",
+        "slide_dQ4dhE",
         "slide_a4Ey4Y",
-        "slide_FPgTaj",
-        "slide_dQ4dhE"
+        "slide_FPgTaj"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -128,6 +128,74 @@
         "image_behavior": "none",
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
+      "type": "two-images",
+      "blocks": {
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/FOTOS_PARA_WEB_BLACK_664X850_Mesa_de_trabajo_1.png",
+            "btn_label": "VER MÁS",
+            "btn_link": "shopify://collections/ropa-mujer",
+            "v_position": "bottom",
+            "h_position": "center_h"
+          }
+        },
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/FOTOS_PARA_WEB_BLACK_664X850_Mesa_de_trabajo_1_copia.png",
+            "btn_label": "VER MÁS",
+            "btn_link": "shopify://collections/ropa-hombre",
+            "v_position": "bottom",
+            "h_position": "center_h"
+          }
+        }
+      },
+      "block_order": [
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1",
+        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
+      ],
+      "settings": {
+        "title": "CLOTHING",
+        "heading_position": "center",
+        "mobile_image": "shopify://shop_images/FOR_HER2_081b3f80-0fe8-409a-8ac4-f96e92bd1639.png",
+        "mobile_btn_label_1": "VER MÁS",
+        "mobile_btn_url_1": "shopify://collections/vestuario-1",
+        "mobile_btn_label_2": "",
+        "mobile_btn_url_2": "shopify://collections/mujer"
+      }
+    },
+    "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "#ALWAYSBETONBLACK",
+        "heading_size": "h1",
+        "content_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "mochilas-urbanas",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "enable_desktop_slider_layout_2": true,
+        "enable_scroll": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 32
       }
     },
     "f2ffa51e-a382-4bed-b53f-b538884ea068": {
@@ -210,36 +278,6 @@
         "padding_bottom": 56
       }
     },
-    "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "#ALWAYSBETONBLACK",
-        "heading_size": "h1",
-        "content_alignment": "center",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "mochilas-urbanas",
-        "products_to_show": 10,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "enable_desktop_slider_layout_2": true,
-        "enable_scroll": true,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "swipe_on_mobile": true,
-        "padding_top": 12,
-        "padding_bottom": 32
-      }
-    },
     "bda69723-dbfb-4e98-a695-134c8c8f9141": {
       "type": "slideshow",
       "blocks": {
@@ -282,44 +320,6 @@
         "image_behavior": "none",
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "8b8fdd54-6390-49d5-9974-bef4b0b24c26": {
-      "type": "two-images",
-      "blocks": {
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/FOTOS_PARA_WEB_BLACK_664X850_Mesa_de_trabajo_1.png",
-            "btn_label": "VER MÁS",
-            "btn_link": "shopify://collections/ropa-mujer",
-            "v_position": "bottom",
-            "h_position": "center_h"
-          }
-        },
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/FOTOS_PARA_WEB_BLACK_664X850_Mesa_de_trabajo_1_copia.png",
-            "btn_label": "VER MÁS",
-            "btn_link": "shopify://collections/ropa-hombre",
-            "v_position": "bottom",
-            "h_position": "center_h"
-          }
-        }
-      },
-      "block_order": [
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1",
-        "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
-      ],
-      "settings": {
-        "title": "CLOTHING",
-        "heading_position": "center",
-        "mobile_image": "shopify://shop_images/FOR_HER2_081b3f80-0fe8-409a-8ac4-f96e92bd1639.png",
-        "mobile_btn_label_1": "VER MÁS",
-        "mobile_btn_url_1": "shopify://collections/vestuario-1",
-        "mobile_btn_label_2": "",
-        "mobile_btn_url_2": "shopify://collections/mujer"
       }
     },
     "84dc5cd3-0bc3-4041-8235-1b55e2811c82": {
