@@ -12,6 +12,32 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
       "type": "slideshow",
       "blocks": {
+        "slide_CghXiM": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK_8.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB2.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/carteras",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
@@ -114,6 +140,7 @@
         }
       },
       "block_order": [
+        "slide_CghXiM",
         "slide_dQ4dhE",
         "slide_wB9RPK",
         "slide_a4Ey4Y",
