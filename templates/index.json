@@ -14,7 +14,6 @@
       "blocks": {
         "slide_CghXiM": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-WEB-DESK_8.png",
             "image_mobile": "shopify://shop_images/BANNER-WEB-MOB2.png",
@@ -30,7 +29,7 @@
             "btn_color_border": "#ffffff",
             "button_style_secondary": false,
             "box_align": "middle-center",
-            "show_text_box": true,
+            "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "box_max_width": 100,
@@ -40,6 +39,7 @@
         },
         "slide_dQ4dhE": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-WEB-DESK_7.png",
             "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_8.png",
