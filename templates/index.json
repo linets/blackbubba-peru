@@ -186,13 +186,13 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2"
       ],
       "settings": {
-        "title": "CLOTHING",
+        "title": "CATEGORIES",
         "heading_position": "center",
-        "mobile_image": "shopify://shop_images/FOR_HER2_081b3f80-0fe8-409a-8ac4-f96e92bd1639.png",
+        "mobile_image": "shopify://shop_images/BANNER-MOCHILAS_1.png",
         "mobile_btn_label_1": "VER MÁS",
-        "mobile_btn_url_1": "shopify://collections/vestuario-1",
+        "mobile_btn_url_1": "shopify://collections/mochila",
         "mobile_btn_label_2": "",
-        "mobile_btn_url_2": "shopify://collections/mujer"
+        "mobile_btn_url_2": ""
       }
     },
     "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
