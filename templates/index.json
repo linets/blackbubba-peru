@@ -204,7 +204,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "sale",
+        "collection": "carteras",
         "products_to_show": 10,
         "columns_desktop": 4,
         "full_width": false,
