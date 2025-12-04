@@ -91,15 +91,15 @@
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_94b0a4ff-21ef-4f79-bdbb-b17e6e40e610.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_0c95ffcf-bbee-4fd5-91d7-1d5f62525b3f.png",
+            "image": "shopify://shop_images/BANNER-WEB-DESK_10.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_11.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/bananos",
+            "link": "shopify://collections/xmas",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#121212",
             "btn_color_border": "#000000",
