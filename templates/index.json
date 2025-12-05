@@ -188,9 +188,9 @@
       "settings": {
         "title": "REGALABLES",
         "heading_position": "center",
-        "mobile_image": "shopify://shop_images/FOTOS_PARA_WEB_BLACK_664X850_Mesa_de_trabajo_1.png",
+        "mobile_image": "shopify://shop_images/BANNERS_ellas_y_ellos_BLACK-02.png",
         "mobile_btn_label_1": "",
-        "mobile_btn_url_1": "shopify://collections/mochila",
+        "mobile_btn_url_1": "shopify://collections/mujer",
         "mobile_btn_label_2": "",
         "mobile_btn_url_2": ""
       }
@@ -389,6 +389,53 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
+    },
+    "image_with_text_MEUrEB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ph8QEX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text"
+          }
+        },
+        "text_MT99fL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_dq36wD": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ph8QEX",
+        "text_MT99fL",
+        "button_dq36wD"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "full_width": false,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -397,6 +444,7 @@
     "8dddbaca-717e-445f-a54d-320cc7aff9cc",
     "f2ffa51e-a382-4bed-b53f-b538884ea068",
     "bda69723-dbfb-4e98-a695-134c8c8f9141",
-    "84dc5cd3-0bc3-4041-8235-1b55e2811c82"
+    "84dc5cd3-0bc3-4041-8235-1b55e2811c82",
+    "image_with_text_MEUrEB"
   ]
 }
