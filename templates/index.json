@@ -40,7 +40,6 @@
         },
         "slide_a4Ey4Y": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-WEB-DESK_11.png",
             "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_12.png",
@@ -50,7 +49,7 @@
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/xmas",
+            "link": "shopify://collections/summer",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#121212",
             "btn_color_border": "#000000",
