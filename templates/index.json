@@ -116,15 +116,15 @@
         "slide_FPgTaj": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_5.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_6.png",
+            "image": "shopify://shop_images/BANNER-WEB-DESK2_0f9c0e8c-df05-4b60-8b5d-b066482e4a62.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB2_1.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/carteras",
+            "link": "shopify://collections/maletas",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
