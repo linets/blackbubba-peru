@@ -38,6 +38,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_FPgTaj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK2_0f9c0e8c-df05-4b60-8b5d-b066482e4a62.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB2_1.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/maletas",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_a4Ey4Y": {
           "type": "slide",
           "settings": {
@@ -112,39 +137,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_FPgTaj": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK2_0f9c0e8c-df05-4b60-8b5d-b066482e4a62.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB2_1.png",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/maletas",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_dQ4dhE",
+        "slide_FPgTaj",
         "slide_a4Ey4Y",
         "slide_CghXiM",
-        "slide_wB9RPK",
-        "slide_FPgTaj"
+        "slide_wB9RPK"
       ],
       "settings": {
         "layout": "full_bleed",
