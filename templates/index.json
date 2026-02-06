@@ -116,15 +116,15 @@
         "slide_wB9RPK": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_6.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_7.png",
+            "image": "shopify://shop_images/KV-LOVERS3.jpg",
+            "image_mobile": "shopify://shop_images/KV-LOVERS4.jpg",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/carteras",
+            "link": "shopify://collections/vestuario",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
