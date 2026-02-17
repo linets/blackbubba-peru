@@ -38,6 +38,31 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_wB9RPK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-WEB-DESK_13.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_14.png",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/back-to-it",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#ffffff",
+            "btn_color_border": "#ffffff",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "box_max_width": 100,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_FPgTaj": {
           "type": "slide",
           "settings": {
@@ -112,39 +137,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_wB9RPK": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/KV-LOVERS3.jpg",
-            "image_mobile": "shopify://shop_images/KV-LOVERS4.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/vestuario",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#ffffff",
-            "btn_color_border": "#ffffff",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "box_max_width": 100,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "slide_dQ4dhE",
+        "slide_wB9RPK",
         "slide_FPgTaj",
         "slide_a4Ey4Y",
-        "slide_CghXiM",
-        "slide_wB9RPK"
+        "slide_CghXiM"
       ],
       "settings": {
         "layout": "full_bleed",
