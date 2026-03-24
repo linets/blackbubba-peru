@@ -1,6 +1,5 @@
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -190,6 +189,10 @@
     spaceBetween: 18,
     centeredSlides: true,
     loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
