@@ -163,7 +163,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/mochilas-banner.png",
-            "btn_label": "VER TODO",
+            "btn_label": "",
             "btn_link": "shopify://collections/mochila",
             "v_position": "bottom",
             "h_position": "center_h"
@@ -172,9 +172,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/banners_web_black_summer_-_HOMBRE_Y_MUJER_Mesa_de_trabajo_1_copia.png",
-            "btn_label": "VER TODO",
-            "btn_link": "shopify://collections/hombre",
+            "image": "shopify://shop_images/mochilas-banner1.png",
+            "btn_label": "",
+            "btn_link": "shopify://collections/bolsos-y-totes",
             "v_position": "bottom",
             "h_position": "center_h"
           }
