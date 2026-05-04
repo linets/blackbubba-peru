@@ -14,17 +14,16 @@
       "blocks": {
         "slide_CghXiM": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_17.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_17.png",
+            "image": "shopify://shop_images/BANNER-WEB-DESK_18.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_18.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/sale",
+            "link": "shopify://collections/mujer",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
