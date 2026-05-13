@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -13,8 +22,7 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "caption": {
           "type": "text",
@@ -25,8 +33,7 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -37,8 +44,7 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -47,11 +53,16 @@
             "show_gift_card_recipient": true
           }
         },
+        "custom_liquid_ecCcpm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div\n  data-mercado-pago-widget\n  cuotas=\"3,6\"\n  message-type=\"type_2\"\n  logo-type=\"color\"\n  contain-width=\"100%\"\n  background-color=\"#ffffff\"\n  border-color=\"#cccccc\"\n  link-color=\"#007bff\"\n  font-size=\"1rem\"\n  cuotas-font-size=\"1.2rem\"\n></div>"
+          }
+        },
         "venti_GhDVhm": {
           "type": "venti",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
@@ -121,6 +132,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "custom_liquid_ecCcpm",
         "venti_GhDVhm",
         "description",
         "related_products_Ee8MfB",
@@ -142,8 +154,8 @@
         "mobile_thumbnails": "show",
         "hide_variants": false,
         "enable_video_looping": false,
-        "dispatch": "<p><strong>Despacho  RM:<\/strong> Entre 1-4 días habiles.<\/p><p><strong>Despacho Regiones:<\/strong> Entre 3-9 días habiles.<\/p><p><strong>Retiro en Tienda:<\/strong> Entre 1-5 días habiles.<\/p><p>* Despachos en periodos en Cyber Days o Black Friday pueden sufrir retrasos por la alta demanda. <\/p><p><a href=\"\/pages\/cambios-y-devoluciones\" title=\"Cambios y devoluciones\">Para mas Info ver Politica de Cambios y Devoluciones<\/a><\/p>",
-        "changes": "<p>Podrá realizar el cambio o devolución en un plazo de 7 días calendario, en caso usted requiera, tendrá acercarse a la tienda. Esta opción No aplica para productos en oferta. Existe un plazo de 30 días de garantía del producto, la devolución de dinero, para las opciones mencionadas, podrá tomar hasta 15 días hábiles.<\/p>",
+        "dispatch": "<p><strong>Despacho  RM:</strong> Entre 1-4 días habiles.</p><p><strong>Despacho Regiones:</strong> Entre 3-9 días habiles.</p><p><strong>Retiro en Tienda:</strong> Entre 1-5 días habiles.</p><p>* Despachos en periodos en Cyber Days o Black Friday pueden sufrir retrasos por la alta demanda. </p><p><a href=\"/pages/cambios-y-devoluciones\" title=\"Cambios y devoluciones\">Para mas Info ver Politica de Cambios y Devoluciones</a></p>",
+        "changes": "<p>Podrá realizar el cambio o devolución en un plazo de 7 días calendario, en caso usted requiera, tendrá acercarse a la tienda. Esta opción No aplica para productos en oferta. Existe un plazo de 30 días de garantía del producto, la devolución de dinero, para las opciones mencionadas, podrá tomar hasta 15 días hábiles.</p>",
         "padding_top": 36,
         "padding_bottom": 12
       }
@@ -190,7 +202,7 @@
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>{{ product.metafields.custom.pdp_content_1 | metafield_tag }}<\/p>",
+            "text": "<p>{{ product.metafields.custom.pdp_content_1 | metafield_tag }}</p>",
             "text_style": "body"
           }
         }
@@ -247,7 +259,7 @@
         "text_CEkNQt": {
           "type": "text",
           "settings": {
-            "text": "<p>{{ product.metafields.custom.pdp_content_2 | metafield_tag }}<\/p>",
+            "text": "<p>{{ product.metafields.custom.pdp_content_2 | metafield_tag }}</p>",
             "text_style": "body"
           }
         }
