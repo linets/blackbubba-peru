@@ -12,6 +12,31 @@
     "3cfa5f99-8b8a-4128-9fd9-305ec0d48c0c": {
       "type": "slideshow",
       "blocks": {
+        "slide_a4Ey4Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Copia_de_TOTTE_LARGE_f9b57520-b842-41ff-8669-6004c228d658.jpg",
+            "image_mobile": "shopify://shop_images/Copia_de_Hyper-realistic_fashion_editor_Nano_Banana_2_81665.jpg",
+            "desktop_video": "",
+            "mobile_video": "",
+            "tag": "",
+            "heading": "25% OFF",
+            "subheading": "EN TODA LA WEB",
+            "button_label": "",
+            "link": "shopify://collections/summer",
+            "btn_color_text": "#ffffff",
+            "btn_color_bg": "#121212",
+            "btn_color_border": "#000000",
+            "button_style_secondary": true,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "box_max_width": 8,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_CghXiM": {
           "type": "slide",
           "disabled": true,
@@ -40,6 +65,7 @@
         },
         "slide_dQ4dhE": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-WEB-DESK_16.png",
             "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_16.png",
@@ -112,39 +138,14 @@
             "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
-        },
-        "slide_a4Ey4Y": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Copia_de_TOTTE_LARGE_f9b57520-b842-41ff-8669-6004c228d658.jpg",
-            "image_mobile": "shopify://shop_images/Copia_de_Hyper-realistic_fashion_editor_Nano_Banana_2_81665.jpg",
-            "desktop_video": "",
-            "mobile_video": "",
-            "tag": "",
-            "heading": "25% OFF",
-            "subheading": "EN TODA LA WEB",
-            "button_label": "",
-            "link": "shopify://collections/summer",
-            "btn_color_text": "#ffffff",
-            "btn_color_bg": "#121212",
-            "btn_color_border": "#000000",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 20,
-            "box_max_width": 8,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
+        "slide_a4Ey4Y",
         "slide_CghXiM",
         "slide_dQ4dhE",
         "slide_wB9RPK",
-        "slide_FPgTaj",
-        "slide_a4Ey4Y"
+        "slide_FPgTaj"
       ],
       "settings": {
         "layout": "full_bleed",
