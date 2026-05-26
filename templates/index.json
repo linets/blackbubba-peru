@@ -64,6 +64,7 @@
         },
         "slide_FPgTaj": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-WEB-DESK2_0f9c0e8c-df05-4b60-8b5d-b066482e4a62.png",
             "image_mobile": "shopify://shop_images/BANNER-WEB-MOB2_1.png",
