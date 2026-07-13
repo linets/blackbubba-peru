@@ -90,15 +90,15 @@
         "slide_dQ4dhE": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER-WEB-DESK_16.png",
-            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB_16.png",
+            "image": "shopify://shop_images/BANNER-WEB-DESK_21.png",
+            "image_mobile": "shopify://shop_images/BANNER-WEB-MOB---Copy.png",
             "desktop_video": "",
             "mobile_video": "",
             "tag": "",
             "heading": "",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/bolsos",
+            "link": "shopify://collections/sale",
             "btn_color_text": "#ffffff",
             "btn_color_bg": "#ffffff",
             "btn_color_border": "#ffffff",
