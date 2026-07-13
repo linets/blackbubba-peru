@@ -161,11 +161,11 @@
       "settings": {
         "title": "TU ESTILO EN CADA CATEGORÍA",
         "heading_position": "center",
-        "mobile_image": "shopify://shop_images/banners_web_black_summer_-_HOMBRE_Y_MUJER_Mesa_de_trabajo_1_copia.png",
+        "mobile_image": "shopify://shop_images/BANNER-PRODUCTOS-totes.png",
         "mobile_btn_label_1": "VER TODO",
-        "mobile_btn_url_1": "shopify://collections/mochila",
+        "mobile_btn_url_1": "shopify://collections/sale",
         "mobile_btn_label_2": "VER TODO",
-        "mobile_btn_url_2": "shopify://collections/mochila"
+        "mobile_btn_url_2": "shopify://collections/sale"
       }
     },
     "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
