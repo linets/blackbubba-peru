@@ -138,7 +138,7 @@
           "settings": {
             "image": "shopify://shop_images/BANNER-PRODUCTOS-mochilas.png",
             "btn_label": "VER TODO",
-            "btn_link": "shopify://collections/hombre",
+            "btn_link": "shopify://collections/mochila",
             "v_position": "bottom",
             "h_position": "center_h"
           }
