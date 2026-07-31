@@ -162,11 +162,11 @@
       "settings": {
         "title": "TU ESTILO EN CADA CATEGORÍA",
         "heading_position": "center",
-        "mobile_image": "shopify://shop_images/BANNER-PRODUCTOS-totes.png",
+        "mobile_image": "shopify://shop_images/BRAIDS_BANNERS_HOME-09.webp",
         "mobile_btn_label_1": "VER TODO",
-        "mobile_btn_url_1": "shopify://collections/sale",
+        "mobile_btn_url_1": "shopify://collections/lo-nuevo",
         "mobile_btn_label_2": "VER TODO",
-        "mobile_btn_url_2": "shopify://collections/sale"
+        "mobile_btn_url_2": "shopify://collections/lo-nuevo"
       }
     },
     "8dddbaca-717e-445f-a54d-320cc7aff9cc": {
