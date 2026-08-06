@@ -17,21 +17,24 @@
         "brand_button_rN3ehW": {
           "type": "brand_button",
           "settings": {
-            "brand_image": "",
-            "brand_url": "https://bubbabags.cl/",
-            "brand_active": false
+            "brand_image": "shopify://shop_images/Logo_Bubba_Blanco.png",
+            "brand_url": "https://bubbabags.com.pe/",
+            "brand_active": false,
+            "brand_scale": 100
           }
         },
         "brand_button_G9b3d8": {
           "type": "brand_button",
           "settings": {
-            "brand_image": "",
+            "brand_image": "shopify://shop_images/Logo_Black_Negro.avif",
             "brand_url": "#",
-            "brand_active": true
+            "brand_active": true,
+            "brand_scale": 100
           }
         },
         "e4bafdab-8ff7-4e04-a956-75f8950d49fc": {
           "type": "info",
+          "disabled": true,
           "settings": {
             "position": "center",
             "ubicacion": "ENCUENTRA LO NUEVO",
@@ -49,13 +52,22 @@
             "text": "DELIVERY GRATIS POR COMPRAS MAYORES A  S/200",
             "link": "shopify://pages/faqs"
           }
+        },
+        "announcement_QnT7YQ": {
+          "type": "announcement",
+          "settings": {
+            "position": "center",
+            "text": "ENCUENTRA LO NUEVO",
+            "link": "shopify://collections/lo-nuevo"
+          }
         }
       },
       "block_order": [
         "brand_button_rN3ehW",
         "brand_button_G9b3d8",
         "e4bafdab-8ff7-4e04-a956-75f8950d49fc",
-        "announcement_thfy3Q"
+        "announcement_thfy3Q",
+        "announcement_QnT7YQ"
       ],
       "settings": {
         "color_scheme": "",
@@ -63,6 +75,9 @@
         "show_social": false,
         "auto_rotate": true,
         "change_slides_speed": 3,
+        "brand_buttons_gap": 20,
+        "brand_buttons_logo_color": "#ffffff",
+        "brand_buttons_separator_color": "#c9c9c9",
         "enable_country_selector": false,
         "enable_language_selector": false
       }
