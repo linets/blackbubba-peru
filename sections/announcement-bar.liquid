@@ -392,7 +392,7 @@
     }
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 989px) {
     .announcement-bar-section .utility-bar .utility-bar__grid:not(.page-width) {
       padding-left: max(1.2rem, env(safe-area-inset-left, 0px));
       padding-right: max(1.2rem, env(safe-area-inset-right, 0px));
@@ -419,23 +419,24 @@
     .announcement-bar-layout--with-brands .announcement-brand-buttons {
       width: 100%;
       max-width: none;
-      flex: 0 0 100%;
+      flex: 0 0 auto;
       justify-content: center;
       align-self: stretch;
       box-sizing: border-box;
       align-items: stretch;
       min-height: 3.8rem;
-      height: auto;
+      height: 3.8rem;
       padding-inline: 1rem;
     }
 
     .announcement-bar-layout--with-brands .announcement-content {
       width: 100%;
-      flex: 1 1 auto;
+      flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 0;
+      min-height: 3.8rem;
+      height: 3.8rem;
     }
 
     .announcement-brand-buttons {
