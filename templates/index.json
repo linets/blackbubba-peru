@@ -162,9 +162,9 @@
         "title": "TU ESTILO EN CADA COLECCIÓN",
         "heading_position": "center",
         "mobile_image": "shopify://shop_images/1_d0c9e2c5-2537-4bb6-863e-30c89ab45a0a.png",
-        "mobile_btn_label_1": "VER TODO",
+        "mobile_btn_label_1": "",
         "mobile_btn_url_1": "shopify://collections/lo-nuevo",
-        "mobile_btn_label_2": "",
+        "mobile_btn_label_2": "VER TODO",
         "mobile_btn_url_2": "shopify://collections/lo-nuevo"
       }
     },
