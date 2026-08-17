@@ -14,7 +14,6 @@
       "blocks": {
         "slide_dQ4dhE": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BANNER-HOME-1-DEKSTOP.jpg",
             "image_mobile": "shopify://shop_images/BANNER-HOME-MOBILE-2.jpg",
@@ -137,9 +136,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/banners_web_black_summer_-_HOMBRE_Y_MUJER_Mesa_de_trabajo_1_copia.png",
+            "image": "shopify://shop_images/1_d0c9e2c5-2537-4bb6-863e-30c89ab45a0a.png",
             "btn_label": "VER TODO",
-            "btn_link": "shopify://collections/hombre",
+            "btn_link": "shopify://collections/maletas",
             "v_position": "bottom",
             "h_position": "center_h"
           }
@@ -147,9 +146,9 @@
         "template--16708066443427__8b8fdd54-6390-49d5-9974-bef4b0b24c26-image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/banners_web_black_summer_-_HOMBRE_Y_MUJER_Mesa_de_trabajo_1.png",
+            "image": "shopify://shop_images/2_1.png",
             "btn_label": "VER TODO",
-            "btn_link": "shopify://collections/mujer",
+            "btn_link": "shopify://collections/lo-nuevo",
             "v_position": "bottom",
             "h_position": "center_h"
           }
@@ -162,10 +161,10 @@
       "settings": {
         "title": "TU ESTILO EN CADA CATEGORÍA",
         "heading_position": "center",
-        "mobile_image": "shopify://shop_images/BRAIDS_BANNERS_HOME-09.webp",
-        "mobile_btn_label_1": "",
+        "mobile_image": "shopify://shop_images/1_d0c9e2c5-2537-4bb6-863e-30c89ab45a0a.png",
+        "mobile_btn_label_1": "VER TODO",
         "mobile_btn_url_1": "shopify://collections/lo-nuevo",
-        "mobile_btn_label_2": "VER TODO",
+        "mobile_btn_label_2": "",
         "mobile_btn_url_2": "shopify://collections/lo-nuevo"
       }
     },
